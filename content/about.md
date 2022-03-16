@@ -1,5 +1,5 @@
 ---
-title: "Yuchan Jeong"
+title: "About"
 showDate: false
 showAuthor: false
 ---
