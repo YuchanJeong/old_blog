@@ -6,7 +6,7 @@ categories:
 tags:
 ---
 
-### Today I learned
+## Today I learned
 
 ### 학습 환경 설정
 
@@ -30,12 +30,12 @@ tags:
 - 기록
   - 기록은 증명이자 무기가 된다.
 
-### Today's takeaway
+## Today's takeaway
 
 - 이미 사전 공지했던 사안들을 다시 한번 확인하면서 진행하였기에 크게 할 것은 없었다. 그 덕에 학습 방향 설정에 좀 더 많은 시간을 투자할 수 있었다.
 - 블로그에는 그날 그날 배운 내용을 간략히 기록하고, 자세한 내용은 GitHub의 [WIL](https://github.com/YuchanJeong/WIL)(what I learned)에 정리할 것이다.
 
-### Tomorrow I'll learn
+## Tomorrow I'll learn
 
 - JS 변수
   - const와 let으로 선언
