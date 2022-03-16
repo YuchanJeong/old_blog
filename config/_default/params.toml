@@ -11,7 +11,7 @@ autoSwitchAppearance = true
 showAppearanceSwitcher = true
 
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 
 # mainSections = ["posts"]
 # robots = ""
@@ -42,7 +42,7 @@ showScrollToTop = true
 [list]
   showBreadcrumbs = false
   showSummary = false
-  showTableOfContents = true
+  showTableOfContents = false
   groupByYear = false
 
 [sitemap]
