@@ -1,7 +1,10 @@
 ---
 title: "About"
 showDate: false
-showAuthor: false
+showTableOfContents: false
 ---
 
-About
+### ⌨️ Key world
+
+- Pros : `Philomath` `Optimistic` `Meticulous` `Proactive` `Consistent`
+- Cons : `Overconcentration` `Reserved`
