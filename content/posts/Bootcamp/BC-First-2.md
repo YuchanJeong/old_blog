@@ -13,7 +13,7 @@ tags:
 
 ### 1. Custom Hooks & Utils
 
-#### useDetectOutsideClick
+##### useDetectOutsideClick
 
 - 범위 밖을 클릭하면 닫히는 모달
 
@@ -50,7 +50,7 @@ const click = useCallback(() => {
 }, [isActive, setIsActive]);
 ```
 
-#### useQuery
+##### useQuery
 
 - 쿼리 값 불러오기
 
@@ -72,7 +72,7 @@ const queryPage = query.get("page");
 const querySearch = query.get("search") || "";
 ```
 
-#### getByteLength
+##### getByteLength
 
 - 바이트 계산
 
@@ -94,7 +94,7 @@ c에 s의 현재 위치(i)의 유니코드값을 charCodeAt() 함수를 사용�
 getByteLength(name);
 ```
 
-#### useBoardCheck
+##### useBoardCheck
 
 - 유효한 게시판인지 확인
 
@@ -208,7 +208,7 @@ function App() {
 
 ### 4. Header
 
-#### D-day 계산
+##### D-day 계산
 
 ```jsx
 let d_day = null;
@@ -219,7 +219,7 @@ if (started_at) {
 }
 ```
 
-#### Navbar 토글 기능
+##### Navbar 토글 기능
 
 ```jsx
 <GiHamburgerMenu className={`text-3xl absolute left-4 cursor-pointer hover:text-hibye-60 ${isActive ? "text-hibye-60" : "text-hibye-80"}`} onClick={click} />
@@ -228,7 +228,7 @@ if (started_at) {
   </div>
 ```
 
-#### 로그인 시 Logout과 MyPage 표시
+##### 로그인 시 Logout과 MyPage 표시
 
 ```jsx
 {
@@ -258,7 +258,7 @@ if (started_at) {
 
 ### 5. Navbar
 
-#### 게시판 타입 별로 아이콘 선택
+##### 게시판 타입 별로 아이콘 선택
 
 ```jsx
 const choseIcon = (category) => {
@@ -277,7 +277,7 @@ const choseIcon = (category) => {
 };
 ```
 
-#### 게시판 목록 불러오기
+##### 게시판 목록 불러오기
 
 ```jsx
 {
@@ -299,7 +299,7 @@ const choseIcon = (category) => {
 
 ### 6. PrivateBoardCreateModal
 
-#### input 기본 상태관리
+##### input 기본 상태관리
 
 ```jsx
 const [name, setName] = useState("");
@@ -312,7 +312,7 @@ const onChangeName = (e) => {
 <input type="text" value={name} placeholder="Enter board name" onChange={onChangeName} className={inputStyle} ref={refName} />;
 ```
 
-#### 게시판 생성 시 유효성 검사
+##### 게시판 생성 시 유효성 검사
 
 ```jsx
 const nameByte = getByteLength(name);
@@ -325,7 +325,7 @@ if (nameByte < 1 || nameByte > 36 || /\s{2,}|^\s|\s$|[^\w가-힣\x20\s]/g.test(n
 
 ### 7. ChatBoard
 
-#### Top 버튼
+##### Top 버튼
 
 ```jsx
 const onClick = () => {
@@ -361,7 +361,7 @@ useEffect(() => {
 }
 ```
 
-#### 로딩 혹은 에러
+##### 로딩 혹은 에러
 
 ```jsx
 // 2초 이내에 데이터를 못 받아오면 Error로 간주 그 이전에는 Loading으로 간주
@@ -390,7 +390,7 @@ useEffect(() => {
 }
 ```
 
-#### 무한 스크롤
+##### 무한 스크롤
 
 ```jsx
 import { useInView } from "react-intersection-observer";
@@ -432,7 +432,7 @@ useEffect(() => {
 </div>;
 ```
 
-#### 내용과 input창 전환
+##### 내용과 input창 전환
 
 ```jsx
 {
@@ -449,7 +449,7 @@ useEffect(() => {
 
 ### 8. PostBoard
 
-#### Nested routing
+##### Nested routing
 
 ```jsx
 <Routes>
@@ -458,7 +458,7 @@ useEffect(() => {
 </Routes>
 ```
 
-#### 게시물 목록 불러오기(페이지네이션)
+##### 게시물 목록 불러오기(페이지네이션)
 
 ```jsx
 import { useNavigate } from "react-router-dom";
@@ -502,7 +502,7 @@ const onKeyPress = (e) => {
   };
 ```
 
-#### 검색
+##### 검색
 
 ```jsx
 const refSearch = useRef(null);
