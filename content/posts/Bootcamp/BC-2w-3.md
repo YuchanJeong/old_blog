@@ -4,7 +4,7 @@ date: 2021-09-01
 categories:
   - "'Bootcamp'"
 tags:
-  - CLI
+  - Linux
 ---
 
 ## Today I learned
