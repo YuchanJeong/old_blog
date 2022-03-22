@@ -644,20 +644,6 @@ const searchCancel = () => {
 </>
 ```
 
-### Ps. Error Handling
-
-```bash
-TypeError: Cannot read properties of undefined (reading 'name')
-
-react-dom.development.js:13231 Uncaught Error: Objects are not valid as a React child (found: object with keys {}). If you meant to render a collection of children, use an array instead. at
-```
-
-- state의 data에 배열 형태가 아닌 객체 형태의 데이터를 받아올 때,  
-  useSelector의 state.리듀서.data.data로 바로 불러왔을 경우 이상이 없지만  
-  '리듀서.isLoading'과 '리듀서.error'를 사용하기 위해 리듀서 자체를 불러왔을 경우  
-  그다음 '리듀서.data.data.키'로 호출을 하였을 때 에러 발생
-- 초깃값에 미리 키들도 입력해 두거나 옵셔널 체이닝(?) 사용
-
 ### Ps. 느낀점
 
 - 중복 로직 혹은 스타일이 많았는데 이를 효율적으로 처리하지 못하고 반복 작성하였음
