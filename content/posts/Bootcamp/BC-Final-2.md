@@ -486,6 +486,19 @@ useEffect(() => {
 }, [stream, peerStream]);
 ```
 
+```jsx
+// 녹화 영상 다운로드
+function download() {
+  aRef?.current?.click();
+}
+
+return (
+  ...
+  <a ref={aRef} download={`${debateInfo.title}_${debateId}`} />
+  ...
+)
+```
+
 ## Ps. Problem Solving
 
 ### a. Backspace & Reload
