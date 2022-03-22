@@ -1,5 +1,5 @@
 ---
-title: "My Mac Shortcuts"
+title: "Mac Shortcuts"
 date: 2021-10-07
 categories:
   - "'Etc'"

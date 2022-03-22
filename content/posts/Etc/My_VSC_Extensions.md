@@ -3,6 +3,7 @@ title: "My VSC Extensions"
 date: 2022-01-01
 categories:
   - "'Etc'"
+draft: true
 ---
 
 ### Basic
