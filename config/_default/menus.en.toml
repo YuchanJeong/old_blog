@@ -16,6 +16,11 @@
   weight = 1
 
 [[main]]
+  name = "WIL"
+  pageRef = "https://github.com/YuchanJeong/_WIL"
+  weight = 2
+
+[[main]]
   name = "Posts"
   pageRef = "posts"
   weight = 10

@@ -1,0 +1,105 @@
+---
+title: "[React] Redux-saga"
+date: 2022-03-24
+categories:
+  - "'React'"
+tags:
+  - Redux
+---
+
+# [Redux-saga](https://redux-saga.js.org/docs/introduction/GettingStarted)
+
+> An intuitive Redux side effect manager; middleware
+
+\*[redux-saga/effects API](https://redux-saga.js.org/docs/api#effect-creators)
+
+```bash
+npm i redux-saga
+```
+
+### 1) createSagaMiddleware() & sagaMiddleware.run()
+
+```js
+import { applyMiddleware, createStore } from "redux";
+import reducers from "./modules/reducers";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "./modules/rootSaga";
+
+// sagaMiddleware 생성
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  reducers,
+  // sagaMiddleware 등록
+  applyMiddleware(sagaMiddleware)
+);
+
+// sagaMiddleware 실행 준비
+sagaMiddleware.run(rootSaga);
+
+export default store;
+```
+
+### 2) rootSaga
+
+```js
+import { all } from "redux-saga/effects";
+import { 사가_이펙트, ... } from "./...";
+
+export default function* rootSaga() {
+  yield all([사가_이펙트, ...]);
+}
+```
+
+### 3) redux-saga in a Module
+
+```js
+import axios form "axios"
+import { put, call, takeEvery } from "redux-saga/effects";
+
+
+// 1) Saga Function 작성
+function* 사가_함수(action) {
+  try {
+    yield put(액션_생성자_시작());
+    // yield delay(ms)
+    const res = yield call(axios.get, "경로");
+    yield put(액션_생성자_성공(res.data));
+  } catch (err) {
+    yield put(액션_생성자_실패(err));
+  }
+}
+
+// 2) Saga Type 정의
+const 사가_타입 = "액션_사가_타입";
+
+// 3) Saga Creator 작성
+// params(payload)는 옵션
+export function 사가_생성자(params) {
+  return {
+    type: 사가_타입,
+    param,
+    ...
+  };
+}
+
+// 4) Saga Effect 작성
+export function* 사가_이펙트() {
+  yield throttle(ms, 사가_타입, 사가_함수);
+  ...
+}
+```
+
+### 4) Saga Creator in a Container
+
+```js
+import { useDispatch } from "react-redux";
+import { useCallback } from "react";
+import { 사가_생성자 } from "../redux/modules/모듈";
+
+const dispatch = useDispatch();
+
+const getUsers = useCallback(() => {
+  dispatch(사가_생성자(옵션));
+}, [dispatch]);
+```

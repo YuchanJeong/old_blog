@@ -1,0 +1,250 @@
+---
+title: "[React] Redux"
+date: 2022-03-23
+categories:
+  - "'React'"
+tags:
+  - Redux
+---
+
+# [Redux](https://redux.js.org/api/api-reference)
+
+> A Predictable State Container for JS Apps  
+> Have a Single Store
+
+```bash
+npm i redux react-redux
+```
+
+## 1. Redux Basic [\*](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-Redux-ReduxBasic.md)
+
+### 1) Action
+
+```js
+// 1) Action Type 정의
+const 액션_타입 = "액션_타입";
+
+// 2) Action Creator(Action 객체 반환) 작성
+// params(payload)는 옵션
+function 액션_생성자(params) {
+  return { type: 액션_타입, parm: 값, ... };
+}
+```
+
+### 2) Reducer
+
+- Reducer has to be a "Pure Function"
+- State has to be "Immutable"
+
+```js
+// 3) combineReducers로 reducers 작성
+import { combineReducers } from "redux";
+
+const reducers = combineReducers({
+  리듀서
+  ...,
+});
+
+export default reducers;
+```
+
+```js
+// 4) 개별 Reducer 작성
+function 리듀서(state = initState, action) {
+  if (action.type === ??) return newState;
+  // params(payload) 있으면 action.param 사용 가능
+  ...
+
+  return state
+}
+```
+
+### 3) Store
+
+```js
+import reducers from "./modules/reducers";
+import { createStore } from "redux";
+
+// 5) reducers로 store 생성
+const store = createStore(reducers);
+
+// Store의 State들을 반환
+store.getState();
+
+// Store에 Action을 보냄
+store.dispatch(액션_생성자(옵션));
+
+// Change listener
+// unsubscribe() 할 때까지 변화 시 subscribe 함수 작동
+const unsubscribe = store.subscribe(() => {});
+
+export default store;
+```
+
+### 4) Provider
+
+```js
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
+// 6) Provider로 App 전체에 전달
+<Provider store={store}>
+  <App />
+</Provider>;
+```
+
+### 5) useSelector() & useDispatch()
+
+```js
+import { useSelector, useDispatch } from "react-redux";
+import 액션_생성자 from "./redux/modules/모듈";
+
+// 최적화를 위해서는 reducer의 결과로 나온 state에서 각각 data를 뽑아서 할당
+const state = useSelector((state) => state.reducer.data);
+
+const dispatch = useDispatch();
+const func = useCallback(() => {
+  dispatch(액션_생성자(옵션));
+}, [dispatch]);
+```
+
+\*Ducks Pattern
+
+- "Reducer"는 export default
+- "Action Type"과 "Action Creator"는 export
+- project
+  - components/
+    - ...
+  - containers/
+    - ...
+  - redux/
+    - modules/
+      - reducers.js
+      - filter.js
+      - todos.js
+      - users.js
+    - store.js
+  - app.js
+  - index.js
+
+## 2. Redux Advance
+
+### 1) Redux Middleware
+
+- 디스패치 앞뒤에 코드 추가 가능
+
+```js
+import { applyMiddleware, createStore } from "redux";
+import reducers from "./reducers/reducers";
+
+const store = createStore(reducers, applyMiddleware(미들웨어));
+export default store;
+```
+
+### 2) [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
+
+- Chrome에서 Redux Extension 활성화
+
+```bash
+npm i redux-devtools-extension -D
+```
+
+```js
+import { applyMiddleware, createStore } from "redux";
+import reducer from "./reducers/reducer";
+import { composeWithDevTools } from "redux-devtools-extension";
+
+// const store = createStore(reducer, composeWithDevTools());
+const store = createStore(reducer, composeWithDevTools(applyMiddleware()));
+export default store;
+```
+
+### 3) [redux-thunk](https://github.com/reduxjs/redux-thunk) [\*](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-Redux-redux_thunk.md)
+
+- Redux의 비동기 처리를 위한 라이브러리 미들웨어
+- Action Creator가 함수 반환 가능
+
+```bash
+npm i redux-thunk
+```
+
+```js
+import { applyMiddleware, createStore } from "redux";
+import reducer from "./reducers/reducer";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+export default store;
+```
+
+### 4) [connected-react-router](https://github.com/supasate/connected-react-router) [\*](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-Redux-connected_react_router.md)
+
+```bash
+npm i connected-react-router
+```
+
+- Redux에서 관리하는 history를 React에서 사용하게 만드는 미들웨어
+
+1. ```js
+   // history 객체 생성
+   import { createBrowserHistory } from "history";
+
+   const history = createBrowserHistory();
+
+   export default history;
+   ```
+
+2. ```js
+   // middleware 등록
+   ...
+   import { routerMiddleware } from "connected-react-router";
+
+   const store = createStore(
+     reducers,
+     composeWithDevTools(applyMiddleware(routerMiddleware(history)))
+   );
+
+   export default store;
+   ```
+
+3. ```js
+   // router 리듀서 작성
+   ...
+   import { connectRouter } from "connected-react-router";
+   ...
+
+   const reducers = combineReducers({
+     router: connectRouter(history),
+     ...
+   });
+
+   export default reducers;
+   ```
+
+4. ```js
+   // ConnectedRouter로 history 전달
+   ...
+   import { ConnectedRouter } from "connected-react-router";
+
+   ReactDOM.render(
+     <React.StrictMode>
+       <Provider store={store}>
+         <ConnectedRouter history={history}>
+           <App />
+         </ConnectedRouter>
+       </Provider>
+     </React.StrictMode>,
+     document.getElementById("root")
+   );
+   ```
+
+5. push("경로")가 Action Creator 처럼 쓰임
+
+### 5) [redux-logger](https://www.npmjs.com/package/redux-logger)
+
+```bash
+npm i redux-logger -D
+```
+
+- redux에서 dispatch()의 실행으로 바뀔 prevState와 바뀐 newState가 콘솔에 찍혀 디버깅 쉽게 해주는 라이브러리
