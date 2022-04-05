@@ -6,7 +6,7 @@ theme = "congo"
 baseURL = "https://yuchanjeong.github.io/"
 defaultContentLanguage = "en"
 
-enableRobotsTXT = "true"
+enableRobotsTXT = true
 paginate = 10
 summaryLength = 0
 
