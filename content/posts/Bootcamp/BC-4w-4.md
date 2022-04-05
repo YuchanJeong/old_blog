@@ -1,5 +1,5 @@
 ---
-title: "BC-4w-4 / [React] Router + <FC> React(2)"
+title: "BC-4w-4 / [React] Router + {FC} React(2)"
 date: 2021-09-16
 categories:
   - "'Bootcamp'"

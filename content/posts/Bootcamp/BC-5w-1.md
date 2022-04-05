@@ -1,5 +1,5 @@
 ---
-title: "BC-5w-추석(1) / <FC> React(4)"
+title: "BC-5w-추석(1) / {FC} React(4)"
 date: 2021-09-24
 categories:
   - "'Bootcamp'"

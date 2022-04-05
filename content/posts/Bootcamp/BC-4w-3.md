@@ -1,5 +1,5 @@
 ---
-title: "BC-4w-3 / [React] Intro + <FC> React(1)"
+title: "BC-4w-3 / [React] Intro + {FC} React(1)"
 date: 2021-09-15
 categories:
   - "'Bootcamp'"

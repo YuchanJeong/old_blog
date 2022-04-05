@@ -1,5 +1,5 @@
 ---
-title: "BC-4w-1 / [JS/브라우저] DOM(2) + <FC> TypeScript"
+title: "BC-4w-1 / [JS/브라우저] DOM(2) + {FC} TypeScript"
 date: 2021-09-13
 categories:
   - "'Bootcamp'"
@@ -35,7 +35,7 @@ tags:
 - 데이터의 타입이 같거나 서브 타입인 경우, 할당 가능 -> 공변  
   함수의 매개변수 타입이 같거나 슈퍼 타입인 경우, 할당 가능 -> 반병
 
-\*[WIL](https://github.com/YuchanJeong/WIL)에 정리
+\*[WIL](https://github.com/YuchanJeong/_WIL)에 정리
 
 ## Today's takeaway
 

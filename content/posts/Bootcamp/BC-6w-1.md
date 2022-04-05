@@ -1,5 +1,5 @@
 ---
-title: "BC-6w-1 / <FC> React(7)"
+title: "BC-6w-1 / {FC} React(7)"
 date: 2021-09-27
 categories:
   - "'Bootcamp'"

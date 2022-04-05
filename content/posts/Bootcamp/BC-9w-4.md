@@ -1,5 +1,5 @@
 ---
-title: "BC-9w-4 / <FC> React(8) Deploy React App"
+title: "BC-9w-4 / {FC} React(8) Deploy React App"
 date: 2021-10-21
 categories:
   - "'Bootcamp'"
