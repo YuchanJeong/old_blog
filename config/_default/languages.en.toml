@@ -7,7 +7,7 @@ rtl = false
 
 title = "Yuchan's hello world!"
 # logo = "img/logo.jpg"
-# description = "The blog of a developer who wants to help create a better world :)"
+description = "The blog of a developer who wants to help create a better world :)"
 # copyright = "Copyright © Yuchan's hello world!"
 
 dateFormat = "2 January 2006"
