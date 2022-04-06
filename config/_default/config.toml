@@ -3,7 +3,7 @@
 # https://jpanther.github.io/congo/docs/getting-started/
 
 theme = "congo"
-baseURL = "https://github.com/YuchanJeong/yuchanjeong.github.io"
+baseURL = "https://yuchanjeong.github.io"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = false
