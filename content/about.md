@@ -4,8 +4,6 @@ showDate: false
 showTableOfContents: false
 ---
 
-???
-
 ✏️ [What I learned (Cheat Sheet)](https://github.com/YuchanJeong/_WIL)
 
 ### ⌨️ Key world
