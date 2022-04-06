@@ -1,5 +1,5 @@
 ---
-title: "[Next.js] Official Documentation (0) - From JavaScript to React"
+title: "[Next.js] Official Documentation (2) - From JavaScript to React"
 date: 2022-04-05
 categories:
   - "'React'"
