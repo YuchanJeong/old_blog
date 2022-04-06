@@ -30,6 +30,11 @@
   pageRef = "tags"
   weight = 30
 
+[[main]]
+  name = "WIL"
+  url = "https://github.com/YuchanJeong/_WIL"
+  weight = 40
+
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
