@@ -685,7 +685,9 @@ useEffect(() => {
   - setInterval로 캔버스에 그림을 그린 후 clearInterval로 더 이상 그려지지 않게 할 때 clearInterval이 제대로 작동하지 않음
 - Solving
 
-  - 재랜더링이 일어나지 않는 useRef를 활용해서 해결 (\*Ref: [The Iceberg of React Hooks](https://medium.com/@sdolidze/the-iceberg-of-react-hooks-af0b588f43fb))
+  - 재랜더링이 일어나지 않는 useRef를 활용해서 해결  
+    \*[The Iceberg of React Hooks](https://medium.com/@sdolidze/the-iceberg-of-react-hooks-af0b588f43fb)  
+    \*[Referencing Values with Refs](https://beta.reactjs.org/learn/referencing-values-with-refs)
   - Interval Hook
 
     ```js
