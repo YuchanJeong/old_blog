@@ -96,16 +96,16 @@ In the context of web applications, the **client** refers to the browser on a us
 
 There is an unavoidable unit of work to convert the code you write in React into the HTML representation of your UI. This process is called rendering.
 
-- **Client-Side Rendering**
+- **Client-Side Rendering (CSR)**
   - In a standard React application, the browser receives an **empty HTML** shell from the server along with the JavaScript instructions to construct the UI. The initial rendering work happens on the user's device.
 - Pre-Rendering
   - Next.js pre-renders every page by default. Pre-rendering means the HTML is generated in advance, on a server, instead of having it all done by JavaScript on the user's device.
-  1.  **Server-Side Rendering**
+  1.  **Server-Side Rendering (SSR)**
       - The HTML of the page is generated on a server for each request. The generated HTML, JSON data, and JavaScript instructions to make the page interactive are then sent to the client.
       - On the client, the HTML is used to show a fast non-interactive page, while React uses the JSON data and JavaScript instructions to make components interactive (for example, attaching event handlers to a button). This process is called hydration.
       - In Next.js, you can opt to server-side render pages by using [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props).
         > React 18 and Next 12 introduce an alpha version of React `server components`. Server components are completely rendered on the server and do not require client-side JavaScript to render. In addition, server components allow developers to keep some logic on the server and only send the result of that logic to the client. This reduces the bundle size sent to the client and improves client-side rendering performance. [Learn more about React server components here](https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html).
-  2.  **Static Site Generation**
+  2.  **Static Site Generation (SSG)**
       - The HTML is generated on the server, but unlike server-side rendering, there is no server at runtime. Instead, content is generated once, at build time, when the application is deployed, and the HTML is stored in a CDN and re-used for each request.
       - In Next.js, you can opt to statically generate pages by using [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
 
@@ -122,7 +122,7 @@ The beauty of Next.js is that you can choose the most appropriate rendering meth
 - The Edge
   - The Edge is a generalized concept for the fringe (or edge) of the network, closest to the user. CDNs could be considered part of "the Edge" because they store static content at the fringe (edge) of the network.
   - Similar to CDNs, Edge servers are distributed to multiple locations around the world. But unlike CDNs, which store static content, some Edge servers can run code.
-  - By running code at the Edge, you can move some of the work that was traditionally done client-side or server-side to the Edge (see examples with Next.js here). This can make your application more performant.
+  - By running code at the Edge, you can move some of the work that was traditionally done client-side or server-side to the Edge. This can make your application more performant.
   - In Next.js, you can run code at the Edge with [Middleware](https://nextjs.org/docs/middleware), and soon with [React Server Components](https://nextjs.org/docs/advanced-features/react-18/overview#react-server-components-alpha).
 
 ---
