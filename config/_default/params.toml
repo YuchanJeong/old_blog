@@ -13,12 +13,12 @@ showAppearanceSwitcher = true
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["posts"]
+# mainSections = ["posts"]
 # robots = ""
 showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, custom
+  layout = "page" # valid options: page, profile, custom
   showRecent = false
 
 [article]
