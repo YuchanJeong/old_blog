@@ -1,5 +1,5 @@
 ---
-title: "[Next.js] Official Documentation (4) - CREATE YOUR FIRST APP 2"
+title: "[Next.js] Learn Course (4) - CREATE YOUR FIRST APP 2"
 date: 2022-04-17
 categories:
   - "'Today I learned'"
@@ -510,3 +510,7 @@ When you have a pull request open, Vercel automatically creates a preview deploy
 You can share this preview URL with your collaborators and get immediate feedback.
 
 If your preview deployment looks good, merge it to `main`. When you do this, Vercel automatically creates a production deployment.
+
+---
+
+\*[https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)

@@ -1,5 +1,5 @@
 ---
-title: "[Next.js] Official Documentation (1) - About Next.js"
+title: "[Next.js] Learn Course (1) - About Next.js"
 date: 2022-04-05
 categories:
   - "'Today I learned'"
