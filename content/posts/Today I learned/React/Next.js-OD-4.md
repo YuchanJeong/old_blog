@@ -457,4 +457,56 @@ npm install remark remark-html
   }
   ```
 
-## 6. API Routes
+## 6. API Routes[\*](https://nextjs.org/docs/api-routes/introduction)
+
+- Create `pages/api/hello.js`
+  ```js
+  export default function handler(req, res) {
+    res.status(200).json({ text: "Hello" });
+  }
+  ```
+  - [http://localhost:3000/api/hello](http://localhost:3000/api/hello)
+- Do Not Fetch an API Route from `getStaticProps` or `getStaticPaths`
+  - Because they run only on the server-side and will never run on the client-side.
+- A Good Use Case: Handling Form Input
+  - A good use case for API Routes is handling form input. For example, you can create a form on your page and have it send a POST request to your API Route. You can then write code to directly save it to your database. The API Route code will not be part of your client bundle, so you can safely write server-side code.
+    ```js
+    export default function handler(req, res) {
+      const email = req.body.email;
+      // Then save email to your database, etc...
+    }
+    ```
+- [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
+- [Dynamic API Routes](https://nextjs.org/docs/api-routes/dynamic-api-routes)
+
+## 7. Deploying Your Next.js App
+
+### Deploy to Vercel
+
+1. Create a Github Repository
+2. ```bash
+   git remote add origin git@github.com:YuchanJeong/nextjs-blog-sample.git
+   git push -u origin main
+   ```
+3. [Create a Vercel Account](https://vercel.com/signup)
+4. Import your `nextjs-blog-sample` repository
+
+- [nextjs-blog-sample](https://nextjs-blog-sample-omega.vercel.app/)
+
+### Next.js and Vercel[\*](https://vercel.com/docs)
+
+- Default features:
+  - Pages that use Static Generation and assets (JS, CSS, images, fonts, etc) will automatically be served from the Vercel Edge Network, which is blazingly fast.
+  - Pages that use Server-Side Rendering and API routes will automatically become isolated Serverless Functions. This allows page rendering and API requests to scale infinitely.
+- More features:
+  - **Custom Domains**: Once deployed on Vercel, you can assign a custom domain to your Next.js app. Take a look at [our documentation](https://vercel.com/docs/concepts/projects/custom-domains) here.
+  - **Environment Variables**: You can also set environment variables on Vercel. Take a look at [our documentation](https://vercel.com/docs/concepts/deployments/build-step#environment-variables) here. You can then use those [environment variables](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables) in your Next.js app.
+  - **Automatic HTTPS**: HTTPS is enabled by default (including custom domains) and doesn't require extra configuration. We auto-renew SSL certificates.
+
+### Preview Deployment for Every Push (Develop, Preview, Ship)
+
+When you have a pull request open, Vercel automatically creates a preview deployment for that branch on every push. The preview URL will always point to the latest preview deployment.
+
+You can share this preview URL with your collaborators and get immediate feedback.
+
+If your preview deployment looks good, merge it to `main`. When you do this, Vercel automatically creates a production deployment.
