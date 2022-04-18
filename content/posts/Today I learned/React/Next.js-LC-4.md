@@ -513,4 +513,4 @@ If your preview deployment looks good, merge it to `main`. When you do this, Ver
 
 ---
 
-\*[https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)
+\*Ref. [https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)

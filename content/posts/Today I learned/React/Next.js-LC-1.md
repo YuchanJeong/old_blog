@@ -254,4 +254,4 @@ npm install react react-dom next
 
 ---
 
-\*[https://nextjs.org/learn/foundations/about-nextjs](https://nextjs.org/learn/foundations/about-nextjs)
+\*Ref. [https://nextjs.org/learn/foundations/about-nextjs](https://nextjs.org/learn/foundations/about-nextjs)
