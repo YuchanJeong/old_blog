@@ -1,8 +1,8 @@
 ---
-title: "[Next.js] Official Documentation (4) - How Next.js Works"
+title: "[Next.js] Official Documentation (2) - How Next.js Works"
 date: 2022-04-06
 categories:
-  - "'React'"
+  - "'Today I learned'"
 tags:
   - Next.js
 ---

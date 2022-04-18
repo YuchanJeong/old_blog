@@ -1,5 +1,5 @@
 ---
-title: "개발자의 글쓰기-김철수"
+title: "개발자의 글쓰기 - 김철수"
 date: 2021-08-29
 categories:
   - "'What I Read'"

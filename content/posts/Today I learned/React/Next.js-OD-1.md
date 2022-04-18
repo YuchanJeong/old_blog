@@ -1,15 +1,45 @@
 ---
-title: "[Next.js] Official Documentation (2) - From JavaScript to React"
+title: "[Next.js] Official Documentation (1) - About Next.js"
 date: 2022-04-05
 categories:
-  - "'React'"
+  - "'Today I learned'"
 tags:
   - Next.js
 ---
 
-# From JavaScript to React
+## About Next.js
 
-## 1. Rendering User Interfaces
+### 1. Building Blocks of a Web Application
+
+|     |                      |                                                                                           |
+| --- | -------------------- | ----------------------------------------------------------------------------------------- |
+| 1   | User Interface       | How users will consume and interact with your application.                                |
+| 2   | Routing              | How users navigate between different parts of your application.                           |
+| 3   | Data Fetching        | Where your data lives and how to get it.                                                  |
+| 4   | Rendering            | When and where you render static or dynamic content.                                      |
+| 5   | Integrations         | What third-party services you use (CMS, auth, payments, etc) and how you connect to them. |
+| 6   | Infrastructure       | Where you deploy, store, and run your application code (Serverless, CDN, Edge, etc).      |
+| 7   | Performance          | How to optimize your application for end-users.                                           |
+| 8   | Scalability          | How your application adapts as your team, data, and traffic grow.                         |
+| 9   | Developer Experience | Your team’s experience building and maintaining your application.                         |
+
+\*For each part of your application, you will need to decide whether you will build a solution yourself or use other tools such as libraries and frameworks.
+
+### 2. What is React?
+
+> [React](https://beta.reactjs.org/) is a `JavaScript library` for building interactive **user interfaces(UI)**.
+
+By library, we mean React provides helpful functions to build UI, but leaves it **up to the developer where to use** those functions in their application.
+
+### 3. What is Next.js?
+
+> [Next.js](https://nextjs.org/docs/getting-started) is a `React framework` that gives you building blocks to create web applications.
+
+By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
+
+## From JavaScript to React
+
+### 1. Rendering User Interfaces
 
 When a user visits a web page, the server returns an HTML file to the browser. Then the browser reads the HTML and constructs the DOM.
 
@@ -57,7 +87,7 @@ When a user visits a web page, the server returns an HTML file to the browser. T
      - Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza.
      - Ex. “A Hawaiian pizza please.”
 
-## 2. Getting Started with React
+### 2. Getting Started with React
 
 1. **react**
    - The core React library
@@ -85,7 +115,7 @@ When a user visits a web page, the server returns an HTML file to the browser. T
 
 \*If you’d like to learn more, take a look at the [UI trees](https://beta.reactjs.org/learn/preserving-and-resetting-state#the-ui-tree) and the [render method](https://beta.reactjs.org/apis/render) sections in the React Documentation.
 
-## 3. Building UI with Components
+### 3. Building UI with Components
 
 User interfaces(UI) can be broken down into smaller building blocks called components.
 
@@ -109,7 +139,7 @@ function HomePage() {
 ReactDOM.render(<HomePage />, app);
 ```
 
-## 4. Displaying Data with Props
+### 4. Displaying Data with Props
 
 Using props
 
@@ -151,7 +181,7 @@ function HomePage() {
 }
 ```
 
-## 5. Adding Interactivity with State
+### 5. Adding Interactivity with State
 
 ```jsx
 function HomePage() {
@@ -171,6 +201,57 @@ function HomePage() {
 
 \*If you’d like to learn more, take a look at the [Adding Interactivity](https://beta.reactjs.org/learn/adding-interactivity) and [Managing State](https://beta.reactjs.org/learn/managing-state) sections in the React Documentation.
 
+## From React to Next.js
+
+```bash
+npm install react react-dom next
+```
+
+- pages/index.jsx
+
+  ```jsx
+  import { useState } from "react";
+
+  function Header({ title }) {
+    return <h1>{title ? title : "Default title"}</h1>;
+  }
+
+  export default function HomePage() {
+    const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
+
+    const [likes, setLikes] = useState(0);
+
+    function handleClick() {
+      setLikes(likes + 1);
+    }
+
+    return (
+      <div>
+        <Header title="Develop. Preview. Ship. 🚀" />
+        <ul>
+          {names.map((name) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
+
+        <button onClick={handleClick}>Like ({likes})</button>
+      </div>
+    );
+  }
+  ```
+
+- package.json
+
+  ```json
+  ...
+  "scripts": {
+    "dev": "next dev"
+  },
+  ...
+  ```
+
+> You removed the babel script, a taste of the complex tooling configuration you no longer have to think about.
+
 ---
 
-\*[https://nextjs.org/learn/foundations/from-javascript-to-react](https://nextjs.org/learn/foundations/from-javascript-to-react)
+\*[https://nextjs.org/learn/foundations/about-nextjs](https://nextjs.org/learn/foundations/about-nextjs)
