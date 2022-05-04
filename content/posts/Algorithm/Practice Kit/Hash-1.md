@@ -244,7 +244,11 @@ function solution(genres, plays) {
 
 ## My Tip
 
-### Type 별 정보 정리
+- sort
+  - 내부의 값을 이용한 정렬
+  - 다중 정렬
+
+### Compile by Type
 
 - reduce
   ```js
@@ -268,6 +272,41 @@ function solution(genres, plays) {
   for (let i = 0; i < arr1.length; i++) {
     map.set(arr1[i], (map.get(arr1[i]) || arr2[i]) + arr2[i]);
   }
+  ```
+
+### .sort
+
+- 객체 정렬
+
+  ```js
+  // 1) value
+  arr.sort((a, b) => b.value - a.value); // value값 기준 내림차순정렬
+  arr.sort((a, b) => a.value - b.value); // value값 기준 오름차순정렬
+
+  // 2) key
+  arr.map((el) => Object.entries(el));
+  arr.sort((a, b) => b[0] - a[0]); // key값 기준 내림차순정렬
+  arr.sort((a, b) => a[0] - b[0]); // key값 기준 오름차순정렬
+  ```
+
+- 다중 정렬
+
+  ```js
+  arr.sort((a, b) => {
+    if (a.type1 !== b.type1) {
+      return b.type1 - a.type1;
+    }
+    if (a.type2 !== b.type2) {
+      return b.type2 - a.type2;
+    }
+    return b.type3 - a.type3;
+  });
+
+  /*
+  arr.sort((a, b) => b.type3 - a.type3)
+  arr.sort((a, b) => b.type2 - a.type2)
+  arr.sort((a, b) => b.type1 - a.type1)
+  */
   ```
 
 ---
