@@ -8,6 +8,8 @@ tags:
   - Practice Kit
 ---
 
+> 정렬을 이용해서 문제를 효율적으로 풀어보세요.
+
 ## 문제
 
 ### 1. K번째수 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42748)
@@ -37,7 +39,7 @@ function solution(numbers) {
 }
 ```
 
-### 3. H-Index (Lv.3) [\*](https://programmers.co.kr/learn/courses/30/lessons/42747?language=javascript)
+### 3. H-Index (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42747?language=javascript)
 
 ```js
 function solution(citations) {
