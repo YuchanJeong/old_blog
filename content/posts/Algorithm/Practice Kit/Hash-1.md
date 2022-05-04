@@ -254,7 +254,7 @@ function solution(genres, plays) {
   ```js
   const obj = arr1.reduce(
     (acc, cur, idx) => (
-      (acc[cur] = acc[cur] ? acc[cur] + arr2[idx] : arr2[idx]), obj
+      (acc[cur] = acc[cur] ? acc[cur] + arr2[idx] : arr2[idx]), acc
     ),
     {}
   );
