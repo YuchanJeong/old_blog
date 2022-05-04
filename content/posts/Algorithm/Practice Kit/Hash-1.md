@@ -158,50 +158,117 @@ function solution(clothes) {
 }
 ```
 
-### 3. 베스트앨범 [\*](https://programmers.co.kr/learn/courses/30/lessons/42579)
+### 3. 베스트앨범 (Lv.3) [\*](https://programmers.co.kr/learn/courses/30/lessons/42579)
+
+1. reduce 사용
 
 ```js
 function solution(genres, plays) {
-  const info = genres.map((genre, idx) => ({
+  const infos = genres.map((genre, idx) => ({
     num: idx,
     genre: genre,
     play: plays[idx],
   }));
 
   // 1) 장르별 총 플레이 시간
-  const genre_play_obj = genres.reduce(
+  const genre_play = genres.reduce(
     (obj, genre, idx) => (
       (obj[genre] = obj[genre] ? obj[genre] + plays[idx] : plays[idx]), obj
     ),
     {}
   );
 
-  info.map((el) => {
+  infos.map((el) => {
     const genre = el.genre;
-    const genre_play = genre_play_obj[genre];
+    const genre_play = genre_play[genre];
 
     el.genre = genre_play;
   });
 
   // 2) 순서대로 정렬
-  info.sort((a, b) => b.play - a.play);
-  info.sort((a, b) => b.genre - a.genre);
+  infos.sort((a, b) => b.play - a.play);
+  infos.sort((a, b) => b.genre - a.genre);
 
-  // 3) 2개만 베스트앨범에 추가
+  // 3) 2개만 앨범에 추가
   const count = {};
-  const best_album = [];
+  const album = [];
 
-  info.forEach((el) => {
+  infos.forEach((el) => {
     count[el.genre] = count[el.genre] ? count[el.genre] + 1 : 1;
 
     if (count[el.genre] < 3) {
-      best_album.push(el.num);
+      album.push(el.num);
     }
   });
 
-  return best_album;
+  return album;
 }
 ```
+
+2. forEach, 다중 sort 사용
+
+```js
+function solution(genres, plays) {
+  const genre_play = {};
+  genres.forEach((genre, idx) => {
+    genre_play[genre] = genre_play[genre]
+      ? genre_play[genre] + plays[idx]
+      : plays[idx];
+  });
+
+  const genre_play_count = {};
+  return (
+    genres
+      .map((genre, idx) => ({ genre: genre, play: plays[idx], num: idx }))
+      // 다중 sort
+      .sort((a, b) => {
+        if (a.genre !== b.genre) {
+          return genre_play[b.genre] - genre_play[a.genre];
+        }
+        if (a.play !== b.play) {
+          return b.play - a.play;
+        }
+        return a.num - b.num;
+      })
+      .filter((genre) => {
+        if (genre_play_count[genre.genre] >= 2) return false;
+        genre_play_count[genre.genre] = genre_play_count[genre.genre]
+          ? genre_play_count[genre.genre] + 1
+          : 1;
+        return true;
+      })
+      .map((genre) => genre.num)
+  );
+}
+```
+
+## My Tip
+
+### Type 별 정보 정리
+
+- reduce
+  ```js
+  const obj = arr1.reduce(
+    (acc, cur, idx) => (
+      (acc[cur] = acc[cur] ? acc[cur] + arr2[idx] : arr2[idx]), obj
+    ),
+    {}
+  );
+  ```
+- forEach
+  ```js
+  const obj = {};
+  arr1.forEach((el, idx) => {
+    obj[el] = obj[el] ? obj[el] + arr2[idx] : arr2[idx];
+  });
+  ```
+- map
+  ```js
+  const map = new Map();
+  for (let i = 0; i < arr1.length; i++) {
+    map.set(arr1[i], (map.get(arr1[i]) || arr2[i]) + arr2[i]);
+  }
+  ```
 
 ---
 
