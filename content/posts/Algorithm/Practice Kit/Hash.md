@@ -1,5 +1,5 @@
 ---
-title: "[Practice Kit] Hash"
+title: "[Practice Kit] 해시(Hash)"
 date: 2022-05-02
 categories:
   - "'Algorithm'"

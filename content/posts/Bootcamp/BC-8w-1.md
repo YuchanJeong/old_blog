@@ -141,7 +141,12 @@ const func = function (arr) {
         }
         // 간선을 추가할 수 없는 상황에서는 추가 x
         // 인덱스와 크기라서 + 1
-        if (from + 1 > currentLength || to + 1 > currentLength || from < 0 || to < 0) {
+        if (
+          from + 1 > currentLength ||
+          to + 1 > currentLength ||
+          from < 0 ||
+          to < 0
+        ) {
           console.log("범위가 매트릭스 밖에 있습니다.");
           return;
         }
@@ -159,7 +164,12 @@ const func = function (arr) {
           return;
         }
         // 간선을 제거할 수 없는 상황에서는 제거 x
-        if (from + 1 > currentLength || to + 1 > currentLength || from < 0 || to < 0) {
+        if (
+          from + 1 > currentLength ||
+          to + 1 > currentLength ||
+          from < 0 ||
+          to < 0
+        ) {
           console.log("범위가 매트릭스 밖에 있습니다.");
           return;
         }
@@ -416,7 +426,7 @@ class BinarySearchTree {
   - 주로 두 정점 사이의 최단 경로를 찾을 때 사용
   - 주로 그래프가 굉장히 클 때 사용
 - DFS(Depth-First Search)
-  - 하나의 경로를 끝까지 탐색한 후, 미국 도착이 아니라면 다음 경로로 넘어가 탐색
+  - 하나의 경로를 끝까지 탐색한 후, 도착이 아니라면 다음 경로로 넘어가 탐색
   - BFS보다 탐색 시간은 조금 오래 걸릴지라도 모든 노드를 완전히 탐색
   - 주로 그래프의 규모가 작고, depth가 얕을 때 사용
 
@@ -427,7 +437,8 @@ class BinarySearchTree {
 ```js
 function func(edges) {
   // 마지막 vertex의 index + 1
-  const matrixSize = Math.max(...edges.flat().filter((item) => typeof item === "number")) + 1;
+  const matrixSize =
+    Math.max(...edges.flat().filter((item) => typeof item === "number")) + 1;
 
   const matrix = [];
 

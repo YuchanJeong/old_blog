@@ -1,5 +1,5 @@
 ---
-title: "[Practice Kit] Sort"
+title: "[Practice Kit] 정렬(Sort)"
 date: 2022-05-04
 categories:
   - "'Algorithm'"
