@@ -318,7 +318,7 @@ function solution(genres, plays) {
 }
 ```
 
-## My Tip
+## My Tips
 
 - sort
   - 내부의 값을 이용한 정렬
