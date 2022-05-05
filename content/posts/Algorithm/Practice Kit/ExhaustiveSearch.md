@@ -72,6 +72,33 @@ function solution(numbers) {
 }
 ```
 
+### 3. 카펫 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42842?language=javascript)
+
+```js
+function solution(brown, yellow) {
+  const getDivisors = (num) => {
+    const result = [];
+    for (let i = 1; i <= Math.floor(Math.sqrt(num)); i++) {
+      if (num % i === 0) result.push(i);
+    }
+    return result.map((el) => [num / el, el]);
+  };
+
+  const result = [];
+
+  const divisors = getDivisors(yellow);
+  divisors.forEach((divisor) => {
+    const width = divisor[0] + 2;
+    const height = divisor[1] + 2;
+    if (brown === width * 2 + (height - 2) * 2) {
+      result.push(width, height);
+    }
+  });
+
+  return result;
+}
+```
+
 ## My Tips
 
 ### 효율적인 소수 판별
@@ -171,6 +198,18 @@ const isPrime = (num) => {
   ```
 
 \*forEach에 rest_arr가 하나씩 줄어서 따로 탈출 조건은 필요 없음.
+
+### 효율적인 약수 쌍 구하기
+
+```js
+const getDivisors = (num) => {
+  const result = [];
+  for (let i = 1; i <= Math.floor(Math.sqrt(num)); i++) {
+    if (num % i === 0) result.push(i);
+  }
+  return result.map((el) => [el, num / el]);
+};
+```
 
 ---
 
