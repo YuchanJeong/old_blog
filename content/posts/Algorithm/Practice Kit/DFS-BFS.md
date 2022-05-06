@@ -178,6 +178,15 @@ function solution(tickets) {
 }
 ```
 
+## My Tips
+
+### DFS, BFS 구분
+
+| DFS                                 | BFS              |
+| ----------------------------------- | ---------------- |
+| 재귀 함수 > 스택                    | 큐               |
+| 탐색 시 가중치 혹은 제약, 완전 탐색 | 최단 탐색만 고려 |
+
 ---
 
 \*Ref. [프로그래머스 고득점 Kit - 깊이/너비 우선 탐색(DFS/BFS)](https://programmers.co.kr/learn/courses/30/parts/12421)
