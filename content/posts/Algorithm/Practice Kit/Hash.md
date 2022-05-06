@@ -356,13 +356,13 @@ function solution(genres, plays) {
 
   ```js
   // 1) value
-  arr.sort((a, b) => b.value - a.value); // value값 기준 내림차순정렬
   arr.sort((a, b) => a.value - b.value); // value값 기준 오름차순정렬
+  arr.sort((a, b) => b.value - a.value); // value값 기준 내림차순정렬
 
   // 2) key
   arr.map((el) => Object.entries(el));
-  arr.sort((a, b) => b[0] - a[0]); // key값 기준 내림차순정렬
   arr.sort((a, b) => a[0] - b[0]); // key값 기준 오름차순정렬
+  arr.sort((a, b) => b[0] - a[0]); // key값 기준 내림차순정렬
   ```
 
 - 다중 정렬

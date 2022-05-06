@@ -117,5 +117,67 @@ if (equal === word.length - 1) {
 ### 4. 여행경로 (Lv.3) [\*](https://programmers.co.kr/learn/courses/30/lessons/43164?language=javascript)
 
 ```js
+// DFS(재귀)
+function solution(tickets) {
+  /*
+  // 문자일 때는 .sort()로 가능!
+  tickets.sort((a, b) => {
+    if (a[0] !== b[0]) {
+      return a[0] - b[0];
+    }
+    return a[1] - b[1];
+  });
+  */
+  tickets.sort();
 
+  // 1) 결과 저장소
+  const result = [];
+  // 2) 중복 체크
+  const isVisited = tickets.map((el) => false);
+  const len = tickets.length;
+
+  // 3) 재귀 함수
+  const dfs = (node, depth) => {
+    // a. 결과 저장!!!
+    result.push(node);
+
+    // ★☆★유효 경로 O (마지막 node 도착)★☆★
+    if (depth === len) {
+      return true;
+    }
+
+    // 반복문
+    for (let i = 0; i < len; i++) {
+      // 중복 체크
+      if (isVisited[i]) continue;
+      // 및 조건 확인
+      if (tickets[i][0] === node) {
+        // b. 중복 저장!!
+        isVisited[i] = true;
+
+        // 조건을 만족한다면 다음 node에서 재귀 지속!
+        // 조건을 만족하지 못하면 false를 반환하고 재귀 종료!
+        // ★☆★탈출 조건에서 true를 반환하는 순간 순차적으로 true 반환★☆★
+        if (dfs(tickets[i][1], depth + 1)) {
+          return true;
+        }
+
+        // b. 중복 취소!!
+        isVisited[i] = false;
+      }
+    }
+
+    // a. 결과 취소!!!
+    result.pop();
+    // 유효 경로 X
+    return false;
+  };
+
+  dfs("ICN", 0);
+  return result;
+}
 ```
+
+---
+
+\*Ref. [프로그래머스 고득점 Kit - 깊이/너비 우선 탐색(DFS/BFS)](https://programmers.co.kr/learn/courses/30/parts/12421)
