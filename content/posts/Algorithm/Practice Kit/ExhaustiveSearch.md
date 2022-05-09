@@ -10,6 +10,10 @@ tags:
 
 > 무식해 보여도 사실은 최고의 방법일 때가 있지요.
 
+## 개념 정리
+
+- 추가 예정
+
 ## 문제
 
 ### 1. 모의고사 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript)

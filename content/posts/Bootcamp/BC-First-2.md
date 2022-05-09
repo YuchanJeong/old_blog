@@ -4,6 +4,7 @@ date: 2022-02-03
 categories:
   - "'Bootcamp'"
 tags:
+  - Debate-Ducks
   - Retrospect
 ---
 
@@ -107,8 +108,12 @@ export default function useBoardCheck(boardId) {
   // 처음에 undefined라서 초깃값을 따로 할당해서 length나 filter()를 사용 가능하게 만듦
   const publicBoardsData = publicBoards.data.data || [];
   const privateBoardsData = privateBoards.data.data || [];
-  const publicBoard = publicBoardsData.filter((board) => String(board.id) === boardId);
-  const privateBoard = privateBoardsData.filter((board) => String(board.id) === boardId);
+  const publicBoard = publicBoardsData.filter(
+    (board) => String(board.id) === boardId
+  );
+  const privateBoard = privateBoardsData.filter(
+    (board) => String(board.id) === boardId
+  );
   const board = publicBoard.length !== 0 ? publicBoard[0] : privateBoard[0];
   const isLoading = publicBoards.loading && privateBoards.loading;
 
@@ -130,10 +135,15 @@ const { board, isLoading } = useBoardCheck(boardId);
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getPrivateBoards = createAsyncThunk("privateBoards/getPrivateBoards", async (couple_id) => {
-  const response = await axios.get(`${process.env.REACT_APP_API_URL}/boards/${couple_id}`);
-  return response.data;
-});
+export const getPrivateBoards = createAsyncThunk(
+  "privateBoards/getPrivateBoards",
+  async (couple_id) => {
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/boards/${couple_id}`
+    );
+    return response.data;
+  }
+);
 
 const privateBoardsSlice = createSlice({
   name: "privateBoardsSlice",
@@ -262,7 +272,8 @@ if (started_at) {
 
 ```jsx
 const choseIcon = (category) => {
-  if (category === "post") return <BsPencilSquare className="inline mr-2 mb-1" />;
+  if (category === "post")
+    return <BsPencilSquare className="inline mr-2 mb-1" />;
   if (category === "chat") {
     return (
       <BsChatDots
@@ -289,7 +300,12 @@ const choseIcon = (category) => {
     <div className="border-hibye-60">There is no board.</div>
   ) : (
     boards.data.data.map((board) => (
-      <Link to={`/${board.category}/${board.id}?page=1&search=`} key={board.id} className="mb-4 truncate block hover:text-hibye-80 duration-300" onClick={click}>
+      <Link
+        to={`/${board.category}/${board.id}?page=1&search=`}
+        key={board.id}
+        className="mb-4 truncate block hover:text-hibye-80 duration-300"
+        onClick={click}
+      >
         {choseIcon(board.category)} {board.name}
       </Link>
     ))
@@ -309,14 +325,25 @@ const onChangeName = (e) => {
 
 // --- //
 
-<input type="text" value={name} placeholder="Enter board name" onChange={onChangeName} className={inputStyle} ref={refName} />;
+<input
+  type="text"
+  value={name}
+  placeholder="Enter board name"
+  onChange={onChangeName}
+  className={inputStyle}
+  ref={refName}
+/>;
 ```
 
 ##### 게시판 생성 시 유효성 검사
 
 ```jsx
 const nameByte = getByteLength(name);
-if (nameByte < 1 || nameByte > 36 || /\s{2,}|^\s|\s$|[^\w가-힣\x20\s]/g.test(name)) {
+if (
+  nameByte < 1 ||
+  nameByte > 36 ||
+  /\s{2,}|^\s|\s$|[^\w가-힣\x20\s]/g.test(name)
+) {
   setValid((state) => ({ ...state, isValid: false, reason: "name" }));
   refName.current.focus();
   return;
@@ -405,10 +432,12 @@ const [loading, setLoading] = useState(false);
 
 const getChats = useCallback(async () => {
   setLoading(true);
-  await axios.get(`${process.env.REACT_APP_API_URL}/posts/${boardId}?page=${page}`).then((res) => {
-    setChats((state) => [...state, ...res.data.data]);
-    setLastPage(res.data.lastPage);
-  });
+  await axios
+    .get(`${process.env.REACT_APP_API_URL}/posts/${boardId}?page=${page}`)
+    .then((res) => {
+      setChats((state) => [...state, ...res.data.data]);
+      setLastPage(res.data.lastPage);
+    });
   setLoading(false);
 }, [page, boardId]);
 
@@ -438,8 +467,19 @@ useEffect(() => {
 {
   edit.isEdit && edit.post_id === post.id ? (
     <>
-      <input className="w-full rounded-2xl border bg-gray-10 pl-3 pr-3 text-gray-80" type="text" onChange={onChangeEditContents} placeholder="Enter Chat here" value={editContents} ref={refInput} />
-      {valid.isValid ? null : <div className="text-hibye-80 text-sm text-center mb-2 mt-2">Invalid chat. Please check again.</div>}
+      <input
+        className="w-full rounded-2xl border bg-gray-10 pl-3 pr-3 text-gray-80"
+        type="text"
+        onChange={onChangeEditContents}
+        placeholder="Enter Chat here"
+        value={editContents}
+        ref={refInput}
+      />
+      {valid.isValid ? null : (
+        <div className="text-hibye-80 text-sm text-center mb-2 mt-2">
+          Invalid chat. Please check again.
+        </div>
+      )}
     </>
   ) : (
     <div className="text-xm text-gray-80">{post.contents}</div>
@@ -453,7 +493,11 @@ useEffect(() => {
 
 ```jsx
 <Routes>
-  <Route exact path="/" element={<PostBoardMain board={board} boardId={boardId} />} />
+  <Route
+    exact
+    path="/"
+    element={<PostBoardMain board={board} boardId={boardId} />}
+  />
   <Route exact path="/:postId" element={<Post />} />
 </Routes>
 ```
@@ -578,7 +622,9 @@ const searchCancel = () => {
         <div className="mt-24 mb-24 p-10">
           <div className="flex items-center mb-12">
             {!isEditName ? (
-              <div className="text-hibye-80 text-lg mr-3 font-bold">{userInfo.username}</div>
+              <div className="text-hibye-80 text-lg mr-3 font-bold">
+                {userInfo.username}
+              </div>
             ) : (
               <input
                 className="self-center text-hibye-100 text-base rounded-2xl border bg-gray-10 pl-3 pr-3 w-56 mr-3"
@@ -604,12 +650,16 @@ const searchCancel = () => {
             )}
           </div>
           <div className="flex bb-12 mb-8">
-            <div className="text-hibye-60 text-sm font-bold w-28 mr-8">Email address</div>
+            <div className="text-hibye-60 text-sm font-bold w-28 mr-8">
+              Email address
+            </div>
             <div className="text-gray-80 text-sm">{userInfo.email}</div>
           </div>
 
           <div className="flex mb-2">
-            <div className="text-hibye-60 text-sm font-bold w-28 mr-8">Lover</div>
+            <div className="text-hibye-60 text-sm font-bold w-28 mr-8">
+              Lover
+            </div>
             {!userInfo.couple_id ? (
               <>
                 <input
@@ -620,21 +670,42 @@ const searchCancel = () => {
                   ref={refLover}
                 />
                 <div onClick={addLover}>
-                  <FiArrowRightCircle className="text-2xl text-hibye-80 hover:text-hibye-10 hover:bg-hibye-80 rounded-full cursor-pointer duration-300 ml-2" ref={refLover} />
+                  <FiArrowRightCircle
+                    className="text-2xl text-hibye-80 hover:text-hibye-10 hover:bg-hibye-80 rounded-full cursor-pointer duration-300 ml-2"
+                    ref={refLover}
+                  />
                 </div>
               </>
             ) : !userInfo.is_matching ? (
-              <div className="text-hibye-80 text-sm">Please wait for reply.</div>
+              <div className="text-hibye-80 text-sm">
+                Please wait for reply.
+              </div>
             ) : (
-              <input type="date" className="text-hibye-100 text-sm rounded-2xl border bg-gray-10 pl-3 pr-3" placeholder="YYYY-MM-DD" />
+              <input
+                type="date"
+                className="text-hibye-100 text-sm rounded-2xl border bg-gray-10 pl-3 pr-3"
+                placeholder="YYYY-MM-DD"
+              />
             )}
           </div>
 
-          {isUsernameValid ? <div className="mb-10" /> : <div className="text-hibye-80 text-xs text-center mb-10">Invalid username, Please check again.</div>}
-          <div className="text-gray-80 text-sm underline cursor-pointer w-max" onClick={changePassword}>
+          {isUsernameValid ? (
+            <div className="mb-10" />
+          ) : (
+            <div className="text-hibye-80 text-xs text-center mb-10">
+              Invalid username, Please check again.
+            </div>
+          )}
+          <div
+            className="text-gray-80 text-sm underline cursor-pointer w-max"
+            onClick={changePassword}
+          >
             Change password
           </div>
-          <div className="text-gray-80 text-sm underline cursor-pointer w-max" onClick={deleteId}>
+          <div
+            className="text-gray-80 text-sm underline cursor-pointer w-max"
+            onClick={deleteId}
+          >
             Delete account
           </div>
         </div>

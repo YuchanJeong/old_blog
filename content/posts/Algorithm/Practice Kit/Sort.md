@@ -10,6 +10,8 @@ tags:
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.
 
+\*[객체 정렬 및 다중 정렬](https://yuchanjeong.github.io/posts/algorithm/practice-kit/hash/#sort)
+
 ## 문제
 
 ### 1. K번째수 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42748)

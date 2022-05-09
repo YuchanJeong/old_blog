@@ -10,6 +10,10 @@ tags:
 
 > LIFO, FIFO, push & pop! 스택과 큐를 이용해서 문제를 풀어보세요.
 
+## 개념 정리
+
+- 추가 예정
+
 ## 문제
 
 ### 1. 기능개발 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42586?language=javascript)
@@ -102,4 +106,6 @@ function solution(bridge_length, weight, truck_weights) {
 }
 ```
 
-<!-- ### 4. 프린터 (Lv.2) [\*]() -->
+---
+
+\*Ref. [프로그래머스 고득점 Kit - 스택/큐](https://programmers.co.kr/learn/courses/30/parts/12081)
