@@ -45,28 +45,43 @@ function solution(n, lost, reserve) {
 }
 ```
 
-### 2.
+### 2. 조이스틱 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42860)
 
 ```js
-// 틀린 풀이
-// "JAZ"일 때 2번이 아니라 한 번만 이동하는 것 간과!
+// A가 시작되는 시점부터 연속되는 A의 갯수가 A앞의 문자열 길이보다 길면 ◀으로 움직이는 것이 이득.
+// 그래서 ▶으로만 움직이는 상황(n - 1)에서 이득본 만큼의 횟수를 뺌.
 function solution(name) {
-  const alphabet1 = "0BCDEFGHIJKLMN";
-  const alphabet2 = "0ZYXWVUTSRQPO";
-  let result = name.length - 1;
+  const len = name.length;
+  const name_arr = name.split("");
 
-  name.split("").forEach((char) => {
-    if (alphabet1.includes(char)) {
-      result += alphabet1.indexOf(char);
-    } else if (alphabet2.includes(char)) {
-      result += alphabet2.indexOf(char);
-    }
+  let cnt = 0;
+  name_arr.forEach((char, idx) => {
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    alphabet.indexOf(char) < 14
+      ? (cnt += alphabet.indexOf(char))
+      : (cnt += 26 - alphabet.indexOf(char));
   });
 
-  return result;
+  const checkACnt = (name, idx) => {
+    let cnt = 0;
+    for (let i = idx + 1; i < len; i += 1) {
+      if (name[i] !== "A") break;
+      cnt += 1;
+    }
+    return cnt;
+  };
+
+  let save = 0;
+  for (let i = 0; i < len; i += 1) {
+    if (name[i + 1] === "A") {
+      const cntA = checkACnt(name, i);
+      if (i < cntA) {
+        save = cntA - i;
+        break;
+      }
+    }
+  }
+
+  return cnt + (len - 1) - save;
 }
-```
-
-```js
-
 ```
