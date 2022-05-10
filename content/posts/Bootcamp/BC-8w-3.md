@@ -2,7 +2,7 @@
 title: "BC-8w-3 / [JS/Node] 비동기, 모듈"
 date: 2021-10-14
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

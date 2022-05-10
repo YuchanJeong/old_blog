@@ -2,8 +2,8 @@
 title: "BC / Bootcamp 회고"
 date: 2022-03-22
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 draft: true
 ---

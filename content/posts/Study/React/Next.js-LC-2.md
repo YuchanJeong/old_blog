@@ -2,7 +2,7 @@
 title: "[Next.js] Learn Course (2) - How Next.js Works"
 date: 2022-04-06
 categories:
-  - "'Today I learned'"
+  - <Study>
 tags:
   - Next.js
 ---

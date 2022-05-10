@@ -2,7 +2,7 @@
 title: "[React] React v18.0"
 date: 2022-04-18
 categories:
-  - "'Today I learned'"
+  - <Study>
 tags:
   - React
 ---
@@ -106,7 +106,9 @@ this is an in-depth feature that we don’t expect most users to need to think a
   }
 
   <Suspense fallback={<Spinner />}>
-    <div style={{ opacity: isPending ? 0.8 : 1 }}>{tab === "photos" ? <Photos /> : <Comments />}</div>
+    <div style={{ opacity: isPending ? 0.8 : 1 }}>
+      {tab === "photos" ? <Photos /> : <Comments />}
+    </div>
   </Suspense>;
   ```
 
@@ -197,7 +199,10 @@ const deferredValue = useDeferredValue(value);
 
     // Memoizing tells React to only re-render when deferredQuery changes,
     // not when query changes.
-    const suggestions = useMemo(() => <SearchSuggestions query={deferredQuery} />, [deferredQuery]);
+    const suggestions = useMemo(
+      () => <SearchSuggestions query={deferredQuery} />,
+      [deferredQuery]
+    );
 
     return (
       <>

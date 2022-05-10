@@ -2,9 +2,9 @@
 title: "BC-2w-7 / 2주 차 정리"
 date: 2021-09-06
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 # 2주 차 정리

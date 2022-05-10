@@ -2,7 +2,7 @@
 title: "[Next.js] Learn Course (1) - About Next.js"
 date: 2022-04-05
 categories:
-  - "'Today I learned'"
+  - <Study>
 tags:
   - Next.js
 ---
@@ -70,7 +70,9 @@ When a user visits a web page, the server returns an HTML file to the browser. T
            const header = document.createElement("h1");
 
            // Create a new text node for the H1 element
-           const headerContent = document.createTextNode("Develop. Preview. Ship. 🚀");
+           const headerContent = document.createTextNode(
+             "Develop. Preview. Ship. 🚀"
+           );
 
            // Append the text to the H1 element
            header.appendChild(headerContent);

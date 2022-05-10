@@ -2,9 +2,9 @@
 title: "BC-7w-2 / [자료구조/알고리즘] 재귀(1)"
 date: 2021-10-06
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Algorithm
+  - _Algorithm
 ---
 
 ## Today I learned
@@ -334,5 +334,5 @@ function func(arr) {
   - 반복 종료 조건, 반복 내용(재귀)으로 구분
   - 반복 조건이 있을 때는 base case도 설정
   - 무엇을 남길 때는 헤드 사용
-- Algorithm Test도 재귀함 수도 많이 어려웠다. 하지만 원리를 파악하고 차근차근 알고리즘을 생각하다 보니 해결할 수 있었다.
+- \_Algorithm Test도 재귀함 수도 많이 어려웠다. 하지만 원리를 파악하고 차근차근 알고리즘을 생각하다 보니 해결할 수 있었다.
 - 문제를 분리해서 생각하자! 한 번에 전체 해결법을 생각하는 것보다 하나씩 해결법을 생각하는 게 더 쉽다.

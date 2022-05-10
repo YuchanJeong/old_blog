@@ -2,7 +2,7 @@
 title: "BC-5w-추석(2) / {FC} React(5)"
 date: 2021-09-25
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -185,7 +185,10 @@ export default function Example4() {
   }, []);
 
   React.useEffect(() => {
-    console.log("componentDidMount & componentDidUpdate by state.count", state.count);
+    console.log(
+      "componentDidMount & componentDidUpdate by state.count",
+      state.count
+    );
     return () => {
       // cleanup
       // 이전 값으로 미리 실행하고 넘어감

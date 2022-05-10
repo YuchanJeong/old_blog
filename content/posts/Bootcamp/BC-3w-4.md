@@ -2,7 +2,7 @@
 title: "BC-3w-4 / [JS/Node] JavaScript Koans"
 date: 2021-09-09
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

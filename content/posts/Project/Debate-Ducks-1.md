@@ -2,10 +2,10 @@
 title: "[Debate-Ducks] 개선 프로젝트 시작"
 date: 2022-05-09
 categories:
-  - "'Devlog'"
+  - <Project>
 tags:
-  - Debate-Ducks
-  - Devlog
+  - "'Debate-Ducks'"
+  - _Devlog
 ---
 
 ## 개요
@@ -33,7 +33,6 @@ Ps2. 팀원중 한분은 바로 취업하셔서 4인 프로젝트에서 3인 프
      - 개발자의 의도를 코드로 명확히 표시 가능
 2. **NextJS**를 사용하여 기능 및 편의성 향상.
    - Pre-rendering, 파일 시스템 기반 라우팅등의 장점
-   - [NextJS 작동 원리](https://yuchanjeong.github.io/posts/today-i-learned/react/next.js-lc-2/)
 3. **React-query**를 사용하여 외부 데이터 효율적 처리.
    - 캐싱, 중복 호출 허용 시간 조절등의 장점
 4. **SCSS**를 사용하여 관심사 분리.

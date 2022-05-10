@@ -2,7 +2,7 @@
 title: "BC-3w-1 / [JS/Node] 객체"
 date: 2021-09-06
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

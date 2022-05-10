@@ -2,7 +2,7 @@
 title: "[Next.js] Learn Course (3) - CREATE YOUR FIRST APP 1"
 date: 2022-04-06
 categories:
-  - "'Today I learned'"
+  - <Study>
 tags:
   - Next.js
 ---
@@ -151,7 +151,13 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   ```
 
   ```jsx
-  <Script src="https://connect.facebook.net/en_US/sdk.js" strategy="lazyOnload" onLoad={() => console.log(`script loaded correctly, window.FB has been populated`)} />
+  <Script
+    src="https://connect.facebook.net/en_US/sdk.js"
+    strategy="lazyOnload"
+    onLoad={() =>
+      console.log(`script loaded correctly, window.FB has been populated`)
+    }
+  />
   ```
 
   - strategy controls when the third-party script should load. A value of lazyOnload tells Next.js to load this particular script lazily during browser idle time
@@ -226,7 +232,8 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+      Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     line-height: 1.6;
     font-size: 18px;
   }
@@ -348,7 +355,10 @@ In addition to metadata, scripts that need to load and execute as soon as possib
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="Learn how to build a personal website using Next.js" />
+          <meta
+            name="description"
+            content="Learn how to build a personal website using Next.js"
+          />
           <meta
             property="og:image"
             content={`https://og-image.vercel.app/${encodeURI(
@@ -361,14 +371,28 @@ In addition to metadata, scripts that need to load and execute as soon as possib
         <header className={styles.header}>
           {home ? (
             <>
-              <Image priority src="/images/profile.jpg" className={utilStyles.borderCircle} height={144} width={144} alt={name} />
+              <Image
+                priority
+                src="/images/profile.jpg"
+                className={utilStyles.borderCircle}
+                height={144}
+                width={144}
+                alt={name}
+              />
               <h1 className={utilStyles.heading2Xl}>{name}</h1>
             </>
           ) : (
             <>
               <Link href="/">
                 <a>
-                  <Image priority src="/images/profile.jpg" className={utilStyles.borderCircle} height={108} width={108} alt={name} />
+                  <Image
+                    priority
+                    src="/images/profile.jpg"
+                    className={utilStyles.borderCircle}
+                    height={108}
+                    width={108}
+                    alt={name}
+                  />
                 </a>
               </Link>
               <h2 className={utilStyles.headingLg}>
@@ -408,7 +432,8 @@ In addition to metadata, scripts that need to load and execute as soon as possib
         <section className={utilStyles.headingMd}>
           <p>Hi! I'm Yuchan Jeong.</p>
           <p>
-            (This is a sample website - you’ll be building a site like this on <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+            (This is a sample website - you’ll be building a site like this on{" "}
+            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
           </p>
         </section>
       </Layout>

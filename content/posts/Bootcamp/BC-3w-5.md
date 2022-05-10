@@ -2,7 +2,7 @@
 title: "BC-3w-5 / [JS/브라우저] DOM(1)"
 date: 2021-09-10
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - DOM
 ---

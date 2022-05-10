@@ -2,9 +2,9 @@
 title: "BC-7w-3 / [자료구조/알고리즘] 재귀(2)"
 date: 2021-10-07
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Algorithm
+  - _Algorithm
 ---
 
 ## Today I learned

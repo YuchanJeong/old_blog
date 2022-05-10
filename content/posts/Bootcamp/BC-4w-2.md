@@ -2,7 +2,7 @@
 title: "BC-4w-2 / [JS/Node] 고차 함수"
 date: 2021-09-14
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---
@@ -77,7 +77,9 @@ tags:
 
   function func(obj, key) {
     if (Array.isArray(obj[key])) {
-      return obj[key].filter((item) => typeof item === "number").filter((item) => innerFunc(item));
+      return obj[key]
+        .filter((item) => typeof item === "number")
+        .filter((item) => innerFunc(item));
     }
     return [];
   }
@@ -193,7 +195,8 @@ tags:
       .filter((item) => item.gender === "female")
       .map((item) => {
         // 재할당
-        item.grades = item.grades.reduce((acc, cur) => acc + cur) / item.grades.length;
+        item.grades =
+          item.grades.reduce((acc, cur) => acc + cur) / item.grades.length;
         return item;
       });
   }

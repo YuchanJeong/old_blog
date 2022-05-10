@@ -2,7 +2,7 @@
 title: "BC-3w-2 / [CSS] 레이아웃, Selector"
 date: 2021-09-07
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - CSS
 ---

@@ -2,7 +2,7 @@
 title: "VSC Shortcuts"
 date: 2021-10-07
 categories:
-  - "'Etc'"
+  - <Ect>
 ---
 
 ### 1. Cursor

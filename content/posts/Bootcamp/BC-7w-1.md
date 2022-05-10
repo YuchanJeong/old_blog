@@ -2,7 +2,7 @@
 title: "BC-7w-1 / [JS/Node] 객체지향 프로그래밍"
 date: 2021-10-05
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

@@ -2,10 +2,10 @@
 title: "[Practice Kit] 정렬(Sort)"
 date: 2022-05-04
 categories:
-  - "'Algorithm'"
+  - <Algorithm>
 tags:
-  - Algorithm
-  - Practice Kit
+  - _Algorithm
+  - _Practice Kit
 ---
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.

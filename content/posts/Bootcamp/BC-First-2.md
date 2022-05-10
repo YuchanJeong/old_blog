@@ -2,10 +2,10 @@
 title: "BC-First / First Project 기능 회고"
 date: 2022-02-03
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Debate-Ducks
-  - Retrospect
+  - "'Debate-Ducks'"
+  - _Retrospect
 ---
 
 \*전체적인 회고는 따로 [회고록](https://yuchanjeong.github.io/posts/bootcamp/bc-first-1/)에 작성

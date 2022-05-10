@@ -2,9 +2,9 @@
 title: "BC-2w-6 / 맥 계산기 만들기"
 date: 2021-09-05
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 ![macCalculator](https://user-images.githubusercontent.com/84524514/132117283-92b29171-0d03-4f92-9325-d58a94a95539.gif)
@@ -100,7 +100,9 @@ tags:
 
       exponentialNum = Number.parseFloat(displayNum).toExponential(16);
       intPart = exponentialNum.slice(0, 1);
-      decimalPart = String(parseFloat(`0.${exponentialNum.slice(2, 18)}`)).slice(1);
+      decimalPart = String(
+        parseFloat(`0.${exponentialNum.slice(2, 18)}`)
+      ).slice(1);
       exponentialPart = exponentialNum.slice(18);
 
       displayEl.textContent = `${intPart}${decimalPart}${exponentialPart}`;
@@ -140,7 +142,11 @@ tags:
 
   ```js
   if (action === "number") {
-    if (displayNum === "0" || previousKey === "operator" || previousKey === "calculate") {
+    if (
+      displayNum === "0" ||
+      previousKey === "operator" ||
+      previousKey === "calculate"
+    ) {
       displayNum = buttonContent;
     } else {
       displayNum += buttonContent;
@@ -324,7 +330,11 @@ tags:
 
     if (stackCalculate !== undefined) {
       if (buttonContent === "＋" || buttonContent === "－") {
-        displayNum = calculate(stackCalculate[0], stackCalculate[1], displayNum);
+        displayNum = calculate(
+          stackCalculate[0],
+          stackCalculate[1],
+          displayNum
+        );
         stackCalculate = undefined;
       }
     }
@@ -360,7 +370,11 @@ tags:
       }
 
       if (stackCalculate !== undefined) {
-        displayNum = calculate(stackCalculate[0], stackCalculate[1], displayNum);
+        displayNum = calculate(
+          stackCalculate[0],
+          stackCalculate[1],
+          displayNum
+        );
         stackCalculate = undefined;
       }
 

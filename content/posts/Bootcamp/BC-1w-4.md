@@ -2,7 +2,7 @@
 title: "BC-1w-4 / [JS/Node] 반복문"
 date: 2021-08-26
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

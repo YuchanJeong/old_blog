@@ -2,9 +2,9 @@
 title: "BC-3w-6 / 3주 차 정리, 반응형 내비게이션 바 만들기"
 date: 2021-09-12
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 ## 3주 차 정리

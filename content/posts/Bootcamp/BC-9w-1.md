@@ -2,7 +2,7 @@
 title: "BC-9w-1 / [HTTP/네트워크] 네트워크-기초"
 date: 2021-10-18
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - Network
 ---

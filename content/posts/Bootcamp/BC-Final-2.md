@@ -2,9 +2,9 @@
 title: "BC-Final / Final Project 기능 회고"
 date: 2022-03-21
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 > 실시간 토론 기능 구현 회고
@@ -274,43 +274,53 @@ socket.on("host_signal", (data) => {
 
   ```jsx
   function shareScreen() {
-    navigator.mediaDevices.getDisplayMedia({ cursor: true }).then((screenStream) => {
-      // Screen Share On
-      // 얻은 공유 화면 스트림의 비디오 트랙으로 기존 스트림의 비디오 트랙 대체
-      myPeer?.current?.replaceTrack(stream?.getVideoTracks()[0], screenStream?.getVideoTracks()[0], stream);
-
-      if (myVideoRef?.current) {
-        // 비디오 스트림 대체
-        myVideoRef.current.srcObject = screenStream;
-
-        if (isPro) {
-          setIsProScreenOn(true);
-        } else if (!isPro) {
-          setIsConScreenOn(true);
-        }
-
-        socket.emit("screen_on", { debateId, isPro });
-      }
-
-      // Screen Share Off
-      // 기존 스트림의 비디오 트랙으로 공유 화면의 스트림의 비디오 트랙 대체
-      screenStream.getTracks()[0].onended = () => {
-        myPeer?.current?.replaceTrack(screenStream?.getVideoTracks()[0], stream?.getVideoTracks()[0], stream);
+    navigator.mediaDevices
+      .getDisplayMedia({ cursor: true })
+      .then((screenStream) => {
+        // Screen Share On
+        // 얻은 공유 화면 스트림의 비디오 트랙으로 기존 스트림의 비디오 트랙 대체
+        myPeer?.current?.replaceTrack(
+          stream?.getVideoTracks()[0],
+          screenStream?.getVideoTracks()[0],
+          stream
+        );
 
         if (myVideoRef?.current) {
           // 비디오 스트림 대체
-          myVideoRef.current.srcObject = stream;
+          myVideoRef.current.srcObject = screenStream;
 
           if (isPro) {
-            setIsProScreenOn(false);
+            setIsProScreenOn(true);
           } else if (!isPro) {
-            setIsConScreenOn(false);
+            setIsConScreenOn(true);
           }
 
-          socket.emit("screen_off", { debateId, isPro });
+          socket.emit("screen_on", { debateId, isPro });
         }
-      };
-    });
+
+        // Screen Share Off
+        // 기존 스트림의 비디오 트랙으로 공유 화면의 스트림의 비디오 트랙 대체
+        screenStream.getTracks()[0].onended = () => {
+          myPeer?.current?.replaceTrack(
+            screenStream?.getVideoTracks()[0],
+            stream?.getVideoTracks()[0],
+            stream
+          );
+
+          if (myVideoRef?.current) {
+            // 비디오 스트림 대체
+            myVideoRef.current.srcObject = stream;
+
+            if (isPro) {
+              setIsProScreenOn(false);
+            } else if (!isPro) {
+              setIsConScreenOn(false);
+            }
+
+            socket.emit("screen_off", { debateId, isPro });
+          }
+        };
+      });
   }
   ```
 
@@ -394,9 +404,17 @@ socket.on("host_signal", (data) => {
       noticeCtx.textAlign = "center";
 
       if (notice?.turn === "pre") {
-        noticeCtx.fillText(`${notice?.text}`, canvasRef?.current?.width / 2, 25);
+        noticeCtx.fillText(
+          `${notice?.text}`,
+          canvasRef?.current?.width / 2,
+          25
+        );
       } else if (notice?.turn === "pro" || notice?.turn === "con") {
-        noticeCtx.fillText(`${notice?.text} ( ${notice?.time} sec )`, canvasRef?.current?.width / 2, 25);
+        noticeCtx.fillText(
+          `${notice?.text} ( ${notice?.time} sec )`,
+          canvasRef?.current?.width / 2,
+          25
+        );
       }
     }
   }, [notice.text, notice.time]);
@@ -419,13 +437,18 @@ socket.on("debate_start", () => {
   canvasStream.current = canvasRef?.current?.captureStream();
 
   // 캔버스 스트림의 비디오 트랙과 합쳐진 오디오 트랙 합침
-  const mergeTracks = [...canvasStream.current.getVideoTracks(), ...mergedAudioTracks.current];
+  const mergeTracks = [
+    ...canvasStream.current.getVideoTracks(),
+    ...mergedAudioTracks.current,
+  ];
 
   // 합쳐진 트랙에서 스트림 생성
   mergedStream.current = new MediaStream(mergeTracks);
 
   // 레코더 생성
-  mergedRecorder.current = new MediaRecorder(mergedStream?.current, { mimeType: "video/webm" });
+  mergedRecorder.current = new MediaRecorder(mergedStream?.current, {
+    mimeType: "video/webm",
+  });
 
   // Blobs에 얻은 데이터들 추가하기
   mergedRecorder.current.ondataavailable = (ev) => {
@@ -443,19 +466,35 @@ socket.on("debate_start", () => {
     // 저장 가능한 링크
     aRef.current.href = mergedUrl?.current;
 
-    const videoUrl = await saveVideo(mergedBlob?.current, `${debateInfo.title}_${debateId}`);
+    const videoUrl = await saveVideo(
+      mergedBlob?.current,
+      `${debateInfo.title}_${debateId}`
+    );
 
-    axios.patch(`${process.env.REACT_APP_API_URL}/debate/debate_room/${debateId}/video`, { videoUrl }, { withCredentials: true });
+    axios.patch(
+      `${process.env.REACT_APP_API_URL}/debate/debate_room/${debateId}/video`,
+      { videoUrl },
+      { withCredentials: true }
+    );
   };
 
   // 60프레임으로 녹화 시작
   mergedRecorder?.current?.start(1000 / 60);
 
-  setNotice({ ...notice, ...{ turn: "pre", text: `Topic : ${debateInfo.title}` } });
+  setNotice({
+    ...notice,
+    ...{ turn: "pre", text: `Topic : ${debateInfo.title}` },
+  });
 
   setTimeout(() => {
     setIsProTurn(true);
-    setNotice({ ...notice, ...{ turn: "pre", text: "The debate will begin soon with the opening remarks of the pro. ( 60 sec )" } });
+    setNotice({
+      ...notice,
+      ...{
+        turn: "pre",
+        text: "The debate will begin soon with the opening remarks of the pro. ( 60 sec )",
+      },
+    });
   }, 3000);
 
   setTimeout(() => {
@@ -573,8 +612,21 @@ useEffect(() => {
   - 보이지 않는 비디오를 화면 가운데 고정해서 해결
     ```jsx
     <div className="w-screen h-screen flex justify-center items-center fixed">
-      <video ref={myVideoRef} muted autoPlay playsInline width="0" height="0"></video>
-      <video ref={peerVideoRef} autoPlay playsInline width="0" height="0"></video>
+      <video
+        ref={myVideoRef}
+        muted
+        autoPlay
+        playsInline
+        width="0"
+        height="0"
+      ></video>
+      <video
+        ref={peerVideoRef}
+        autoPlay
+        playsInline
+        width="0"
+        height="0"
+      ></video>
     </div>
     ```
 

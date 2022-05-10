@@ -2,7 +2,7 @@
 title: "Mac Shortcuts"
 date: 2021-10-07
 categories:
-  - "'Etc'"
+  - <Ect>
 ---
 
 ### 1. 포커스 및 화면 관리(ctrl)

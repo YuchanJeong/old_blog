@@ -2,7 +2,7 @@
 title: "BC-2w-2 / [HTML/CSS] 계산기 만들기"
 date: 2021-08-31
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - CSS
 ---

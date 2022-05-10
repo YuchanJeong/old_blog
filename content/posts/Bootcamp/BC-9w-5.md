@@ -2,7 +2,7 @@
 title: "BC-9w-5 / [Web Server] 기초(1)"
 date: 2021-10-22
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - Network
 ---

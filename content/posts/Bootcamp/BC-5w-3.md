@@ -2,10 +2,10 @@
 title: "BC-5w-추석(3) / 5주 차 정리 + {FC} React(6)"
 date: 2021-09-26
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
-  - Retrospect
+  - _Retrospect
 ---
 
 ## 5주 차 정리(추석 연휴)

@@ -2,7 +2,7 @@
 title: "BC-1w-2 / [JS/Node] 변수, 타입, 함수"
 date: 2021-08-24
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

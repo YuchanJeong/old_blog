@@ -2,9 +2,9 @@
 title: "BC-6w / 6주 차 정리, Section1 회고"
 date: 2021-10-03
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 ## 6주 차 정리

@@ -2,7 +2,7 @@
 title: "BC-9w-2 / [HTTP/네트워크] REST API"
 date: 2021-10-19
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - Network
 ---

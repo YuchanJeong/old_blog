@@ -2,7 +2,7 @@
 title: "BC-4w-5 / [React] props, state"
 date: 2021-09-17
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -137,9 +137,20 @@ tags:
     return (
       <div className="App">
         <div>{username}</div>
-        <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} placeholder="여기는 인풋입니다." className="tweetForm__input--username"></input>
+        <input
+          type="text"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          placeholder="여기는 인풋입니다."
+          className="tweetForm__input--username"
+        ></input>
         <div>{msg}</div>
-        <textarea placeholder="여기는 텍스트 영역입니다." className="tweetForm__input--message" onChange={(event) => setMsg(event.target.value)} value={msg}></textarea>
+        <textarea
+          placeholder="여기는 텍스트 영역입니다."
+          className="tweetForm__input--message"
+          onChange={(event) => setMsg(event.target.value)}
+          value={msg}
+        ></textarea>
       </div>
     );
   }
@@ -191,7 +202,9 @@ tags:
     };
 
     // MyPage.js
-    const filteredTweets = props.tweets.filter((item) => item.username === props.username);
+    const filteredTweets = props.tweets.filter(
+      (item) => item.username === props.username
+    );
     ```
 
   - 추가로 MyPage의 필터를 사용자가 입력한 props.username으로 하였는데 이때, username만 바꾸고 tweet을 보내지 않은 다음에 마이페이지를 누르면 에러가 났다(아직 입력되어있는 username은 정보를 전혀 가지고 있지 않아서). 그래서 초기값을 삼항 연산자를 이용해 정해주었다.

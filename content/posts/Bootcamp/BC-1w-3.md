@@ -2,7 +2,7 @@
 title: "BC-1w-3 / [JS/Node] 조건문, 문자열"
 date: 2021-08-25
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

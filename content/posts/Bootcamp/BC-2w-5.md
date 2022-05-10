@@ -2,7 +2,7 @@
 title: "BC-2w-5 / [JS/Node] 배열, 객체"
 date: 2021-09-03
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

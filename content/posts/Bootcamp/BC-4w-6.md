@@ -2,10 +2,10 @@
 title: "BC-4w-6 / 4주 차 정리 + {FC} React(3)"
 date: 2021-09-18
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
-  - Retrospect
+  - _Retrospect
 ---
 
 ## 4주 차 정리

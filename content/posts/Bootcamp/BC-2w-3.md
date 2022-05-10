@@ -2,7 +2,7 @@
 title: "BC-2w-3 / [Linux] 기초"
 date: 2021-09-01
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - Linux
 ---

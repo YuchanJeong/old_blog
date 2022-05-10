@@ -2,9 +2,9 @@
 title: "BC-1w-6 / 1주 차 정리"
 date: 2021-08-29
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 # 1주 차 정리

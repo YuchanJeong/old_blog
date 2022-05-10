@@ -2,7 +2,7 @@
 title: "BC-6w-2 / HA-React"
 date: 2021-09-28
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---

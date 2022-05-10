@@ -2,7 +2,7 @@
 title: "BC-6w-3 / HA-JavaScript"
 date: 2021-09-29
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

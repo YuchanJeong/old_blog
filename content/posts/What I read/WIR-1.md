@@ -2,7 +2,7 @@
 title: "개발자의 글쓰기 - 김철수"
 date: 2021-08-29
 categories:
-  - "'What I read'"
+  - <What I read>
 ---
 
 > 개발자의 글쓰기는 정확하고 간결하고 가독성이 높아야 한다.

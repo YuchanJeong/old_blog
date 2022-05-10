@@ -2,9 +2,9 @@
 title: "BC-8w-1 / [자료구조/알고리즘] Graph, Tree, BST"
 date: 2021-10-12
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Algorithm
+  - _Algorithm
 ---
 
 ## Today I learned

@@ -2,10 +2,10 @@
 title: "[Practice Kit] 완전탐색(Exhaustive Search, Brute-force Search)"
 date: 2022-05-05
 categories:
-  - "'Algorithm'"
+  - <Algorithm>
 tags:
-  - Algorithm
-  - Practice Kit
+  - _Algorithm
+  - _Practice Kit
 ---
 
 > 무식해 보여도 사실은 최고의 방법일 때가 있지요.

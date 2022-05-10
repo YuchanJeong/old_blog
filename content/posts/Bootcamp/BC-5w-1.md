@@ -2,7 +2,7 @@
 title: "BC-5w-추석(1) / {FC} React(4)"
 date: 2021-09-24
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -126,9 +126,13 @@ tags:
     color: white;
   `;
 
-  const UppercaseButton = (props) => <button {...props} children={props.children.toUpperCase()} />;
+  const UppercaseButton = (props) => (
+    <button {...props} children={props.children.toUpperCase()} />
+  );
 
-  const MyButton = (props) => <button {...props} children={`MyButton ${props.children}`} />;
+  const MyButton = (props) => (
+    <button {...props} children={`MyButton ${props.children}`} />
+  );
 
   const StyledMyButton = styled(MyButton)`
     background: transparent;
@@ -209,7 +213,12 @@ tags:
       <root.div>
         <div className="App">
           <header className="App-header">
-            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+            <a
+              className="App-link"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Learn React
             </a>
           </header>

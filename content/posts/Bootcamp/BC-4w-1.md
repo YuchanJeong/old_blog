@@ -2,7 +2,7 @@
 title: "BC-4w-1 / [JS/브라우저] DOM(2) + {FC} TypeScript"
 date: 2021-09-13
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - DOM
   - TypeScript
@@ -34,8 +34,6 @@ tags:
 - TypeScript는 structural type system(구조가 같으면 같은 타입)
 - 데이터의 타입이 같거나 서브 타입인 경우, 할당 가능 -> 공변  
   함수의 매개변수 타입이 같거나 슈퍼 타입인 경우, 할당 가능 -> 반병
-
-\*[WIL](https://github.com/YuchanJeong/_WIL)에 정리
 
 ## Today's takeaway
 

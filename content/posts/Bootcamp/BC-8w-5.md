@@ -2,9 +2,9 @@
 title: "BC-8w-5 / 8주 차 정리"
 date: 2021-10-17
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 - 자료구조를 마무리하고 비동기를 공부하였다.

@@ -2,9 +2,9 @@
 title: "BC-7w-4 / [자료구조/알고리즘] Stack, Queue"
 date: 2021-10-08
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Algorithm
+  - _Algorithm
 ---
 
 ## Today I learned

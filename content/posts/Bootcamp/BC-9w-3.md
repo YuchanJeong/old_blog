@@ -2,7 +2,7 @@
 title: "BC-9w-3 / [React] 데이터 흐름의 이해와 비동기 처리"
 date: 2021-10-20
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -266,7 +266,9 @@ export function getFlight(filterBy = {}) {
     query = query + `destination=${filterBy.destination}`;
   }
 
-  return fetch(`http://ec2-13-124-90-231.ap-northeast-2.compute.amazonaws.com:81/flight?${query}`).then((response) => response.json());
+  return fetch(
+    `http://ec2-13-124-90-231.ap-northeast-2.compute.amazonaws.com:81/flight?${query}`
+  ).then((response) => response.json());
 }
 ```
 

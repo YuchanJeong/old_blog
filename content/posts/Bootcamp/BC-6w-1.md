@@ -2,7 +2,7 @@
 title: "BC-6w-1 / {FC} React(7)"
 date: 2021-09-27
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -741,7 +741,8 @@ body {
 // src/components/Modal.jsx
 import ReactDOM from "react-dom";
 
-const Modal = ({ children }) => ReactDOM.createPortal(children, document.querySelector("#modal"));
+const Modal = ({ children }) =>
+  ReactDOM.createPortal(children, document.querySelector("#modal"));
 
 export default Modal;
 ```

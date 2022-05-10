@@ -2,7 +2,7 @@
 title: "BC-1w-5 / [HTML/CSS] HTML 기초"
 date: 2021-08-27
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - HTML
 ---

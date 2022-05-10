@@ -2,9 +2,9 @@
 title: "BC-7w-5 / 7주 차 정리"
 date: 2021-10-10
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
-  - Retrospect
+  - _Retrospect
 ---
 
 # 7주 차 정리

@@ -2,7 +2,7 @@
 title: "BC-4w-4 / [React] Router + {FC} React(2)"
 date: 2021-09-16
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -108,13 +108,22 @@ tags:
         <Link to="/">
           <i className="far fa-comment-dots"></i>
         </Link>
-        <NavLink exact to="/about" activeClassName="selectedPage selectedPage--about">
+        <NavLink
+          exact
+          to="/about"
+          activeClassName="selectedPage selectedPage--about"
+        >
           <i className="far fa-question-circle"></i>
         </NavLink>
-        <NavLink exact to="/mypage" activeClassName="selectedPage selectedPage--mypage">
+        <NavLink
+          exact
+          to="/mypage"
+          activeClassName="selectedPage selectedPage--mypage"
+        >
           <i className="far fa-user"></i>
         </NavLink>
-        <i onClick={() => history.back()} className="far fa-arrow-left"></i> // history
+        <i onClick={() => history.back()} className="far fa-arrow-left"></i> //
+        history
       </section>
     );
   };

@@ -2,7 +2,7 @@
 title: "BC-9w-4 / {FC} React(8) Deploy React App"
 date: 2021-10-21
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - React
 ---
@@ -150,8 +150,13 @@ app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/test", (req, res) => {
   // <div data-reactroot"">Hello</div>
-  const ssr = ReactDOMServer.renderToString(React.createElement("div", null, "Hello"));
-  const indexHtml = fs.readFileSync(path.join(__dirname, "build", "index.html")).toString().replace('<div id="root"></div>', `<div id="root">${ssr}</div>`);
+  const ssr = ReactDOMServer.renderToString(
+    React.createElement("div", null, "Hello")
+  );
+  const indexHtml = fs
+    .readFileSync(path.join(__dirname, "build", "index.html"))
+    .toString()
+    .replace('<div id="root"></div>', `<div id="root">${ssr}</div>`);
   res.send(indexHtml);
 });
 

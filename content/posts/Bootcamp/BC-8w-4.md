@@ -2,7 +2,7 @@
 title: "BC-8w-4 / [JS/Node] 비동기-fetch API"
 date: 2021-10-15
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---
@@ -61,7 +61,10 @@ function getNewsAndWeather() {
 
 ```js
 function getNewsAndWeatherAll() {
-  return Promise.all([fetch(newsURL).then((response) => response.json()), fetch(weatherURL).then((response) => response.json())]).then((datSet) => {
+  return Promise.all([
+    fetch(newsURL).then((response) => response.json()),
+    fetch(weatherURL).then((response) => response.json()),
+  ]).then((datSet) => {
     return { news: dataSet[0], weather: dataSet[1] };
   });
 }

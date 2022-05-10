@@ -2,7 +2,7 @@
 title: "BC-3w-3 / [JS/Node] 자료형, 스코프, 클로저"
 date: 2021-09-08
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

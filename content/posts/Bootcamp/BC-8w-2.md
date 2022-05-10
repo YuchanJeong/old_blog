@@ -2,7 +2,7 @@
 title: "BC-8w-2 / [JS/Node] 중급"
 date: 2021-10-13
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - JavaScript
 ---

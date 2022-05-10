@@ -2,7 +2,7 @@
 title: "BC-2w-4 / [Git] 기초"
 date: 2021-09-02
 categories:
-  - "'Bootcamp'"
+  - <Bootcamp>
 tags:
   - Git
 ---

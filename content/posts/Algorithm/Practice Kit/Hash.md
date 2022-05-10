@@ -2,10 +2,10 @@
 title: "[Practice Kit] 해시(Hash)"
 date: 2022-05-02
 categories:
-  - "'Algorithm'"
+  - <Algorithm>
 tags:
-  - Algorithm
-  - Practice Kit
+  - _Algorithm
+  - _Practice Kit
 ---
 
 > Key-value쌍으로 데이터를 빠르게 찾아보세요.
