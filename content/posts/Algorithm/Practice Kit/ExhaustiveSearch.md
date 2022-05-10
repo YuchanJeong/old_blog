@@ -4,8 +4,7 @@ date: 2022-05-05
 categories:
   - <Algorithm>
 tags:
-  - _Algorithm
-  - _Practice Kit
+  - (Algorithm)
 ---
 
 > 무식해 보여도 사실은 최고의 방법일 때가 있지요.

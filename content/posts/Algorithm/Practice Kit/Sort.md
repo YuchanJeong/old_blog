@@ -4,8 +4,7 @@ date: 2022-05-04
 categories:
   - <Algorithm>
 tags:
-  - _Algorithm
-  - _Practice Kit
+  - (Algorithm)
 ---
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.

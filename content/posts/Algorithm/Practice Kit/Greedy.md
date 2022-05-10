@@ -4,8 +4,7 @@ date: 2022-05-08
 categories:
   - <Algorithm>
 tags:
-  - _Algorithm
-  - _Practice Kit
+  - (Algorithm)
 ---
 
 > 부분적인 최적해가 전체적인 최적해가 되는 마법!

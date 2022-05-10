@@ -4,7 +4,7 @@ date: 2021-08-29
 categories:
   - <Bootcamp>
 tags:
-  - _Retrospect
+  - (Retrospect)
 ---
 
 # 1주 차 정리

@@ -5,7 +5,7 @@ categories:
   - <Bootcamp>
 tags:
   - React
-  - _Retrospect
+  - (Retrospect)
 ---
 
 ## 5주 차 정리(추석 연휴)

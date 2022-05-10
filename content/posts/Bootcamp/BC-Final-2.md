@@ -4,7 +4,7 @@ date: 2022-03-21
 categories:
   - <Bootcamp>
 tags:
-  - _Retrospect
+  - (Retrospect)
 ---
 
 > 실시간 토론 기능 구현 회고

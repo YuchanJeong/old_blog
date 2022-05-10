@@ -5,7 +5,7 @@ categories:
   - <Bootcamp>
 tags:
   - React
-  - _Retrospect
+  - (Retrospect)
 ---
 
 ## 4주 차 정리

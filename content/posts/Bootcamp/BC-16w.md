@@ -4,7 +4,7 @@ date: 2022-01-29
 categories:
   - <Bootcamp>
 tags:
-  - _Retrospect
+  - (Retrospect)
 ---
 
 - Section3 회고지만 First Project를 끝내고서야 작성할 수 있을 정도로 프로젝트에 온 힘을 쏟았었다. 특히 Section3 후반부 부터는 프로젝트 전에 나의 역량을 최대한 끌어올리기 위해 다양한 공부(특히 리액트와 관련된 추가 스택들)를 병행하였다.

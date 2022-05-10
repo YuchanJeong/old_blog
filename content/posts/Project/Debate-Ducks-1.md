@@ -5,7 +5,7 @@ categories:
   - <Project>
 tags:
   - "'Debate-Ducks'"
-  - _Devlog
+  - (Devlog)
 ---
 
 ## 개요
