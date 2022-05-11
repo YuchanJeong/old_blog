@@ -47,41 +47,32 @@ function solution(n, lost, reserve) {
 ### 2. 조이스틱 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42860)
 
 ```js
-// ###51% 정확도
-// A가 시작되는 시점부터 연속되는 A의 갯수가 A앞의 문자열 길이보다 길면 ◀으로 움직이는 것이 이득.
-// 그래서 ▶으로만 움직이는 상황(n - 1)에서 이득본 만큼의 횟수를 뺌.
+// 처음에는 제일 길게 연속되는 A를 찾아서 되돌아가는거와 비교 할려고 했는데 예외가 계속 나와서 A를 마주칠 때 마다 돌아가는게 나은지 쭉 가는게 나은지 다 넣어서 해결
 function solution(name) {
   const len = name.length;
-  const name_arr = name.split("");
+  const chars = name.split("");
 
-  let upDown_cnt = 0;
-  name_arr.forEach((char, idx) => {
+  let upDownCnt = 0;
+
+  chars.forEach((char, idx) => {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const upDown = alphabet.indexOf(char);
-    // upDown_cnt += Math.min(upDown, 26 - upDown)
-    upDown < 14 ? (upDown_cnt += upDown) : (upDown_cnt += 26 - upDown);
+    const upDownIdx = alphabet.indexOf(char);
+    upDownCnt += Math.min(upDownIdx, 26 - upDownIdx);
   });
 
-  const checkACnt = (name, idx) => {
-    let cnt = 0;
-    for (let i = idx + 1; i < len; i += 1) {
-      if (name[i] !== "A") break;
-      cnt += 1;
-    }
-    return cnt;
-  };
+  let leftRightArr = [len - 1];
 
-  let save = 0;
-  for (let i = 0; i < len; i += 1) {
-    if (name[i + 1] === "A") {
-      const cntA = checkACnt(name, i);
-      if (i < cntA) {
-        save = cntA - i;
-        break;
-      }
-    }
-  }
+  chars.forEach((char, idx) => {
+    if (name[idx + 1] === "A") {
+      let aIdx = idx + 1;
+      while (name[aIdx] === "A") aIdx += 1;
 
-  return cnt + (len - 1) - save;
+      const right = len - aIdx;
+      leftRightArr.push(idx * 2 + right);
+      leftRightArr.push(right * 2 + idx);
+    }
+  });
+
+  return upDownCnt + Math.min(...leftRightArr);
 }
 ```
