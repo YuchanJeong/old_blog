@@ -22,23 +22,23 @@ tags:
 
 ```js
 function solution(progresses, speeds) {
-  let _progresses = [...progresses];
-  let cnt = 0;
+  let day = 0;
   const result = {};
 
-  while (_progresses.length > 0) {
-    cnt += 1;
-    _progresses = _progresses.map((el, idx) => el + speeds[idx]);
+  while (progresses.length > 0) {
+    day += 1;
+    progresses = progresses.map((el, idx) => el + speeds[idx]);
 
-    for (let i = 0; i < _progresses.length; i++) {
-      if (_progresses[i] < 100) break;
-      if (_progresses[i] >= 100) {
-        result[cnt] = result[cnt] ? result[cnt] + 1 : 1;
+    for (let i = 0; i < progresses.length; i++) {
+      if (progresses[i] < 100) break;
+      if (progresses[i] >= 100) {
+        // 같은 day(타입)에 추가 해줌
+        result[day] = result[day] ? result[day] + 1 : 1;
       }
     }
 
-    _progresses.splice(0, result[cnt]);
-    speeds.splice(0, result[cnt]);
+    progresses.splice(0, result[day]);
+    speeds.splice(0, result[day]);
   }
 
   return Object.values(result);
@@ -48,23 +48,24 @@ function solution(progresses, speeds) {
 ### 2. 프린터 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42587)
 
 ```js
-// location을 조정하는 idea!
+// Idea: location 조정!!
 function solution(priorities, location) {
   let cnt = 0;
 
   while (priorities.length > 0) {
-    const max = Math.max(...priorities);
-    const num = priorities.shift();
+    const maxPriority = Math.max(...priorities);
+    const priority = priorities.shift();
 
-    if (num === max) {
+    if (priority === maxPriority) {
       cnt += 1;
       if (location === 0) return cnt;
     } else {
-      priorities.push(num);
+      priorities.push(priority);
     }
 
     location -= 1;
 
+    // 제일 뒤로 보냄.
     if (location === -1) {
       location = priorities.length - 1;
     }
@@ -74,37 +75,63 @@ function solution(priorities, location) {
 
 ### 3. 다리를 지나는 트럭 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42583?language=javascript)
 
-- 다른 풀이 추가 필요!!! (시간 건너띄기 for 퍼포먼스)
-
 ```js
+// Buffer
 function solution(bridge_length, weight, truck_weights) {
-  let cnt = 0;
-  const buffer = new Array(bridge_length).fill(0);
-  let buffet_size = 0;
-  const passed = [];
   const len = truck_weights.length;
+  let time = 0;
+  const buffer = new Array(bridge_length).fill(0);
+  let bufferWeights = 0;
+  const passedTrucks = [];
 
-  while (passed.length < len) {
-    cnt += 1;
+  while (passedTrucks.length < len) {
+    time += 1;
 
-    // buffer 맨앞 빼서, 0이 아닐 경우 passed에 저장
-    const passed_truck = buffer.shift();
-    buffet_size -= passed_truck;
-    if (passed_truck !== 0) {
-      passed.push(passed_truck);
+    // buffer 맨앞 빼서, 0이 아닐 경우 passedTrucks에 저장
+    const passedTruck = buffer.shift();
+    bufferWeights -= passedTruck;
+    if (passedTruck !== 0) {
+      passedTrucks.push(passedTruck);
     }
 
     // truck_weights 맨앞 빼서, weight 안넘을 경우 buffer에 저장
-    if (buffet_size + truck_weights[0] <= weight) {
-      const new_truck = truck_weights.shift();
-      buffet_size += new_truck;
-      buffer.push(new_truck);
+    if (bufferWeights + truck_weights[0] <= weight) {
+      const newTruck = truck_weights.shift();
+      bufferWeights += newTruck;
+      buffer.push(newTruck);
     } else {
       buffer.push(0);
     }
   }
 
-  return cnt;
+  return time;
+}
+```
+
+```js
+// better performance
+function solution(bridge_length, weight, truck_weights) {
+  const queue = [[0, 0]]; // [truckWeight, time]
+  let time = 0,
+    weightOnBridge = 0;
+
+  while (queue.length > 0 || truck_weights.length > 0) {
+    // 현재 시간과 나갈 시간이 같으면 내보냄.
+    if (queue[0][1] === time) weightOnBridge -= queue.shift()[0];
+
+    if (weightOnBridge + truck_weights[0] <= weight) {
+      weightOnBridge += truck_weights[0];
+      // Idea: 나갈 시간을 미리 입력!
+      queue.push([truck_weights.shift(), time + bridge_length]);
+    } else {
+      // Idea: 새로운 트럭이 추가되지 않으면, 시간을 건너뜀!!! (뒤에서 +1이라 여기서 -1)
+      if (queue[0]) time = queue[0][1] - 1;
+    }
+
+    time += 1;
+  }
+
+  return time;
 }
 ```
 
