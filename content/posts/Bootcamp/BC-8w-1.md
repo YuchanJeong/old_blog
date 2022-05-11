@@ -4,7 +4,7 @@ date: 2021-10-12
 categories:
   - <Bootcamp>
 tags:
-  - (Algorithm)
+  - Algorithm
 ---
 
 ## Today I learned

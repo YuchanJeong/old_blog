@@ -4,7 +4,7 @@ date: 2022-05-07
 categories:
   - <Algorithm>
 tags:
-  - (Algorithm)
+  - Algorithm
 ---
 
 > LIFO, FIFO, push & pop! 스택과 큐를 이용해서 문제를 풀어보세요.
