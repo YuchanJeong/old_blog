@@ -4,7 +4,7 @@ date: 2022-04-06
 categories:
   - <Studies>
 tags:
-  - Next.js
+  - NextJS
 ---
 
 # CREATE YOUR FIRST APP

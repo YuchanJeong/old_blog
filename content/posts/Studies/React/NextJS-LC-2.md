@@ -4,7 +4,7 @@ date: 2022-04-06
 categories:
   - <Studies>
 tags:
-  - Next.js
+  - NextJS
 ---
 
 # How Next.js Works
@@ -99,7 +99,7 @@ There is an unavoidable unit of work to convert the code you write in React into
 - **Client-Side Rendering (CSR)**
   - In a standard React application, the browser receives an **empty HTML** shell from the server along with the JavaScript instructions to construct the UI. The initial rendering work happens on the user's device.
 - Pre-Rendering
-  - Next.js pre-renders every page by default. Pre-rendering means the HTML is generated in advance, on a server, instead of having it all done by JavaScript on the user's device.
+  - NextJS pre-renders every page by default. Pre-rendering means the HTML is generated in advance, on a server, instead of having it all done by JavaScript on the user's device.
   1.  **Server-Side Rendering (SSR)**
       - The HTML of the page is generated on a server for each request. The generated HTML, JSON data, and JavaScript instructions to make the page interactive are then sent to the client.
       - On the client, the HTML is used to show a fast non-interactive page, while React uses the JSON data and JavaScript instructions to make components interactive (for example, attaching event handlers to a button). This process is called hydration.

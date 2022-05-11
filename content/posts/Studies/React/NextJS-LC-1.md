@@ -4,7 +4,7 @@ date: 2022-04-05
 categories:
   - <Studies>
 tags:
-  - Next.js
+  - NextJS
 ---
 
 ## About Next.js
