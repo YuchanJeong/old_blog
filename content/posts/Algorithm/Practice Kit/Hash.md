@@ -64,8 +64,8 @@ tags:
 1. sort 사용
 
 ```js
-// 1. 순서데로 정렬.
-// 2. 하나씩 비교 -> 다른 순간 해당 참가자는 완주하지 못한 것.
+// 정렬 후 비교해서 다른 순간이 완주하지 못한 참가자.
+// Ps. 문자는 `.sort()`로 오름차순 정렬 가능.
 function solution(participant, completion) {
   participant.sort();
   completion.sort();
@@ -74,63 +74,45 @@ function solution(participant, completion) {
 
   return participant[idx];
 }
-// Ps. 해시로 풀지 않음.
 ```
 
 2.  Map 사용
 
 ```js
-// participant에 있는 경우 +1,completion에 있는 경우 -1, 1이 남는 경우가 정답.
+// participant에 있는 경우 +1, completion에 있는 경우 -1.
 function solution(participant, completion) {
   const map = new Map();
 
   for (let i = 0; i < participant.length; i++) {
-    const a = participant[i];
-    const b = completion[i];
+    const p = participant[i];
+    const c = completion[i];
 
-    map.set(a, (map.get(a) || 0) + 1);
-    map.set(b, (map.get(b) || 0) - 1);
+    map.set(p, (map.get(p) || 0) + 1);
+    map.set(c, (map.get(c) || 0) - 1);
   }
 
   for (let [k, v] of map) {
     if (v > 0) return k;
   }
-
-  return "nothing";
 }
 ```
 
-3. reduce, 쉼표 연산자 사용
+3. reduce, **쉼표 연산자** 사용
 
 ```js
-// completion의 요소를 key로 중복이 있으면 1+a, 없으면 1을 value로 가지는 객체 생성.
-// completion에 있는 경우 -1을 해주고, 없을 경우 0이라 falsy 즉, 해당 el이 반환!
+// completion에 있는 경우 -1.
 function solution(participant, completion) {
-  const obj = completion.reduce(
-    (acc, cur) => ((acc[cur] = acc[cur] ? acc[cur] + 1 : 1), acc),
-    {}
-  );
-  return participant.find((el) => {
-    if (obj[el]) obj[el] = obj[el] - 1;
-    else true;
-  });
-}
-```
-
-```js
-// 2022.05.04
-function solution(participant, completion) {
-  const participant_obj = participant.reduce(
+  const pObj = participant.reduce(
     (acc, cur) => ((acc[cur] = acc[cur] ? acc[cur] + 1 : 1), acc),
     {}
   );
 
-  completion.forEach((el) => {
-    participant_obj[el] -= 1;
+  completion.forEach((c) => {
+    pObj[c] -= 1;
   });
 
-  for (let key in participant_obj) {
-    if (participant_obj[key] === 1) return key;
+  for (let key in pObj) {
+    if (pObj[key] === 1) return key;
   }
 }
 ```
@@ -140,58 +122,42 @@ function solution(participant, completion) {
 1. Map 사용
 
 ```js
-// 옷 종류별로 갯수 + 1(안입는 경우의 수) 전부 곱한 뒤 -1(아무것도 안입는 경우의 수).
+// 옷 종류별로 개수 + 1(안입는 경우의 수) 전부 곱한 뒤, -1(아무것도 안입는 경우의 수).
 function solution(clothes) {
-  let count = 1;
-
+  let cnt = 1;
   const map = new Map();
 
-  for (let el of clothes) {
-    const type = el[1];
+  for (let c of clothes) {
+    const type = c[1];
     map.set(type, (map.get(type) || 0) + 1);
   }
 
   for (let [_, v] of map) {
-    count *= v + 1;
+    cnt *= v + 1;
   }
 
-  return count - 1;
+  return cnt - 1;
 }
 ```
 
 2. reduce 사용
 
 ```js
-// reduce로 obj와 값을 추출!
 function solution(clothes) {
-  return (
-    Object.values(
-      clothes.reduce(
-        (acc, cur) => ((acc[cur[1]] = acc[cur[1]] ? acc[cur[1]] + 1 : 1), acc),
-        {}
-      )
-    ).reduce((acc, cur) => acc * (cur + 1), 1) - 1
-  );
-}
-```
-
-```js
-// 2022.05.04
-function solution(clothes) {
-  const clothes_obj = clothes.reduce(
+  const cObj = clothes.reduce(
     (obj, _clothes) => (
       (obj[_clothes[1]] = obj[_clothes[1]] ? obj[_clothes[1]] + 1 : 1), obj
     ),
     {}
   );
 
-  let count = 1;
+  let cnt = 1;
 
-  for (let key in clothes_obj) {
-    count *= clothes_obj[key] + 1;
+  for (let key in cObj) {
+    cnt *= cObj[key] + 1;
   }
 
-  return count - 1;
+  return cnt - 1;
 }
 ```
 
@@ -208,33 +174,33 @@ function solution(genres, plays) {
   }));
 
   // 1) 장르별 총 플레이 시간.
-  const genre_play = genres.reduce(
+  const genrePlayObj = genres.reduce(
     (obj, genre, idx) => (
       (obj[genre] = obj[genre] ? obj[genre] + plays[idx] : plays[idx]), obj
     ),
     {}
   );
 
-  infos.map((el) => {
-    const genre = el.genre;
-    const genre_play = genre_play[genre];
+  infos.map((info) => {
+    const genre = info.genre;
+    const genrePlayObj = genrePlayObj[genre];
 
-    el.genre = genre_play;
+    info.genre = genrePlayObj;
   });
 
   // 2) 순서대로 정렬.
   infos.sort((a, b) => b.play - a.play);
   infos.sort((a, b) => b.genre - a.genre);
 
-  // 3) 2개만 앨범에 추가.
-  const count = {};
+  // 3) 상위 2개만 앨범에 추가.
+  const cnt = {};
   const album = [];
 
-  infos.forEach((el) => {
-    count[el.genre] = count[el.genre] ? count[el.genre] + 1 : 1;
+  infos.forEach((info) => {
+    cnt[info.genre] = cnt[info.genre] ? cnt[info.genre] + 1 : 1;
 
-    if (count[el.genre] < 3) {
-      album.push(el.num);
+    if (cnt[info.genre] < 3) {
+      album.push(info.num);
     }
   });
 
@@ -243,25 +209,25 @@ function solution(genres, plays) {
 ```
 
 ```js
-// 2022.05.04
 function solution(genres, plays) {
-  // reduce로 Type 별로 정리
-  const genres_play = genres.reduce(
+  // reduce로 타입 별로 정리
+  const genrePlayObj = genres.reduce(
     (acc, genre, idx) => (
       (acc[genre] = acc[genre] ? acc[genre] + plays[idx] : plays[idx]), acc
     ),
     {}
   );
 
-  const count = {};
+  const cnt = {};
   const album = [];
+
   genres
     // 객체에 정보 담아서
     .map((genre, idx) => ({ genre, play: plays[idx], idx }))
     .sort((a, b) => {
       // 다중 정렬
       if (a.genre !== b.genre) {
-        return genres_play[b.genre] - genres_play[a.genre];
+        return genrePlayObj[b.genre] - genrePlayObj[a.genre];
       }
       if (a.play !== b.play) {
         return b.play - a.play;
@@ -270,8 +236,8 @@ function solution(genres, plays) {
     })
     // 상위 2개만 앨범에 포함
     .filter((info) => {
-      count[info.genre] = count[info.genre] ? count[info.genre] + 1 : 1;
-      if (count[info.genre] < 3) {
+      cnt[info.genre] = cnt[info.genre] ? cnt[info.genre] + 1 : 1;
+      if (cnt[info.genre] < 3) {
         album.push(info.idx);
       }
     });
@@ -280,50 +246,43 @@ function solution(genres, plays) {
 }
 ```
 
-2. forEach, 다중 sort 사용
+2. forEach 사용
 
 ```js
 function solution(genres, plays) {
-  const genre_play = {};
+  const genrePlayObj = {};
   genres.forEach((genre, idx) => {
-    genre_play[genre] = genre_play[genre]
-      ? genre_play[genre] + plays[idx]
+    genrePlayObj[genre] = genrePlayObj[genre]
+      ? genrePlayObj[genre] + plays[idx]
       : plays[idx];
   });
 
-  const genre_play_count = {};
-  return (
-    genres
-      .map((genre, idx) => ({ genre: genre, play: plays[idx], num: idx }))
-      // 다중 sort.
-      .sort((a, b) => {
-        if (a.genre !== b.genre) {
-          return genre_play[b.genre] - genre_play[a.genre];
-        }
-        if (a.play !== b.play) {
-          return b.play - a.play;
-        }
-        return a.num - b.num;
-      })
-      .filter((genre) => {
-        if (genre_play_count[genre.genre] >= 2) return false;
-        genre_play_count[genre.genre] = genre_play_count[genre.genre]
-          ? genre_play_count[genre.genre] + 1
-          : 1;
-        return true;
-      })
-      .map((genre) => genre.num)
-  );
+  const genrePlayObj_cnt = {};
+  return genres
+    .map((genre, idx) => ({ genre: genre, play: plays[idx], num: idx }))
+    .sort((a, b) => {
+      if (a.genre !== b.genre) {
+        return genrePlayObj[b.genre] - genrePlayObj[a.genre];
+      }
+      if (a.play !== b.play) {
+        return b.play - a.play;
+      }
+      return a.num - b.num;
+    })
+    .filter((genre) => {
+      if (genrePlayObj_cnt[genre.genre] >= 2) return false;
+      genrePlayObj_cnt[genre.genre] = genrePlayObj_cnt[genre.genre]
+        ? genrePlayObj_cnt[genre.genre] + 1
+        : 1;
+      return true;
+    })
+    .map((genre) => genre.num);
 }
 ```
 
 ## My Tips
 
-- sort
-  - 내부의 값을 이용한 정렬
-  - 다중 정렬
-
-### Compile by Type
+### 종류별로 정리
 
 - reduce
   ```js
@@ -341,7 +300,7 @@ function solution(genres, plays) {
     obj[el] = obj[el] ? obj[el] + arr2[idx] : arr2[idx];
   });
   ```
-- map
+- Map
   ```js
   const map = new Map();
   for (let i = 0; i < arr1.length; i++) {
@@ -349,7 +308,7 @@ function solution(genres, plays) {
   }
   ```
 
-### .sort
+### 고급 정렬
 
 - 객체 정렬
 
@@ -377,8 +336,7 @@ function solution(genres, plays) {
     return b.type3 - a.type3;
   });
 
-  /*
-  성능이 떨어짐!
+  /* lower performance
   arr.sort((a, b) => b.type3 - a.type3)
   arr.sort((a, b) => b.type2 - a.type2)
   arr.sort((a, b) => b.type1 - a.type1)
