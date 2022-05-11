@@ -36,7 +36,7 @@ function solution(numbers) {
     // .sort는 Greedy하게 작동.
     .sort((a, b) => Number(b + a) - Number(a + b))
     .join("");
-  // 0으로만 구성 되었을 경우 edge case!
+  // Edge: 0으로만 구성 되었을 경우.
   return numStr[0] === "0" ? "0" : numStr;
 }
 ```

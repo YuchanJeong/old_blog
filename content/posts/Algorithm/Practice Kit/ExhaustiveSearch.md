@@ -19,19 +19,21 @@ function solution(answers) {
   const two = [2, 1, 2, 3, 2, 4, 2, 5];
   const three = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
 
-  const func = (arr, num_arr) => {
-    return arr.filter((el, idx) => el === num_arr[idx % num_arr.length]).length;
+  const func = (answers, nums) => {
+    // Idea: 나머지로 반복되는 값 처리 가능.
+    return answers.filter((answer, idx) => answer === nums[idx % nums.length])
+      .length;
   };
 
-  const arr = [
+  const result = [
     [1, func(answers, one)],
     [2, func(answers, two)],
     [3, func(answers, three)],
   ];
 
-  arr.sort((a, b) => b[1] - a[1]);
+  result.sort((a, b) => b[1] - a[1]);
 
-  return arr.filter((el) => el[1] === arr[0][1]).map((el) => el[0]);
+  return result.filter((el) => el[1] === result[0][1]).map((el) => el[0]);
 }
 ```
 
@@ -47,8 +49,6 @@ function solution(numbers) {
     return true;
   };
 
-  const nums = numbers.split("");
-
   const getPermutation = (arr) => {
     const result = [];
 
@@ -62,12 +62,12 @@ function solution(numbers) {
     return result;
   };
 
-  const arr = getPermutation(nums)
+  const nums = numbers.split("");
+  const permutations = getPermutation(nums)
     .map((el) => el.join(""))
     .map((el) => parseInt(el));
-  const unique_arr = [...new Set(arr)];
-
-  return unique_arr.filter((el) => isPrime(el)).length;
+  const uniquePermutations = [...new Set(permutations)];
+  return uniquePermutations.filter((num) => isPrime(num)).length;
 }
 ```
 
@@ -116,80 +116,86 @@ const isPrime = (num) => {
 
 - 조합
 
-  ```js
-  const getCombination = (arr) => {
-    const result = [];
+  - 모든 조합
 
-    arr.forEach((head, idx, arr) => {
-      // 현재 요소 저장
-      result.push(head);
-      // 현재 요소 뒤의 나머지 배열
-      const rest_arr = arr.slice(idx + 1);
-      // 의 조합
-      const rest_combination = getCombination(rest_arr);
-      // 현재 요소와 합쳐서 저장
-      result.push(...rest_combination.map((tail) => [head, ...tail]));
-    });
+    ```js
+    const getCombination = (arr) => {
+      const result = [];
 
-    return result;
-  };
-  ```
+      arr.forEach((head, idx, src) => {
+        // 현재 요소 저장.
+        result.push(head);
+        // 현재 요소 뒤의 나머지 배열!!!
+        const restArr = src.slice(idx + 1);
+        // 의 조합.
+        const restCombination = getCombination(restArr);
+        // 현재 요소와 합쳐서 저장.
+        result.push(...restCombination.map((tail) => [head, ...tail]));
+      });
 
-  ```js
-  const getCombination = (arr, selected_num) => {
-    // 마지막 값이 결정되고 순차적으로 값 결정
-    if (selected_num === 1) return arr.map((el) => [el]);
+      return result;
+    };
+    ```
 
-    const result = [];
+  - 특정 조합
 
-    arr.forEach((head, idx, arr) => {
-      // 현재 요소 뒤의 나머지 배열
-      const rest_arr = arr.slice(idx + 1);
-      // 의 조합
-      const rest_combination = getCombination(rest_arr, selected_num - 1);
-      // 현재 요소와 합쳐서 저장
-      result.push(...rest_combination.map((tail) => [head, ...tail]));
-    });
+    ```js
+    const getCombination = (arr, selected_num) => {
+      // 마지막 값이 결정되고 순차적으로 값 결정!!
+      if (selected_num === 1) return arr.map((el) => [el]);
 
-    return result;
-  };
-  ```
+      const result = [];
+
+      arr.forEach((head, idx, arr) => {
+        // 현재 요소 뒤의 나머지 배열!!!
+        const restArr = arr.slice(idx + 1);
+        // 의 조합.
+        const restCombination = getCombination(restArr, selected_num - 1);
+        // 현재 요소와 합쳐서 저장.
+        result.push(...restCombination.map((tail) => [head, ...tail]));
+      });
+
+      return result;
+    };
+    ```
 
 - 순열
 
-  ```js
-  const getPermutation = (arr) => {
-    const result = [];
+  - 모든 순열
 
-    arr.forEach((head, idx, arr) => {
-      // 현재 요소 저장
-      result.push([head]);
-      // 현재 요소를 뺀 나머지 배열
-      const rest_arr = arr.filter((_, i) => i !== idx);
-      // 의 순열
-      const rest_permutation = getPermutation(rest_arr);
-      // 현재 요소와 합쳐서 저장
-      result.push(...rest_permutation.map((tail) => [head, ...tail]));
-    });
+    ```js
+    const getPermutation = (arr) => {
+      const result = [];
 
-    return result;
-  };
-  ```
+      arr.forEach((head, idx, arr) => {
+        // 현재 요소 저장.
+        result.push([head]);
+        // 현재 요소를 뺀 나머지 배열!!!
+        const restArr = arr.filter((_, i) => i !== idx);
+        // 의 순열.
+        const restPermutation = getPermutation(restArr);
+        // 현재 요소와 합쳐서 저장.
+        result.push(...restPermutation.map((tail) => [head, ...tail]));
+      });
+
+      return result;
+    };
+    ```
 
   ```js
   const getPermutation = (arr, selected_num) => {
     const result = [];
 
-    // 마지막 값이 결정되고 순차적으로 값 결정
+    // 마지막 값이 결정되고 순차적으로 값 결정!!
     if (selected_num === 1) return arr.map((el) => [el]);
 
     arr.forEach((head, idx, arr) => {
-      // 현재 요소를 뺀 나머지 배열
-      const rest_arr = arr.filter((_, i) => i !== idx);
-      // 의 순열
-      const rest_permutation = getPermutation(rest_arr, selected_num - 1);
-      // 현재 요소와 합쳐서 저장
-      result.push(...rest_permutation.map((tail) => [head, ...tail]));
+      // 현재 요소를 뺀 나머지 배열!!!
+      const restArr = arr.filter((_, i) => i !== idx);
+      // 의 순열.
+      const restPermutation = getPermutation(restArr, selected_num - 1);
+      // 현재 요소와 합쳐서 저장.
+      result.push(...restPermutation.map((tail) => [head, ...tail]));
     });
 
     return result;

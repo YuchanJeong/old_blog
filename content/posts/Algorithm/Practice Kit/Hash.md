@@ -64,7 +64,7 @@ tags:
 1. sort 사용
 
 ```js
-// 정렬 후 비교해서 다른 순간이 완주하지 못한 참가자.
+// Idea: 정렬 후 비교해서 다른 순간이 완주하지 못한 참가자.
 // Ps. 문자는 `.sort()`로 오름차순 정렬 가능.
 function solution(participant, completion) {
   participant.sort();
@@ -79,7 +79,7 @@ function solution(participant, completion) {
 2.  Map 사용
 
 ```js
-// participant에 있는 경우 +1, completion에 있는 경우 -1.
+// Idea: participant에 있는 경우 +1, completion에 있는 경우 -1.
 function solution(participant, completion) {
   const map = new Map();
 
@@ -100,7 +100,7 @@ function solution(participant, completion) {
 3. reduce, **쉼표 연산자** 사용
 
 ```js
-// completion에 있는 경우 -1.
+// Idea: completion에 있는 경우 -1.
 function solution(participant, completion) {
   const pObj = participant.reduce(
     (acc, cur) => ((acc[cur] = acc[cur] ? acc[cur] + 1 : 1), acc),
@@ -122,7 +122,7 @@ function solution(participant, completion) {
 1. Map 사용
 
 ```js
-// 옷 종류별로 개수 + 1(안입는 경우의 수) 전부 곱한 뒤, -1(아무것도 안입는 경우의 수).
+// Idea: 옷 종류별로 개수 + 1(안입는 경우의 수) 전부 곱한 뒤, -1(아무것도 안입는 경우의 수).
 function solution(clothes) {
   let cnt = 1;
   const map = new Map();
@@ -210,7 +210,6 @@ function solution(genres, plays) {
 
 ```js
 function solution(genres, plays) {
-  // reduce로 타입 별로 정리.
   const genrePlayObj = genres.reduce(
     (acc, genre, idx) => (
       (acc[genre] = acc[genre] ? acc[genre] + plays[idx] : plays[idx]), acc
@@ -222,7 +221,7 @@ function solution(genres, plays) {
   const album = [];
 
   genres
-    // 객체에 정보 담아서.
+    // 객체에 정보 담아서,
     .map((genre, idx) => ({ genre, play: plays[idx], idx }))
     .sort((a, b) => {
       // 다중 정렬.
