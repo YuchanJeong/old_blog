@@ -2,7 +2,7 @@
 title: "[React] React v18.0"
 date: 2022-04-18
 categories:
-  - <Study>
+  - <Studies>
 tags:
   - React
 ---

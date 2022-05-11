@@ -2,7 +2,7 @@
 title: "[Debate-Ducks] 개선 프로젝트 시작"
 date: 2022-05-09
 categories:
-  - <Project>
+  - <Projects>
 tags:
   - "'Debate-Ducks'"
   - (Devlog)

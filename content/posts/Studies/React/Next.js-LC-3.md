@@ -2,7 +2,7 @@
 title: "[Next.js] Learn Course (3) - CREATE YOUR FIRST APP 1"
 date: 2022-04-06
 categories:
-  - <Study>
+  - <Studies>
 tags:
   - Next.js
 ---
