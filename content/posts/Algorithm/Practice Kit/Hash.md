@@ -282,7 +282,7 @@ function solution(genres, plays) {
 
 ## My Tips
 
-### 종류별로 정리
+### 종류별로 정리 👍
 
 - reduce
   ```js
