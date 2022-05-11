@@ -9,7 +9,7 @@ tags:
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.
 
-\*[객체 정렬 및 다중 정렬](https://yuchanjeong.github.io/posts/algorithm/practice-kit/hash/#sort)
+Tip. [객체 정렬 및 다중 정렬](https://yuchanjeong.github.io/posts/algorithm/practice-kit/hash/#sort)
 
 ## 문제
 
@@ -18,9 +18,9 @@ tags:
 ```js
 function solution(array, commands) {
   const func = (arr, i, j, k) => {
-    const _arr = arr.slice(i - 1, j);
-    _arr.sort((a, b) => a - b);
-    return _arr[k - 1];
+    const cutArr = arr.slice(i - 1, j);
+    cutArr.sort((a, b) => a - b);
+    return cutArr[k - 1];
   };
 
   return commands.map((command) => func(array, ...command));
@@ -31,12 +31,13 @@ function solution(array, commands) {
 
 ```js
 function solution(numbers) {
-  const nums = numbers
+  const numStr = numbers
     .map((num) => String(num))
+    // .sort는 Greedy하게 작동.
     .sort((a, b) => Number(b + a) - Number(a + b))
     .join("");
   // 0으로만 구성 되었을 경우 edge case!
-  return nums[0] === "0" ? "0" : nums;
+  return numStr[0] === "0" ? "0" : numStr;
 }
 ```
 
@@ -56,7 +57,6 @@ function solution(citations) {
 
 ```js
 const solution = (citations) =>
-  // h 편 이상 인용된 논문 수가 length.
   citations.sort((a, b) => b - a).filter((citation, idx) => citation >= idx + 1)
     .length;
 ```

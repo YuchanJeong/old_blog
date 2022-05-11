@@ -210,7 +210,7 @@ function solution(genres, plays) {
 
 ```js
 function solution(genres, plays) {
-  // reduce로 타입 별로 정리
+  // reduce로 타입 별로 정리.
   const genrePlayObj = genres.reduce(
     (acc, genre, idx) => (
       (acc[genre] = acc[genre] ? acc[genre] + plays[idx] : plays[idx]), acc
@@ -222,10 +222,10 @@ function solution(genres, plays) {
   const album = [];
 
   genres
-    // 객체에 정보 담아서
+    // 객체에 정보 담아서.
     .map((genre, idx) => ({ genre, play: plays[idx], idx }))
     .sort((a, b) => {
-      // 다중 정렬
+      // 다중 정렬.
       if (a.genre !== b.genre) {
         return genrePlayObj[b.genre] - genrePlayObj[a.genre];
       }
@@ -234,7 +234,7 @@ function solution(genres, plays) {
       }
       return a.idx - b.idx;
     })
-    // 상위 2개만 앨범에 포함
+    // 상위 2개만 앨범에 포함.
     .filter((info) => {
       cnt[info.genre] = cnt[info.genre] ? cnt[info.genre] + 1 : 1;
       if (cnt[info.genre] < 3) {
@@ -314,13 +314,13 @@ function solution(genres, plays) {
 
   ```js
   // 1) value
-  arr.sort((a, b) => a.value - b.value); // value값 기준 오름차순정렬
-  arr.sort((a, b) => b.value - a.value); // value값 기준 내림차순정렬
+  arr.sort((a, b) => a.value - b.value); // value값 기준 오름차순정렬.
+  arr.sort((a, b) => b.value - a.value); // value값 기준 내림차순정렬.
 
   // 2) key
   arr.map((el) => Object.entries(el));
-  arr.sort((a, b) => a[0] - b[0]); // key값 기준 오름차순정렬
-  arr.sort((a, b) => b[0] - a[0]); // key값 기준 내림차순정렬
+  arr.sort((a, b) => a[0] - b[0]); // key값 기준 오름차순정렬.
+  arr.sort((a, b) => b[0] - a[0]); // key값 기준 내림차순정렬.
   ```
 
 - 다중 정렬
