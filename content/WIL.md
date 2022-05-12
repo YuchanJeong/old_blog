@@ -23,4 +23,4 @@ showPagination: false
 
 - [Git](/what-i-learned/etc/git)
 - [Linux Console](/what-i-learned/etc/linux)
-- 정규 표현식
+- [Regular Expression](/what-i-learned/etc/regex)
