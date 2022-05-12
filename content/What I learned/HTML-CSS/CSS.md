@@ -3,7 +3,7 @@ title: "CSS(Cascading Style Sheets)"
 showDate: false
 showPagination: false
 categories:
-  - "<What I learned>"
+  - <What I learned>
 tags:
   - CSS
 ---

@@ -3,7 +3,7 @@ title: "Linux Console"
 showDate: false
 showPagination: false
 categories:
-  - "<What I learned>"
+  - <What I learned>
 tags:
   - Linux
 ---

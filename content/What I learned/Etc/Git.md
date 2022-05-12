@@ -3,7 +3,7 @@ title: "Git"
 showDate: false
 showPagination: false
 categories:
-  - "<What I learned>"
+  - <What I learned>
 tags:
   - Git
 ---
