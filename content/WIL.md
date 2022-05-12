@@ -17,7 +17,7 @@ showPagination: false
 ## HTML & CSS
 
 - [HTML](/what-i-learned/html-css/html)
-- CSS
+- [CSS](/what-i-learned/html-css/css)
 
 ## Etc
 
