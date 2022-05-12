@@ -60,7 +60,7 @@ Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/ca
 
 ```html
 <link rel="icon" href="..." />
-<!-- └ /favicon.ico로 대체 가능. -->
+<!-- └ /favicon.ico로 대체 가능 -->
 ```
 
 ```html
@@ -88,10 +88,10 @@ Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/ca
 <script defer|async src="..."></script>
 ```
 
-|       | 순서         | 적용                                                       |
-| ----- | ------------ | ---------------------------------------------------------- |
-| defer | 문서 위치 순 | DOM 전체가 필요한 스크립트나 실행 순서가 중요한 경우 적용. |
-| async | 다운로드 순  | 독립적인 스크립트나 실행 순서가 중요하지 않은 경우 적용.   |
+|       | 순서         | 적용                                                      |
+| ----- | ------------ | --------------------------------------------------------- |
+| defer | 문서 위치 순 | DOM 전체가 필요한 스크립트나 실행 순서가 중요한 경우 적용 |
+| async | 다운로드 순  | 독립적인 스크립트나 실행 순서가 중요하지 않은 경우 적용   |
 
 ## Tag
 
@@ -104,9 +104,9 @@ Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/ca
 
 ### 1. Block Level Tag
 
-\- 요소가 수직으로 쌓임.  
-\- 가로는 부모 요소의 크기만큼 자동으로 늘어남.  
-\- 세로는 포함한 콘텐츠의 크기만큼 자동으로 줄어듦.
+\- 요소가 수직으로 쌓임  
+\- 가로는 부모 요소의 크기만큼 자동으로 늘어남  
+\- 세로는 포함한 콘텐츠의 크기만큼 자동으로 줄어듦
 
 ```html
 <div></div>
@@ -120,9 +120,9 @@ Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/ca
 
 ### 2. Inline Level Tag
 
-\- 요소가 수평으로 나열됨.  
-\- 포함한 콘텐츠의 크기만큼 자동으로 줄어듦.  
-\- Inline 요소 하위에는 Block 요소 불가능.
+\- 요소가 수평으로 나열됨  
+\- 포함한 콘텐츠의 크기만큼 자동으로 줄어듦  
+\- Inline 요소 하위에는 Block 요소 불가능
 
 ```html
 <span></span>
