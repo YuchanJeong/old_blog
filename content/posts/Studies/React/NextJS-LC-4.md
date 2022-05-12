@@ -1,5 +1,5 @@
 ---
-title: "[Next.js] Learn Course (4) - CREATE YOUR FIRST APP 2"
+title: "[NextJS] Learn Course (4) - CREATE YOUR FIRST APP 2"
 date: 2022-04-17
 categories:
   - <Studies>
@@ -425,7 +425,7 @@ npm install remark remark-html
 - [Essential information of dynamic routes](https://nextjs.org/docs/routing/dynamic-routes)
 - Fallback
   - If fallback is `false`, then any paths not returned by getStaticPaths will result in a **404 page**.
-  - If fallback is `true`, then the paths that have not been generated at build time will not result in a 404 page. Instead, Next.js will serve a “**fallback**” version of the page on the first request to such a path.
+  - If fallback is `true`, then the paths that have not been generated at build time will not result in a 404 page. Instead, NextJS will serve a “**fallback**” version of the page on the first request to such a path.
   - If fallback is `blocking`, then new paths will be server-side rendered with getStaticProps, and cached for future requests so it only happens once per path.
 - [Catch-all Routes](https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes)
   - `pages/posts/[...id].js` matches `/posts/a`, but also `/posts/a/b`, `/posts/a/b/c` and so on.
@@ -479,7 +479,7 @@ npm install remark remark-html
 - [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
 - [Dynamic API Routes](https://nextjs.org/docs/api-routes/dynamic-api-routes)
 
-## 7. Deploying Your Next.js App
+## 7. Deploying Your NextJS App
 
 ### Deploy to Vercel
 
@@ -493,14 +493,14 @@ npm install remark remark-html
 
 - [nextjs-blog-sample](https://nextjs-blog-sample-omega.vercel.app/)
 
-### Next.js and Vercel[\*](https://vercel.com/docs)
+### NextJS and Vercel[\*](https://vercel.com/docs)
 
 - Default features:
   - Pages that use Static Generation and assets (JS, CSS, images, fonts, etc) will automatically be served from the Vercel Edge Network, which is blazingly fast.
   - Pages that use Server-Side Rendering and API routes will automatically become isolated Serverless Functions. This allows page rendering and API requests to scale infinitely.
 - More features:
-  - **Custom Domains**: Once deployed on Vercel, you can assign a custom domain to your Next.js app. Take a look at [our documentation](https://vercel.com/docs/concepts/projects/custom-domains) here.
-  - **Environment Variables**: You can also set environment variables on Vercel. Take a look at [our documentation](https://vercel.com/docs/concepts/deployments/build-step#environment-variables) here. You can then use those [environment variables](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables) in your Next.js app.
+  - **Custom Domains**: Once deployed on Vercel, you can assign a custom domain to your NextJS app. Take a look at [our documentation](https://vercel.com/docs/concepts/projects/custom-domains) here.
+  - **Environment Variables**: You can also set environment variables on Vercel. Take a look at [our documentation](https://vercel.com/docs/concepts/deployments/build-step#environment-variables) here. You can then use those [environment variables](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables) in your NextJS app.
   - **Automatic HTTPS**: HTTPS is enabled by default (including custom domains) and doesn't require extra configuration. We auto-renew SSL certificates.
 
 ### Preview Deployment for Every Push (Develop, Preview, Ship)

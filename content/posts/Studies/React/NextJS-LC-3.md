@@ -1,5 +1,5 @@
 ---
-title: "[Next.js] Learn Course (3) - CREATE YOUR FIRST APP 1"
+title: "[NextJS] Learn Course (3) - CREATE YOUR FIRST APP 1"
 date: 2022-04-06
 categories:
   - <Studies>
@@ -9,9 +9,9 @@ tags:
 
 # CREATE YOUR FIRST APP
 
-## 1. Create a Next.js App
+## 1. Create a NextJS App
 
-1. Create a Next.js App
+1. Create a NextJS App
 
    ```bash
    npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
@@ -31,7 +31,7 @@ tags:
 
 ## 2. Navigate Between Pages
 
-In Next.js, a page is a React Component exported from a file in the pages directory.  
+In NextJS, a page is a React Component exported from a file in the pages directory.  
 Pages are associated with a route based on their file name. For example, in development:
 
 - pages/index.js is associated with the / route.
@@ -51,7 +51,7 @@ Simply create a JS file under the pages directory, and the path to the file beco
 
 ### Link Component
 
-In Next.js, you use the Link Component from next/link to wrap the \<a> tag. \<Link> allows you to do client-side navigation to a different page in the application. Client-side navigation means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser(full refresh).
+In NextJS, you use the Link Component from next/link to wrap the \<a> tag. \<Link> allows you to do client-side navigation to a different page in the application. Client-side navigation means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser(full refresh).
 
 - pages/index.js
 
@@ -94,15 +94,15 @@ In Next.js, you use the Link Component from next/link to wrap the \<a> tag. \<Li
 
 ### Code splitting and prefetching
 
-Next.js does code splitting automatically, so each page only loads what’s necessary for that page. Only loading the code for the page you request also means that pages become isolated. If a certain page throws an error, the rest of the application would still work.
+NextJS does code splitting automatically, so each page only loads what’s necessary for that page. Only loading the code for the page you request also means that pages become isolated. If a certain page throws an error, the rest of the application would still work.
 
-Furthermore, in a production build of Next.js, whenever Link components appear in the browser’s viewport, Next.js automatically prefetches the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant.
+Furthermore, in a production build of NextJS, whenever Link components appear in the browser’s viewport, NextJS automatically prefetches the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant.
 
 ## 3. Assets, Metadata, and CSS
 
 ### Assets
 
-Next.js can serve static assets, like images, under the top-level public directory. Files inside public can be referenced from the root of the application similar to pages.
+NextJS can serve static assets, like images, under the top-level public directory. Files inside public can be referenced from the root of the application similar to pages.
 
 - Save the picture as [profile.jpg](https://github.com/vercel/next-learn/blob/master/basics/basics-final/public/images/profile.jpg) in the public/images directory.
 
@@ -160,7 +160,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   />
   ```
 
-  - strategy controls when the third-party script should load. A value of lazyOnload tells Next.js to load this particular script lazily during browser idle time
+  - strategy controls when the third-party script should load. A value of lazyOnload tells NextJS to load this particular script lazily during browser idle time
   - onLoad is used to run any JavaScript code immediately after the script has finished loading. In this example, we log a message to the console that mentions that the script has loaded correctly
 
 \*To learn more about the Script component, check out the [documentation](https://nextjs.org/docs/basic-features/script).
@@ -348,7 +348,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   import Link from "next/link";
 
   const name = "Yuchan";
-  export const siteTitle = "Next.js Sample Website";
+  export const siteTitle = "NextJS Sample Website";
 
   export default function Layout({ children, home }) {
     return (
@@ -357,7 +357,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="Learn how to build a personal website using Next.js"
+            content="Learn how to build a personal website using NextJS"
           />
           <meta
             property="og:image"
@@ -433,7 +433,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
           <p>Hi! I'm Yuchan Jeong.</p>
           <p>
             (This is a sample website - you’ll be building a site like this on{" "}
-            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+            <a href="https://nextjs.org/learn">our NextJS tutorial</a>.)
           </p>
         </section>
       </Layout>
