@@ -91,7 +91,8 @@ Ps2. 팀원중 한분은 바로 취업하셔서 4인 프로젝트에서 3인 프
    ]
    ```
 
-3. ```bash
+3. github-label-sync 사용
+   ```bash
    npx github-label-sync --access-token [액세스 토큰] --labels labels.json [계정명]/[저장소 이름]
    ```
 
