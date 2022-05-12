@@ -130,8 +130,8 @@ Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/ca
 <img src="..." alt="..." />
 
 <a href="..."></a>
-<!-- └ #ID로 문서 내 연결 가능 -->
 <!-- └ target="_blank"로 새 창에서 열기 가능 -->
+<!-- └ #ID로 문서 내 연결 가능 -->
 
 <button onClick="..."></button>
 ```
