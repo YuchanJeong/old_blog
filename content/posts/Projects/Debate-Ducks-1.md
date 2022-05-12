@@ -31,7 +31,7 @@ Ps2. 팀원중 한분은 바로 취업하셔서 4인 프로젝트에서 3인 프
    - 정적 타입
      - 컴파일 단계에서 오류 포착 가능
      - 개발자의 의도를 코드로 명확히 표시 가능
-2. **NextJS**를 사용하여 기능 및 편의성 향상.
+2. **Next.js**를 사용하여 기능 및 편의성 향상.
    - Pre-rendering, 파일 시스템 기반 라우팅등의 장점
 3. **React-query**를 사용하여 외부 데이터 효율적 처리.
    - 캐싱, 중복 호출 허용 시간 조절등의 장점
@@ -158,7 +158,7 @@ Ps2. 팀원중 한분은 바로 취업하셔서 4인 프로젝트에서 3인 프
 
 ## Client 초기 세팅
 
-### 1. NextJS + TypeScript
+### 1. Next.js + TypeScript
 
 ```bash
 npx create-next-app --typescript debate-ducks --use-npm

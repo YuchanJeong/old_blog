@@ -20,34 +20,36 @@ tags:
 
 ```js
 function solution(n, lost, reserve) {
-  const have_arr = new Array(n).fill(1);
-  const lost_arr = lost.map((el) => el - 1);
-  const reserve_arr = reserve.map((el) => el - 1);
+  const clothes = new Array(n).fill(1);
+  const lostArr = lost.map((el) => el - 1);
+  const reserveArr = reserve.map((el) => el - 1);
 
   for (let i = 0; i < n; i++) {
-    if (lost_arr.includes(i)) have_arr[i] -= 1;
-    if (reserve_arr.includes(i)) have_arr[i] += 1;
+    if (lostArr.includes(i)) clothes[i] -= 1;
+    if (reserveArr.includes(i)) clothes[i] += 1;
   }
 
   for (let i = 0; i < n - 1; i++) {
-    if (have_arr[i] === 0 && have_arr[i + 1] === 2) {
-      have_arr[i] += 1;
-      have_arr[i + 1] -= 1;
+    if (clothes[i] === 0 && clothes[i + 1] === 2) {
+      clothes[i] += 1;
+      clothes[i + 1] -= 1;
     }
-    if (have_arr[i] === 2 && have_arr[i + 1] === 0) {
-      have_arr[i] -= 1;
-      have_arr[i + 1] += 1;
+    if (clothes[i] === 2 && clothes[i + 1] === 0) {
+      clothes[i] -= 1;
+      clothes[i + 1] += 1;
     }
   }
 
-  return have_arr.filter((el) => el > 0).length;
+  return clothes.filter((el) => el > 0).length;
 }
 ```
 
 ### 2. 조이스틱 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42860)
 
 ```js
-// 처음에는 제일 길게 연속되는 A를 찾아서 되돌아가는거와 비교 할려고 했는데 예외가 계속 나와서 A를 마주칠 때 마다 돌아가는게 나은지 쭉 가는게 나은지 다 넣어서 해결
+// 처음에는 연속되는 A 중 가장 긴 것을 찾아서 되돌아갈지 말지 결정하려 했음.
+// A로 끝나거나 끝에서 가까운 거리에 있는 경우 등 예외가 있었음.
+// Idea: A를 마주칠 때 마다 돌아가는게 나은지 쭉 가는게 나은지 다 비교해서 해결!!!
 function solution(name) {
   const len = name.length;
   const chars = name.split("");
@@ -63,13 +65,15 @@ function solution(name) {
   let leftRightArr = [len - 1];
 
   chars.forEach((char, idx) => {
+    // 1) 다음 값이 A 인지 아닌지 확인
     if (name[idx + 1] === "A") {
       let aIdx = idx + 1;
+      // 2) 다음 값이 A가 아닐 때까지 반복!! (마지막 aIdx는 A가 아님!)
       while (name[aIdx] === "A") aIdx += 1;
 
-      const right = len - aIdx;
-      leftRightArr.push(idx * 2 + right);
-      leftRightArr.push(right * 2 + idx);
+      const right = len - aIdx; // 끝에서 마지막 A까지 이동 수
+      leftRightArr.push(idx * 2 + right); // A를 만나면 뒤돌아 감!
+      leftRightArr.push(right * 2 + idx); // 처음부터 뒤돌아감!!
     }
   });
 

@@ -9,9 +9,9 @@ showPagination: false
 
 - JavaScript
 - TypeScript
-- Node.js
+- [Node.js](/what-i-learned/javascript/nodejs)
 - React
-- NextJS
+- Next.js
 - Redux-toolkit
 
 ## HTML & CSS

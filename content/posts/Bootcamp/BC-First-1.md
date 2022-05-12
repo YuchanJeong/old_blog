@@ -15,7 +15,7 @@ tags:
 
 ### 1. 사전 준비
 
-프로젝트가 시작되기 전 개인 역량을 최대로 끌어올리기 위해 배웠던 내용들을 복습 및 정리하면서 프로젝트에 추가로 사용할 만한 스택들(Redux-toolkit, Redux-saga, GraphQL, NextJS, TypeScript 등)을 알아보고 공부하였다. 그리고 협업할 때 규칙을 지킬 수 있게 도와주는 관련 라이브러리들(EsLint, Prettier, Lint-staged, Husky)도 공부하고 사용해 보았다.
+프로젝트가 시작되기 전 개인 역량을 최대로 끌어올리기 위해 배웠던 내용들을 복습 및 정리하면서 프로젝트에 추가로 사용할 만한 스택들(Redux-toolkit, Redux-saga, GraphQL, Next.js, TypeScript 등)을 알아보고 공부하였다. 그리고 협업할 때 규칙을 지킬 수 있게 도와주는 관련 라이브러리들(EsLint, Prettier, Lint-staged, Husky)도 공부하고 사용해 보았다.
 
 이 경험을 바탕으로 팀원들에게 공식 문서와 내가 연습했던 내용들을 보여주며 각 스택들을 소개하였고, 필요 여부와 팀원들이 당장 사용 가능할지 여부 등의 의견을 수렴하였다. 팀의 주 의견은 First Project는 복습 위주로 새로운 스택은 사용하지 말자는 것이었다.
 

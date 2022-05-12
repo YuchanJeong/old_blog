@@ -1,13 +1,13 @@
 ---
-title: "[NextJS] Learn Course (1) - About NextJS"
+title: "[Next.js] Learn Course (1) - About Next.js"
 date: 2022-04-05
 categories:
   - <Studies>
 tags:
-  - NextJS
+  - Next.js
 ---
 
-## About NextJS
+## About Next.js
 
 ### 1. Building Blocks of a Web Application
 
@@ -31,11 +31,11 @@ tags:
 
 By library, we mean React provides helpful functions to build UI, but leaves it **up to the developer where to use** those functions in their application.
 
-### 3. What is NextJS?
+### 3. What is Next.js?
 
-> [NextJS](https://nextjs.org/docs/getting-started) is a `React framework` that gives you building blocks to create web applications.
+> [Next.js](https://nextjs.org/docs/getting-started) is a `React framework` that gives you building blocks to create web applications.
 
-By framework, we mean NextJS handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
+By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
 
 ## From JavaScript to React
 
@@ -203,7 +203,7 @@ function HomePage() {
 
 \*If you’d like to learn more, take a look at the [Adding Interactivity](https://beta.reactjs.org/learn/adding-interactivity) and [Managing State](https://beta.reactjs.org/learn/managing-state) sections in the React Documentation.
 
-## From React to NextJS
+## From React to Next.js
 
 ```bash
 npm install react react-dom next
