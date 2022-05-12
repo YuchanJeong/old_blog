@@ -57,5 +57,4 @@ tags:
 - npm i -g [nodemon](https://www.npmjs.com/package/nodemon)
 - npm i [lodash](https://lodash.com/docs)
 - npm i -D [parcel-bundler](https://parceljs.org/docs/)
-- npm i [dayjs](https://www.npmjs.com/package/dayjs)
 - npm i [nanoid](https://www.npmjs.com/package/nanoid)
