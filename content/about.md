@@ -24,7 +24,7 @@ showPagination: false
 | Github         | [/yuchanjeong](https://github.com/yuchanjeong)                                      |
 | Stack Overflow | [/users/16967930/yuchanjeong](https://stackoverflow.com/users/16967930/yuchanjeong) |
 
-### ⌨️ Key world
+### 🔖 Key word
 
 - Pros : `Philomath` `Optimistic` `Meticulous` `Proactive` `Consistent`
 - Cons : `Overconcentration` `Reserved`
