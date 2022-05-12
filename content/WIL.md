@@ -22,5 +22,5 @@ showPagination: false
 ## Etc
 
 - [Git](/what-i-learned/etc/git)
-- Linux 명령어
+- [Linux Console](/what-i-learned/etc/linux)
 - 정규 표현식

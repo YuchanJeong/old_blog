@@ -25,15 +25,15 @@ tags:
 
 ### 2. 시작 & 전역 속성
 
-| Command                                               | Details                   |
-| ----------------------------------------------------- | ------------------------- |
-| git init                                              | 깃 추적 시작              |
-| git config --global core.autocrlf true                | 개행문자 설정             |
-| git config --global user.name "[사용자 이름]"         | 사용자 이름 설정          |
-| git config --global user.email "[사용자 메일]"        | 사용자 메일 설정          |
-| git config --global core.editor "[nano\|vim]"         | 에디터 nano\|vim으로 설정 |
-| git config --global commit.template ~/.gitmessage.txt | commit 템플릿 설정        |
-| git config --global --list                            | 전역 속성 보기            |
+| Command                                               | Details                 |
+| ----------------------------------------------------- | ----------------------- |
+| git init                                              | 깃 추적 시작            |
+| git config --global core.autocrlf true                | 개행문자 설정           |
+| git config --global user.name "[사용자 이름]"         | 사용자 이름 설정        |
+| git config --global user.email "[사용자 메일]"        | 사용자 메일 설정        |
+| git config --global core.editor "[vim\|nano]"         | 에디터 vim\|nano로 설정 |
+| git config --global commit.template ~/.gitmessage.txt | commit 템플릿 설정      |
+| git config --global --list                            | 전역 속성 보기          |
 
 ### 3. 원격 저장소
 
