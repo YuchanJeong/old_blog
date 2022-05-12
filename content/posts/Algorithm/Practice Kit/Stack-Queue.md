@@ -32,7 +32,7 @@ function solution(progresses, speeds) {
     for (let i = 0; i < progresses.length; i++) {
       if (progresses[i] < 100) break;
       if (progresses[i] >= 100) {
-        // 같은 day(타입)에 추가 해줌
+        // 같은 day(타입)에 추가 해줌.
         result[day] = result[day] ? result[day] + 1 : 1;
       }
     }
@@ -87,14 +87,14 @@ function solution(bridge_length, weight, truck_weights) {
   while (passedTrucks.length < len) {
     time += 1;
 
-    // buffer 맨앞 빼서, 0이 아닐 경우 passedTrucks에 저장
+    // buffer 맨앞 빼서, 0이 아닐 경우 passedTrucks에 저장.
     const passedTruck = buffer.shift();
     bufferWeights -= passedTruck;
     if (passedTruck !== 0) {
       passedTrucks.push(passedTruck);
     }
 
-    // truck_weights 맨앞 빼서, weight 안넘을 경우 buffer에 저장
+    // truck_weights 맨앞 빼서, weight 안넘을 경우 buffer에 저장.
     if (bufferWeights + truck_weights[0] <= weight) {
       const newTruck = truck_weights.shift();
       bufferWeights += newTruck;
