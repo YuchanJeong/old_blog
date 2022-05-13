@@ -36,7 +36,7 @@ SEO
 <meta name="robots" content="noindex, nofollow" />
 ```
 
-Open Graph [\*](https://ogp.me/)
+Open Graph[^](https://ogp.me/)
 
 ```html
 <meta property="og:type" content="website" />
@@ -47,7 +47,7 @@ Open Graph [\*](https://ogp.me/)
 <meta property="og:url" content="..." />
 ```
 
-Twitter Cards [\*](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
+Twitter Cards[^](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
 
 ```html
 <meta property="twitter:card" content="summary" />

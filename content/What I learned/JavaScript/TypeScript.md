@@ -18,14 +18,14 @@ data: valueType; //Type annotation
 
 ### 1. 설치 및 사용
 
-| Command                                                                                 | Details            |
-| --------------------------------------------------------------------------------------- | ------------------ |
-| npm i -D typescript                                                                     | typescript 설치    |
-| npx tsc --init [\*](https://www.typescriptlang.org/docs/handbook/compiler-options.html) | tsconfig.json 생성 |
-| npx tsc ([파일명])                                                                      | (해당 파일) 컴파일 |
-| npx tsc -w                                                                              | 자동 컴파일 모드   |
+| Command                                                                                | Details            |
+| -------------------------------------------------------------------------------------- | ------------------ |
+| npm i -D typescript                                                                    | typescript 설치    |
+| npx tsc --init [^](https://www.typescriptlang.org/docs/handbook/compiler-options.html) | tsconfig.json 생성 |
+| npx tsc ([파일명])                                                                     | (해당 파일) 컴파일 |
+| npx tsc -w                                                                             | 자동 컴파일 모드   |
 
-### 2. tsconfig.json [\*](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+### 2. tsconfig.json[^](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
 | Property        | Details                                                                                                                                             |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ data: valueType; //Type annotation
 1. string
 2. number
 3. boolean
-4. symbol (es6) [\*](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+4. symbol (es6) [^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 5. null
 6. undefined
 
@@ -66,7 +66,7 @@ data: valueType; //Type annotation
 3. tuple
    - : [타입1, 타입2, ...]
 4. ~~any~~
-5. unknown [^](/storage/wil/javascript/ex-typescript/#unknown)
+5. unknown[⋯](/storage/wil/javascript/ex-typescript/#unknown)
    - 타입을 확정한 뒤 할당 및 사용 가능
 6. never
    - 항상 오류를 출력하거나, 절대 값을 반환하지 않는 함수의 리턴 타입
@@ -144,7 +144,7 @@ class 하위_클래스 extends 상위_클래스 {
 
 \*[getter & setter 예제](/storage/wil/javascript/ex-typescript/#getter--setter)
 
-### 4. Generic [\*](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html) [^](/storage/wil/javascript/ex-typescript/#generic)
+### 4. Generic[^](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html) [⋯](/storage/wil/javascript/ex-typescript/#generic)
 
 | Questions   | Answers                    |
 | ----------- | -------------------------- |
@@ -175,7 +175,7 @@ class 하위_클래스 extends 상위_클래스 {
 - ?:
 - 해당 요소가 있어도 되고 없어도 됨
 
-**3\) Non-Null Assertion Operator** [\*](https://www.typescriptlang.org/play?ssl=7&ssc=66&pln=3&pc=1#code/MYewdgzgLgBAhgJwTAvDA2gbwG5wDYCuApgFwwCMAvgDQw77FkBMlAugNwBQoksAllCIBbVPCQA6AGZ8wAEwAURPKgB8MJeNyEiqFGiYBKLj2gwERCATyw0A4ZoY6A1BXYwA9O4AqAZXVIQBFoIGWAdOxE+CBh5fDwiAHMiWTwATwMYAAcQCBCAIzSYAjkiaTBkzm5wU3NLawB1AQALAHlMqD5wfFEIgH4HbRgXcjdPHw68ZTgwfwRAgEIYPoHiGCXo6D5JrJz8wuLZUpkKqt4zCysoRqhWzKIEOChAnsEheZXnVw93AEEm2hujwA5NEbjpwER5pwgA)
+**3\) Non-Null Assertion Operator**[^](https://www.typescriptlang.org/play?ssl=7&ssc=66&pln=3&pc=1#code/MYewdgzgLgBAhgJwTAvDA2gbwG5wDYCuApgFwwCMAvgDQw77FkBMlAugNwBQoksAllCIBbVPCQA6AGZ8wAEwAURPKgB8MJeNyEiqFGiYBKLj2gwERCATyw0A4ZoY6A1BXYwA9O4AqAZXVIQBFoIGWAdOxE+CBh5fDwiAHMiWTwATwMYAAcQCBCAIzSYAjkiaTBkzm5wU3NLawB1AQALAHlMqD5wfFEIgH4HbRgXcjdPHw68ZTgwfwRAgEIYPoHiGCXo6D5JrJz8wuLZUpkKqt4zCysoRqhWzKIEOChAnsEheZXnVw93AEEm2hujwA5NEbjpwER5pwgA)
 
 - !.
 - 해당 피연산자가 null, undefined가 아니라고 단언
@@ -191,4 +191,4 @@ class 하위_클래스 extends 상위_클래스 {
 **6\)Type Assertion**
 
 - ... as 타입
-- ... as const (readonly) [^](/storage/wil/javascript/ex-typescript/#as-const)
+- ... as const (readonly) [⋯](/storage/wil/javascript/ex-typescript/#as-const)

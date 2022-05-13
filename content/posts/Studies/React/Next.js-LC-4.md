@@ -17,7 +17,7 @@ tags:
 - We recommend using **SSG** whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
 - If your page shows frequently updated data, and the page content changes on every request, you can use **SSR**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use **CSR** to populate frequently updated data.
 
-### getStaticProps[\*](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)
+### getStaticProps[^](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)
 
 ```js
 export default function Home(props) { ... }
@@ -144,7 +144,7 @@ export async function getStaticProps() {
   }
   ```
 
-### getServerSideProps[\*](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
+### getServerSideProps[^](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
 
 ```js
 export async function getServerSideProps(context) {
@@ -160,7 +160,7 @@ Because getServerSideProps is called at request time, its parameter (context) co
 
 You should use getServerSideProps only if you need to pre-render a page whose data must be fetched at request time.
 
-## 5. Dynamic Routes[\*](https://nextjs.org/docs/routing/dynamic-routes)
+## 5. Dynamic Routes[^](https://nextjs.org/docs/routing/dynamic-routes)
 
 Create a page at /pages/posts/[id].js
 
@@ -457,7 +457,7 @@ npm install remark remark-html
   }
   ```
 
-## 6. API Routes[\*](https://nextjs.org/docs/api-routes/introduction)
+## 6. API Routes[^](https://nextjs.org/docs/api-routes/introduction)
 
 - Create `pages/api/hello.js`
   ```js
@@ -493,7 +493,7 @@ npm install remark remark-html
 
 - [nextjs-blog-sample](https://nextjs-blog-sample-omega.vercel.app/)
 
-### Next.js and Vercel[\*](https://vercel.com/docs)
+### Next.js and Vercel[^](https://vercel.com/docs)
 
 - Default features:
   - Pages that use Static Generation and assets (JS, CSS, images, fonts, etc) will automatically be served from the Vercel Edge Network, which is blazingly fast.

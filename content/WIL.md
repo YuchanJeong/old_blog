@@ -10,7 +10,7 @@ showPagination: false
 - [Node.js](/what-i-learned/javascript/nodejs)
 - [JavaScript](/what-i-learned/javascript/javascript)
 - [TypeScript](/what-i-learned/javascript/typescript)
-- React
+- [React](/what-i-learned/javascript/react)
 - Next.js
 - Redux-toolkit
 

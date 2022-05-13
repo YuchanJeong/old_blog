@@ -24,7 +24,7 @@ tags:
 
 \***falsy**: false, null, undefined, "", 0, NaN (나머지는 truthy)
 
-\***typeof** [\*](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
+\***typeof**[^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
 
 - 평가 전 데이터 타입을 string으로 반환
 - function은 "function"
@@ -297,7 +297,7 @@ myTeam은 {
 */
 ```
 
-**3\) Data Immutability [^](/storage/wil/javascript/ex-javascript/#data-immutability)**
+**3\) Data Immutability[⋯](/storage/wil/javascript/ex-javascript/#data-immutability)**
 
 Primitive Type
 
@@ -584,12 +584,12 @@ outer: for (item of arr) {
    |setInterval(함수, ms)| 일정 시간 마다 함수 실행|
    |clearTimeout(변수)| 해당 Timeout 함수를 종료|
    |clearInterval(변수)| 해당 Interval 함수를 종료|
-2. Callback Function [^](/storage/wil/javascript/ex-javascript/#callback)
+2. Callback Function[⋯](/storage/wil/javascript/ex-javascript/#callback)
    - 함수의 「인자」로 사용되는 함수
-3. Closure Function [^](/storage/wil/javascript/ex-javascript/#closure)
+3. Closure Function[⋯](/storage/wil/javascript/ex-javascript/#closure)
    - 함수를 return하는 함수
    - 외부 함수의 「변수」를 내부 함수에서 재사용
-4. Curry Function [^](/storage/wil/javascript/ex-javascript/#curry)
+4. Curry Function[⋯](/storage/wil/javascript/ex-javascript/#curry)
    - 함수를 return하는 함수
    - 외부 함수의 「인자」를 내부 함수에서 재사용
 
@@ -624,7 +624,7 @@ const 객체 = new 클래스();
 
 ## JS Etc
 
-### 1. DOM API [\*](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model)
+### 1. DOM API[^](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model)
 
 | API                                                                                                                                                                               | Details                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

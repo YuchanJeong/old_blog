@@ -27,7 +27,7 @@ tags:
 
 ## What’s New in React 18
 
-### 1. Automatic Batching [\*](https://github.com/reactwg/react-18/discussions/21)
+### 1. Automatic Batching[^](https://github.com/reactwg/react-18/discussions/21)
 
 {{< alert "lightbulb" >}}
 this is an in-depth feature that we don’t expect most users to need to think about. However, it may be relevant to educators and library developers.
@@ -49,7 +49,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
   }, 1000);
   ```
 
-### 2. Transitions [\*](https://reactjs.org/docs/react-api.html#transitions)
+### 2. Transitions[^](https://reactjs.org/docs/react-api.html#transitions)
 
 - 전환은 **긴급한 업데이트**와 **긴급하지 않은 업데이트**를 구분하기 위한 React의 새로운 개념.
 - 긴급하지 않은 업데이트 중에 긴급한 업데이트가 일어나면 긴급하지 않은 업데이트 중지 후 긴급한 업데이트 우선 처리. (후에 중지 되었던 업데이트는 최신 업데이트만 렌더링.)
@@ -89,7 +89,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
     }
     ```
 
-### 3. Suspense [\*](https://github.com/reactjs/rfcs/blob/main/text/0213-suspense-in-react-18.md)
+### 3. Suspense[^](https://github.com/reactjs/rfcs/blob/main/text/0213-suspense-in-react-18.md)
 
 - Suspense는 React 프로그래밍 모델에서 **UI 로딩 상태**를 **일급 선언적 개념**으로 만듦.
 - React 18에서는 Suspense에 대한 서버의 지원을 추가하고 동시 렌더링(Concurrent rendering)을 사용하여 기능을 확장.
@@ -114,7 +114,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
 
 ### 4. Rendering APIs
 
-#### React DOM Client [\*](https://reactjs.org/docs/react-dom-client.html)
+#### React DOM Client[^](https://reactjs.org/docs/react-dom-client.html)
 
 - react-dom/client:
 
@@ -124,7 +124,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
   \*hydrate란? Server에서 렌더링 된 HTML 코드를 Client에서 JS 코드와 매칭 시키는 것.  
   \*createRoot와 hydrateRoot 모두 "렌더링 중 오류에서 복구" 또는 "로깅을 위한 수화" 시 알림을 받기를 원하는 경우 `onRecoverableError`라는 새로운 옵션을 허용.
 
-#### React DOM Server [\*](https://reactjs.org/docs/react-dom-server.html)
+#### React DOM Server[^](https://reactjs.org/docs/react-dom-server.html)
 
 - react-dom/server:
 
@@ -133,7 +133,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
 
   \*기존 `renderToString`은 작동하지만 권장하지 않음.
 
-### 5. Strict Mode [\*](https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state)
+### 5. Strict Mode[^](https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state)
 
 - React 18 미만:
   - 구성 요소를 마운트하고 효과를 생성.
@@ -142,7 +142,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
 
 ### 6. Hooks
 
-#### useId [\*](https://reactjs.org/docs/hooks-reference.html#useid)
+#### useId[^](https://reactjs.org/docs/hooks-reference.html#useid)
 
 ```js
 const id = useId();
@@ -170,7 +170,7 @@ const id = useId();
   }
   ```
 
-#### useTransition [\*](https://reactjs.org/docs/hooks-reference.html#usetransition)
+#### useTransition[^](https://reactjs.org/docs/hooks-reference.html#usetransition)
 
 ```js
 const [isPending, startTransition] = useTransition();
@@ -178,7 +178,7 @@ const [isPending, startTransition] = useTransition();
 
 \*앞선 [Transitions](#2-transitions-httpsreactjsorgdocsreact-apihtmltransitions)에서 설명.
 
-#### useDeferredValue [\*](https://reactjs.org/docs/hooks-reference.html#usedeferredvalue)
+#### useDeferredValue[^](https://reactjs.org/docs/hooks-reference.html#usedeferredvalue)
 
 ```js
 const deferredValue = useDeferredValue(value);
@@ -213,7 +213,7 @@ const deferredValue = useDeferredValue(value);
   }
   ```
 
-#### useSyncExternalStore [\*](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
+#### useSyncExternalStore[^](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
 
 - useSyncExternalStore는 외부 저장소가 업데이트를 동기적으로 강제하여 동시 읽기를 지원하는 새로운 Hook.
 
@@ -221,7 +221,7 @@ const deferredValue = useDeferredValue(value);
 useSyncExternalStore is intended to be used by libraries, not application code.
 {{< /alert >}}
 
-#### useInsertionEffect [\*](https://reactjs.org/docs/hooks-reference.html#useinsertioneffect)
+#### useInsertionEffect[^](https://reactjs.org/docs/hooks-reference.html#useinsertioneffect)
 
 - useInsertionEffect는 CSS-in-JS 라이브러리가 렌더링 중에 스타일을 삽입할 때 생기는 성능 문제를 해결하는 새로운 Hook.
 - DOM이 변경된 후에 실행되지만 기존 레이아웃이 영향을 미치기 전에 새 레이아웃을 읽음.

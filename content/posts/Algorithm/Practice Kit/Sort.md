@@ -13,7 +13,7 @@ Tip. [객체 정렬 및 다중 정렬](https://yuchanjeong.github.io/posts/algor
 
 ## 문제
 
-### 1. K번째수 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42748)
+### 1. K번째수 (Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42748)
 
 ```js
 function solution(array, commands) {
@@ -27,7 +27,7 @@ function solution(array, commands) {
 }
 ```
 
-### 2. 가장 큰 수 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42746)
+### 2. 가장 큰 수 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42746)
 
 ```js
 function solution(numbers) {
@@ -41,7 +41,7 @@ function solution(numbers) {
 }
 ```
 
-### 3. H-Index (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42747?language=javascript)
+### 3. H-Index (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42747?language=javascript)
 
 ```js
 function solution(citations) {

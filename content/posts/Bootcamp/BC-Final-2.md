@@ -20,7 +20,7 @@ tags:
 - [Github](https://github.com/codestates/debate-ducks)
 - [Demo](https://debate-ducks.click/)
 
-## 1. Socket.io [\*](https://socket.io/)
+## 1. Socket.io[^](https://socket.io/)
 
 ### a. Init
 
@@ -325,7 +325,7 @@ socket.on("host_signal", (data) => {
   }
   ```
 
-## 3. Canvas [\*](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+## 3. Canvas[^](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
 - Video
 

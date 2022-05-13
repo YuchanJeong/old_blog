@@ -12,7 +12,7 @@ tags:
 
 ## NVM(Node Version Manager)
 
-1. Home Brew 설치 [^](/storage/wil/etc/homebrew)
+1. Home Brew 설치[⋯](/storage/wil/etc/homebrew)
    ```bash
    /bin/bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```

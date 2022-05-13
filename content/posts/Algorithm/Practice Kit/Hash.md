@@ -59,7 +59,7 @@ tags:
 
 ## 문제
 
-### 1. 완주하지 못한 선수 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42576?language=javascript#)
+### 1. 완주하지 못한 선수 (Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42576?language=javascript#)
 
 1. sort 사용
 
@@ -117,7 +117,7 @@ function solution(participant, completion) {
 }
 ```
 
-### 2. 위장 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42578?language=javascript)
+### 2. 위장 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42578?language=javascript)
 
 1. Map 사용
 
@@ -161,7 +161,7 @@ function solution(clothes) {
 }
 ```
 
-### 3. 베스트앨범 (Lv.3) [\*](https://programmers.co.kr/learn/courses/30/lessons/42579)
+### 3. 베스트앨범 (Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/42579)
 
 1. reduce 사용
 

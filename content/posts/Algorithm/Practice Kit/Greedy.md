@@ -16,7 +16,7 @@ tags:
 
 ## 문제
 
-### 1. 체육복 (Lv.1) [\*](https://programmers.co.kr/learn/courses/30/lessons/42862)
+### 1. 체육복 (Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42862)
 
 ```js
 function solution(n, lost, reserve) {
@@ -44,7 +44,7 @@ function solution(n, lost, reserve) {
 }
 ```
 
-### 2. 조이스틱 (Lv.2) [\*](https://programmers.co.kr/learn/courses/30/lessons/42860)
+### 2. 조이스틱 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42860)
 
 ```js
 // 처음에는 연속되는 A 중 가장 긴 것을 찾아서 되돌아갈지 말지 결정하려 했음.
