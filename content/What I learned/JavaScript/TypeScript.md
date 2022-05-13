@@ -10,10 +10,6 @@ tags:
 
 \*Ref. [TypeScript Cheat sheets](https://www.typescriptlang.org/cheatsheets)
 
-```ts
-data: valueType; //Type annotation
-```
-
 ## TS Init
 
 ### 1. 설치 및 사용
@@ -46,14 +42,18 @@ data: valueType; //Type annotation
 
 ## TS Data Type
 
+```ts
+data: valueType; //Type annotation
+```
+
 ### 1. Primitive Type
 
-1. string
-2. number
-3. boolean
-4. symbol (es6) [^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-5. null
-6. undefined
+1. : string
+2. : number
+3. : boolean
+4. : symbol (es6) [^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+5. : null
+6. : undefined
 
 ### 2. Non-Primitive Type
 
@@ -64,13 +64,13 @@ data: valueType; //Type annotation
    - : (타입1 | 타입2 | ...)[]
 3. tuple
    - : [타입1, 타입2, ...]
-4. ~~any~~
-5. unknown[⋯](/storage/wil/javascript/ex-typescript/#unknown)
+4. ~~: any~~
+5. : unknown[⋯](/storage/wil/javascript/ex-typescript/#unknown)
    - 타입을 확정한 뒤 할당 및 사용 가능
-6. never
+6. : never
    - 항상 오류를 출력하거나, 절대 값을 반환하지 않는 함수의 리턴 타입
    - 모든 타입의 서브타입이며 어떤 타입도 할당 불가
-7. void
+7. : void
    - 값을 반환하지 않는 함수의 리턴 타입
    - undefined만 할당 가능
 

@@ -12,7 +12,7 @@ showPagination: false
 - [TypeScript](/what-i-learned/javascript/typescript)
 - [React](/what-i-learned/javascript/react)
 - Next.js
-- Redux-toolkit
+- [Redux-toolkit](/what-i-learned/javascript/redux-toolkit)
 
 ## HTML & CSS
 
