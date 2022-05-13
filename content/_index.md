@@ -20,7 +20,7 @@ List of all posts. (except diaries and WIL)
 
 Posts by category.
 
-| Type & Expression                               | Details                                                |
+| Type                                            | Details                                                |
 | ----------------------------------------------- | ------------------------------------------------------ |
 | [\<Algorithm>](/categories/algorithm)           | 코딩 테스트를 위해 학습한 알고리즘 관련 내용           |
 | [\<Bootcamp>](/categories/bootcamp)             | 부트 캠프 기간 동안 기록한 TIL(Today I learned)과 회고 |
@@ -35,11 +35,11 @@ Posts by category.
 
 Posts by tag.
 
-| Type         | Expression | Details                        |
-| ------------ | ---------- | ------------------------------ |
-| Document Tag | (Tag)      | 개발 일지와 회고등의 문서 태그 |
-| Project Tag  | 'Tag'      | 프로젝트별로 지정된 태그       |
-| Normal Tag   | Tag        | 학습 주제별로 지정된 태그      |
+| Type           | Details                        |
+| -------------- | ------------------------------ |
+| Normal Tag     | 학습 주제별로 지정된 태그      |
+| 'Project Tag'  | 프로젝트별로 지정된 태그       |
+| (Document Tag) | 개발 일지와 회고등의 문서 태그 |
 
 ## WIL [📝](/wil)
 
