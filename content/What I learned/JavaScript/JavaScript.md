@@ -35,7 +35,7 @@ tags:
 
 ### 2. Data API
 
-1\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String">[String](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)</a>
+**1\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String">[String](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)</a>**
 
 <table>
   <thead>
@@ -81,7 +81,7 @@ tags:
   </tbody>
 </table>
 
-2\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> & <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a>
+**2\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> & <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a>**
 
 <table>
   <thead>
@@ -120,7 +120,7 @@ tags:
   </tbody>
 </table>
 
-3\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+**3\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>**
 
 <table>
   <thead>
@@ -204,7 +204,7 @@ tags:
 </table>
 <div>*beginIndex, endIndex의 값이 음수일 때, 끝에서부터의 위치를 의미</div><br>
 
-4\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+**4\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>**
 
 <table>
   <thead>
@@ -233,7 +233,7 @@ tags:
 
 ### 3. Etc
 
-1\) Destructuring Assignment(구조 분해 할당)
+**1\) Destructuring Assignment(구조 분해 할당)**
 
 > 배열/객체의 속성을 해체 후 그 값을 개별 변수에 할당하는 표현식
 
@@ -253,7 +253,7 @@ const { name, gender: sex, address = "Korea" } = obj;
 // name는 "X", sex는 "male", address는 "Korea"
 ```
 
-2\) Spread Syntax(전개 구문)
+**2\) Spread Syntax(전개 구문)**
 
 > ...data의 형태로 문자열·배열·객체를 펼치는 표현식
 
@@ -297,7 +297,7 @@ myTeam은 {
 */
 ```
 
-3\) Data Immutability [^](/storage/wil/javascript/ex-javascript/#data-immutability)
+**3\) Data Immutability [^](/storage/wil/javascript/ex-javascript/#data-immutability)**
 
 Primitive Type
 
@@ -312,7 +312,7 @@ Reference Type
 - 같은 주소(heap)를 참조할 때 하나 변화 시 일괄 변화
 - immutable
 
-4\) Data Copy
+**4\) Data Copy**
 
 Shallow Copy
 
@@ -324,11 +324,11 @@ Deep Copy
 
 ## JS Operator
 
-1\) 삼항 연산자(Ternary Operator)
+**1\) 삼항 연산자(Ternary Operator)**
 
 - 조건 ? 조건이 true일 때 : 조건이 false일 때
 
-2\) 논리 연산자(Logical Operator)
+**2\) 논리 연산자(Logical Operator)**
 
 <table>
   <thead>
@@ -355,7 +355,7 @@ Deep Copy
 </tbody>
 </table>
 
-3\) 비교 연산자(Comparison Operator)
+**3\) 비교 연산자(Comparison Operator)**
 
 <table>
   <thead>
@@ -390,7 +390,7 @@ Deep Copy
 </tbody>
 </table>
 
-4\) 산술 연산자(Arithmetic Operator)
+**4\) 산술 연산자(Arithmetic Operator)**
 
 <table>
   <thead>
@@ -422,7 +422,7 @@ Deep Copy
 </table>
 </details>
 
-5\) 할당 연산자(Assignment Operator)
+**5\) 할당 연산자(Assignment Operator)**
 
 <table>
   <thead>
@@ -453,7 +453,7 @@ Deep Copy
 </tbody>
 </table>
 
-6\) 증감 연산자(Increment Operator)
+**6\) 증감 연산자(Increment Operator)**
 
 <table>
   <thead>
@@ -474,7 +474,7 @@ Deep Copy
 
 ## JS Control Statement
 
-1\) Conditional Statement
+**1\) Conditional Statement**
 
 if 조건문
 
@@ -500,7 +500,7 @@ switch (대상) {
 
 \*switch문은 case가 문자열이나 정수일 때 주로 사용
 
-2\) Iterative Statement
+**2\) Iterative Statement**
 
 for 반복문
 
@@ -549,7 +549,7 @@ outer: for (item of arr) {
 
 ## JS Function
 
-1\) 함수 작성
+**1\) 함수 작성**
 
 1. Named Function Declaration(기명 함수 선언)
 
@@ -575,7 +575,7 @@ outer: for (item of arr) {
    // 생성자 함수로 사용할 수 없음
    ```
 
-2\) 고차 함수
+**2\) 고차 함수**
 
 1. Timer Function
    |Type|Details|
