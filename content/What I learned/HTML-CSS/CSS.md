@@ -206,9 +206,9 @@ Transform (변환)
    }
    ```
 
-1. `:root` [^](/storage/html-css/ex-css/#root-selector)
-1. `:is()` [^](/storage/html-css/ex-css/#pseudo-selector)
-1. module.css [^](/storage/html-css/ex-css/#css-module--classnames)
+1. `:root` [^](/storage/wil/html-css/ex-css/#root-selector)
+1. `:is()` [^](/storage/wil/html-css/ex-css/#pseudo-selector)
+1. module.css [^](/storage/wil/html-css/ex-css/#css-module--classnames)
 1. Etc
    - 우선순위는 `inline` > `#id` > `.class` > `tag` > `*` > 나중에 적힌 순  
      \*`value !important;`는 최우선 순위

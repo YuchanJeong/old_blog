@@ -297,7 +297,7 @@ myTeam은 {
 */
 ```
 
-3\) Data Immutability [^](/storage/javascript/ex-javascript/#data-immutability)
+3\) Data Immutability [^](/storage/wil/javascript/ex-javascript/#data-immutability)
 
 Primitive Type
 
@@ -584,12 +584,12 @@ outer: for (item of arr) {
    |setInterval(함수, ms)| 일정 시간 마다 함수 실행|
    |clearTimeout(변수)| 해당 Timeout 함수를 종료|
    |clearInterval(변수)| 해당 Interval 함수를 종료|
-2. Callback Function [^](/storage/javascript/ex-javascript/#callback)
+2. Callback Function [^](/storage/wil/javascript/ex-javascript/#callback)
    - 함수의 「인자」로 사용되는 함수
-3. Closure Function [^](/storage/javascript/ex-javascript/#closure)
+3. Closure Function [^](/storage/wil/javascript/ex-javascript/#closure)
    - 함수를 return하는 함수
    - 외부 함수의 「변수」를 내부 함수에서 재사용
-4. Curry Function [^](/storage/javascript/ex-javascript/#curry)
+4. Curry Function [^](/storage/wil/javascript/ex-javascript/#curry)
    - 함수를 return하는 함수
    - 외부 함수의 「인자」를 내부 함수에서 재사용
 
@@ -614,7 +614,7 @@ const 객체 = new 클래스();
 - 공통 메서드 함수는 생성자의 prototype에 할당해서 메모리 절약
 - 해당 객체 -> 생성자 -> 상위 생성자 -> Object (Prototype chain)
 
-\*[JS Class 예시](/storage/javascript/ex-javascript/#class)
+\*[JS Class 예시](/storage/wil/javascript/ex-javascript/#class)
 
 ## JS Asynchronous
 
@@ -671,7 +671,7 @@ const 객체 = new 클래스();
 | 일반 함수   | 호출      | 1. 일반 호출: 전역 객체<br/>2. 메서드 호출: 호출 객체 |
 | 화살표 함수 | 선언      | 화살표 함수를 감싸고 있는 외부 함수의 객체            |
 
-\*[This 예제](/storage/javascript/ex-javascript/#this)
+\*[This 예제](/storage/wil/javascript/ex-javascript/#this)
 
 ### 4. JSON
 
