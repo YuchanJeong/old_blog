@@ -204,7 +204,7 @@ const value = useContext(MyContext);
 자주 사용하는 Custom Hook 정리 필요
 {{< /alert >}}
 
-## Etc
+## React Etc
 
 **1\) CRA with TS**
 
