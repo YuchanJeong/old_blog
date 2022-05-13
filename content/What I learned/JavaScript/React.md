@@ -92,7 +92,7 @@ export default function SubComponent2({propsName}) => {
 
 \*_[Props Composition](https://ko.reactjs.org/docs/context.html#before-you-use-context): Component를 Props로 넘겨줌_
 
-**4\) State with useState()**[^](https://ko.reactjs.org/docs/hooks-reference.html#usestate)
+**4\) State with useState**[^](https://ko.reactjs.org/docs/hooks-reference.html#usestate)
 
 > 컴포넌트 내부에서 변화하는 값
 
@@ -124,11 +124,11 @@ const [state, setState] = useState({});
 setState((prevState) => ({ ...prevState, ...updatedValues }));
 ```
 
-\*참조형 데이터의 요소는 변경해도 재랜더링이 일어나지 않음
+\*_참조형 데이터의 요소는 변경해도 재랜더링이 일어나지 않음_
 
 ## React Hooks
 
-### 1. useEffect()[^](https://ko.reactjs.org/docs/hooks-reference.html#useeffect) [⋯](/storage/wil/javascript/ex-react/#useeffect)
+### 1. useEffect[^](https://ko.reactjs.org/docs/hooks-reference.html#useeffect) [⋯](/storage/wil/javascript/ex-react/#useeffect)
 
 ```jsx
 /* useEffect */
@@ -138,14 +138,14 @@ useEffect(() => {
 }[, [dependency]]])
 ```
 
-- Side Effect를 다룸
+- side effect 처리
 - 최초 수행 후 컴포넌트 재랜더링 마다 수행  
   \*_부모 컴포넌트 재랜더링, props 및 state 변경_
 - useEffect의 effect를 정리하는 함수 반환 가능 (clean-up)
 - 최초 수행 후 dependency 요소 변화 시만 수행  
   \*_dependency가 []일 때는 최초에만 수행_
 
-### 2. useRef()[^](https://ko.reactjs.org/docs/hooks-reference.html#useref) [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-UseRef.md)
+### 2. useRef[^](https://ko.reactjs.org/docs/hooks-reference.html#useref) [⋯](/storage/wil/javascript/ex-react/#useref)
 
 ```jsx
 /* 1) useRef */
@@ -163,12 +163,9 @@ const currentDom = ContainerRef.current;
 ```
 
 - 리액트에서 DOM에 접근 가능
-- ref.current는 값이 변해도 재랜더링이 일어나지 않아, 변화가 일어나면 안 되는 값을 저장할 때도 사용
+- ref.current는 값이 변해도 재랜더링이 일어나지 않아, 재랜더링이 일어나면 안 되는 데이터를 저장할 때도 사용
 
-### 3) [useCallback](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)() & [useMemo](https://ko.reactjs.org/docs/hooks-reference.html#usememo)() [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-useCallbackMemo.md)
-
-> 특정 함수나 결과값을 재사용  
-> \*profile 진행 후 사용 추천
+### 3. useCallback / useMemo[^](https://ko.reactjs.org/docs/hooks-reference.html#usecallback) [^](https://ko.reactjs.org/docs/hooks-reference.html#usememo) [⋯](/storage/wil/javascript/ex-react/#usecallback--usememo)
 
 ```jsx
 /* useCallback */
@@ -182,9 +179,9 @@ const memoizedCallback = useCallback(() => {
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-### 4) [useContext](https://ko.reactjs.org/docs/hooks-reference.html#usecontext)() [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-useContext1.md) [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-useContext2.md)
+- 특정 함수나 결과값을 재사용
 
-> 하위 컴포넌트 트리 전체에 데이터 제공
+### 4. useContext[^](https://ko.reactjs.org/docs/hooks-reference.html#usecontext) [⋯](/storage/wil/javascript/ex-react/#usecontext---1) [⋯](/storage/wil/javascript/ex-react/#usecontext---2)
 
 ```jsx
 /* 1) React.createContext */
@@ -199,17 +196,25 @@ const MyContext = React.createContext(defaultValue);
 const value = useContext(MyContext);
 ```
 
-### 5) [사용자 정의 Hook](https://ko.reactjs.org/docs/hooks-custom.html)
+- 하위 컴포넌트 트리 전체에 데이터 제공
+
+### 5) Custom Hook[^](https://ko.reactjs.org/docs/hooks-custom.html)
+
+{{< alert "circle-info" >}}
+자주 사용하는 Custom Hook 정리 필요
+{{< /alert >}}
 
 ## Etc
 
-### 1) CRA
+**1\) CRA with TS**
 
 ```bash
 npx create-react-app 프로젝트_이름 --template typescript
 ```
 
-### 2) React.memo()
+**2\) React.memo()**
 
 - 이전과 같은 props가 들어올 때 렌더링 스킵
-- 컴포넌트가 많이 반복되는 렌더링 요소(Ex. arr.map())를 가지고 있을 때 React.memo()로 감싸서 export
+- 많이 반복되는 렌더링 요소를 가지고 있을 때 React.memo()로 감싸서 export
+
+\*_memo(), useCallback(), useMemo() 등의 최적화는 profile 실시 후 적용_
