@@ -12,19 +12,21 @@ tags:
 
 ### 1. Data Type
 
-| Data Type | Details                                                                                                                                                                                                                                                                                                                                                                            |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| string    | - "...", '...'로 표현<br>- \`...${...}` (Template literals)<br>- +로 합침 (이때 다른 타입은 문자화)<br>- str[n]으로 character 읽음 (read only)<br>- String(data), data.toString()으로 문자화<br>- Escape Sequence<br>ㅤ└ \n (new line)<br>ㅤ└ \t (tap)                                                                                                                             |
-| number    | - Number(str)로 숫자화<br>ㅤ\*숫자가 아닌 문자열이 있으면 NaN<br>- parseInt(str)로 정수화, parseFloat(str)으로 숫자화<br>ㅤ\*숫자가 아닌 문자열이 뒤에 있으면 숫자인 부분까지 숫자화                                                                                                                                                                                               |
-| boolean   | true \| false                                                                                                                                                                                                                                                                                                                                                                      |
-| array     | - [..., ...]로 표현<br>- arr[i]로 element 읽음<br>- arr[i] = value로 arr의 i 인덱스에 value 할당<br>- new Array(n).fill(element)로 n개의 element를 가진 배열 생성<br >ㅤ└ .map(() => Array())로 이중 배열 생성<br>- [...new Set(arr)]로 중복 요소를 제거한 새로운 Set 객체 생성 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Set">\*</a> |
-| object    | - { key: value, method() {}, }로 표현<br>- odj.key와 obj["key"]로 value 읽음<br>- obj["key"] = value로 obj의 key에 value (생성)할당<br>- delete obj["key"]로 key-value 삭제<br>- "key" in obj로 key 존재 여부 판단<br >- Optional Chaining<br >ㅤ└ obj.key1?.key2는 key1이 있을 때만 key2 확인                                                                                     |
-| null      | 의도적으로 빔                                                                                                                                                                                                                                                                                                                                                                      |
-| undefined | 값이 할당되지 않음                                                                                                                                                                                                                                                                                                                                                                 |
+| Data Type | Details                                                                                                                                                                                                                                                                                                                                                                           |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| string    | - "...", '...'로 표현<br>- \`...${...}` (Template literals)<br>- +로 합침 (이때 다른 타입은 문자화)<br>- str[n]으로 character 읽음 (read only)<br>- String(data), data.toString()으로 문자화<br>- Escape Sequence<br>ㅤ└ \n (new line)<br>ㅤ└ \t (tap)                                                                                                                            |
+| number    | - Number(str)로 숫자화<br>ㅤ\*_숫자가 아닌 문자열이 있으면 NaN_<br>- parseInt(str)로 정수화, parseFloat(str)으로 숫자화<br>ㅤ\*_숫자가 아닌 문자열이 뒤에 있으면 숫자인 부분까지 숫자화_                                                                                                                                                                                          |
+| boolean   | true \| false                                                                                                                                                                                                                                                                                                                                                                     |
+| array     | - [..., ...]로 표현<br>- arr[i]로 element 읽음<br>- arr[i] = value로 arr의 i 인덱스에 value 할당<br>- new Array(n).fill(element)로 n개의 element를 가진 배열 생성<br >ㅤ└ .map(() => Array())로 이중 배열 생성<br>- [...new Set(arr)]로 중복 요소를 제거한 새로운 Set 객체 생성 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Set">^</a> |
+| object    | - { key: value, method() {}, }로 표현<br>- odj.key와 obj["key"]로 value 읽음<br>- obj["key"] = value로 obj의 key에 value (생성)할당<br>- delete obj["key"]로 key-value 삭제<br>- "key" in obj로 key 존재 여부 판단<br >- Optional Chaining<br >ㅤ└ obj.key1?.key2는 key1이 있을 때만 key2 확인                                                                                    |
+| null      | 의도적으로 빔                                                                                                                                                                                                                                                                                                                                                                     |
+| undefined | 값이 할당되지 않음                                                                                                                                                                                                                                                                                                                                                                |
 
-\***falsy**: false, null, undefined, "", 0, NaN (나머지는 truthy)
+**falsy**
 
-\***typeof**[^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
+- false, null, undefined, "", 0, NaN (나머지는 truthy)
+
+**typeof**[^](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
 
 - 평가 전 데이터 타입을 string으로 반환
 - function은 "function"
@@ -49,7 +51,7 @@ tags:
     </tr>
     <tr>
       <td>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>(searchValue[, fromIndex])</td>
-      <td>searchValue의 첫 번째 등장 인덱스,<br>찾을 수 없으면 -1<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">lastIndexOf</a>()는 마지막 등장 인덱스</td>
+      <td>searchValue의 첫 번째 등장 인덱스,<br>찾을 수 없으면 -1<br><span style="font-style: italic;">*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">lastIndexOf</a>()는 마지막 등장 인덱스</span></td>
     </tr>
     <tr>
       <td>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes">includes</a>(searchValue[, fromIndex])</td>
@@ -65,11 +67,11 @@ tags:
     </tr>
     <tr>
       <td>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/match">match</a>(<a href="https://github.com/YuchanJeong/_WIL/blob/master/Etc/Regex.md">regexp</a>)</td>
-      <td>정규식과 일치하는 문자열을 포함하는 array,<br>찾을 수 없으면 null<br>*g옵션이 없을 때, 캡처된 그룹 및 정보도 배열에 포함</td>
+      <td>정규식과 일치하는 문자열을 포함하는 array,<br>찾을 수 없으면 null<br><span style="font-style: italic;">*g옵션이 없을 때 캡처된 그룹 및 정보도 배열에 포함</span></td>
     </tr>
     <tr>
       <td>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace">replace</a>(regexp|subStr, newSubStr|function)</td>
-      <td>패턴과 처음 일치하는 부분이 교체된 새로운 string<br>*.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">replaceAll</a>()은 모든 일치 문자 교체</td>
+      <td>패턴과 처음 일치하는 부분이 교체된 새로운 string<br><span style="font-style: italic;">*.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll">replaceAll</a>()은 모든 일치 문자 교체</span></td>
     </tr>
       <td>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">toUpperCase</a>()<br>str.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase">toLowerCase</a>()</td>
       <td>모두 대문자로 바꾼 string<br>모두 소문자로 바꾼 string</td>
@@ -91,7 +93,7 @@ tags:
   <tbody>
     <tr>
       <td>num.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">toFixed</a>([digits])</td>
-      <td>고정 소수점 표기법을 사용하여 나타낸 수의 string<br>*digits: 소수점 뒤에 나타날 자릿수, 기본값 0</td>
+      <td>고정 소수점 표기법을 사용하여 나타낸 수의 string<br><span style="font-style: italic;">*digits: 소수점 뒤에 나타날 자릿수, 기본값 0</span></td>
     </tr>
     <tr>
       <td>Math.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/abs">abs</a>(x)</td>
@@ -130,11 +132,11 @@ tags:
   <tbody>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length">length</a></td>
-      <td>배열 안의 요소 수<br>*arr.length === 0은 빈 배열</td>
+      <td>배열 안의 요소 수<br><span style="font-style: italic;">*arr.length === 0은 빈 배열</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">indexOf</a>(searchValue[, beginIndex])</td>
-      <td>searchValue의 첫 번째 등장 인덱스,<br>찾을 수 없으면 -1<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">lastIndexOf</a>()는 마지막 등장 인덱스</td>
+      <td>searchValue의 첫 번째 등장 인덱스,<br>찾을 수 없으면 -1<br><span style="font-style: italic;">*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">lastIndexOf</a>()는 마지막 등장 인덱스</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">includes</a>(searchValue[, beginIndex])</td>
@@ -146,7 +148,7 @@ tags:
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/join">join</a>([separator])</td>
-      <td>모든 요소를 separator로 구분지어 연결한 string<br>*separator를 생략하면 쉼표(,)로 구분</td>
+      <td>모든 요소를 separator로 구분지어 연결한 string<br><span style="font-style: italic;">*separator를 생략하면 쉼표(,)로 구분</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">concat</a>([value1[, ...[, valueN]]])</td>
@@ -154,7 +156,7 @@ tags:
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>(callback(currentValue<br>[, index[, array]])[, thisArg])</td>
-      <td>undefined<br>*콜백 함수를 각 요소에 대해 실행</td>
+      <td>undefined<br><span style="font-style: italic;">*콜백 함수를 각 요소에 대해 실행</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>(callback(currentValue<br>[, index[, array]])[, thisArg])</td>
@@ -174,11 +176,11 @@ tags:
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a>(callback(accValue[, curValue<br>[, curIndex[, array)[, initialValue]]]])</td>
-      <td>콜백 함수의 누적 결과 값(last accValue)<br>*initialValue는 첫 accValue의 값이며,<br>생략 시 arr[0]이 첫 accValue, arr[1]이 첫 curValue</td>
+      <td>콜백 함수의 누적 결과 값(last accValue)<br><span style="font-style: italic;">*initialValue는 첫 accValue의 값이며,<br>생략 시 arr[0]이 첫 accValue, arr[1]이 첫 curValue</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a>([compareFunction])</td>
-      <td>정열된 array(원본)<br>*Ex. [3,2,1].sort((a, b) => a - b) -> [1,2,3]</td>
+      <td>정열된 array(원본)</td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">reverse</a>()</td>
@@ -186,23 +188,25 @@ tags:
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>(beginIndex[, deleteCount<br>[, item1[, ...[, itemN]]]])</td>
-      <td>제거한 요소를 담은 array<br>*배열(원본)의 요소를 교체<br>*deleteCount를 생략하면 배열(원본)의 마지막까지 삭제</td>
+      <td>제거한 요소를 담은 array<br><span style="font-style: italic;">*배열(원본)의 요소를 교체<br>*deleteCount를 생략하면 배열(원본)의 마지막까지 삭제</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push</a>(item1[, ...[, itemN]])</td>
-      <td>요소가 추가된 배열의 새로운 length<br>*배열(원본)의 끝에 하나 이상의 요소를 추가<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift</a>()는 배열(원본)의 앞에 추가</td>
+      <td>요소가 추가된 배열의 새로운 length<br><span style="font-style: italic;">*배열(원본)의 끝에 하나 이상의 요소를 추가<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">unshift</a>()는 배열(원본)의 앞에 추가</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a>(item1[, ...[, itemN]])</td>
-      <td>배열의 마지막 item<br>*배열(원본)의 마지막 요소 삭제<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift</a>()는 배열(원본)의 첫 번째 요소 삭제</td>
+      <td>배열의 마지막 item<br><span style="font-style: italic;">*배열(원본)의 마지막 요소 삭제<br>*.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">shift</a>()는 배열(원본)의 첫 번째 요소 삭제</span></td>
     </tr>
     <tr>
       <td>arr.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">flat</a>([depth])</td>
-      <td>depth 번 만큼 다차원 배열을 푼 array<br>*depth 기본값은 1</td>
+      <td>depth 번 만큼 다차원 배열을 푼 array<br><span style="font-style: italic;">*depth 기본값은 1</span></td>
     </tr>
   </tbody>
 </table>
-<div>*beginIndex, endIndex의 값이 음수일 때, 끝에서부터의 위치를 의미</div><br>
+
+\*_beginIndex, endIndex의 값이 음수일 때, 끝에서부터의 위치를 의미_
+<br>
 
 **4\) <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>**
 
@@ -214,15 +218,15 @@ tags:
   <tbody>
     <tr>
       <td>Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">assign</a>(target, ...sources)</td>
-      <td>출처 객체들로부터 하나 이상의 속성들이 복사된 목표 object<br>*동일한 키를 갖는 속성은 뒤의 출처 값으로 덮어쓰여짐</td>
+      <td>출처 객체들로부터 하나 이상의 속성들이 복사된 목표 object<br><span style="font-style: italic;">*동일한 키를 갖는 속성은 뒤의 출처 값으로 덮어쓰여짐</span></td>
     </tr>
     <tr>
       <td>Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/keys">keys</a>(obj)</td>
-      <td>모든 속성의 키(문자열)를 반환한 array<br>*Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/values">values</a>(obj)는 값의 array</td>
+      <td>모든 속성의 키(문자열)를 반환한 array<br><span style="font-style: italic;">*Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/values">values</a>(obj)는 값의 array</span></td>
     </tr>
     <tr>
       <td>Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries">fromEntries</a>(arr)</td>
-      <td>[key, value] 형태의 다차원 배열을 변환한 object<br>*Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">entries</a>(obj)는 [key, value] 형태의 이차원 array</td>
+      <td>[key, value] 형태의 다차원 배열을 변환한 object<br><span style="font-style: italic;">*Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">entries</a>(obj)는 [key, value] 형태의 이차원 array</span></td>
     </tr>
     <tr>
       <td>Object.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty">hasOwnProperty</a>(key)</td>
@@ -498,7 +502,7 @@ switch (대상) {
 }
 ```
 
-\*switch문은 case가 문자열이나 정수일 때 주로 사용
+\*_switch문은 case가 문자열이나 정수일 때 주로 사용_
 
 **2\) Iterative Statement**
 
@@ -545,7 +549,7 @@ outer: for (item of arr) {
 }
 ```
 
-\*while문은 반복 횟수가 정해져있지 않을 때 주로 사용
+\*_while문은 반복 횟수가 정해져있지 않을 때 주로 사용_
 
 ## JS Function
 
@@ -614,7 +618,7 @@ const 객체 = new 클래스();
 - 공통 메서드 함수는 생성자의 prototype에 할당해서 메모리 절약
 - 해당 객체 -> 생성자 -> 상위 생성자 -> Object (Prototype chain)
 
-\*[JS Class 예시](/storage/wil/javascript/ex-javascript/#class)
+\*_[JS Class 예시](/storage/wil/javascript/ex-javascript/#class)_
 
 ## JS Asynchronous
 
@@ -626,24 +630,24 @@ const 객체 = new 클래스();
 
 ### 1. DOM API[^](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model)
 
-| API                                                                                                                                                                               | Details                                                                                                                                                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| document.[querySelector](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector)("selector")                                                                        | 문서 내에서 selector와 일치하는 첫 번째 요소                                                                                                                                                                             |
-| document.[querySelectorAll](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll)("selector")                                                                  | 문서 내에서 selector와 일치하는 NodeList<br>\*NodeList[i]로 개별 요소 선택<br>\*for이나 forEach로 요소들 반복처리                                                                                                        |
-| document.[createElement](https://developer.mozilla.org/ko/docs/Web/API/Document/createElement)("tag")                                                                             | 문서 내에 해당 tag 요소 생성<br>\*아직 DOM tree에 연결 X                                                                                                                                                                 |
-| .[appendChild](https://developer.mozilla.org/ko/docs/Web/API/Node/appendChild)(aChild)                                                                                            | 대상의 마지막 자식 노드로 붙임<br>\*DOM tree에 연결                                                                                                                                                                      |
-| .[addEventListener](https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener)("event", functionRef)                                                             | 이벤트 발생 시 함수 호출<br>\*[event](https://developer.mozilla.org/ko/docs/Web/Events): click\|focus\|blur\|scroll<br>\*[event.target](https://developer.mozilla.org/ko/docs/Web/API/Event/target)은 이벤트의 대상 요소 |
-| .[onclick](https://developer.mozilla.org/ko/docs/Web/API/GlobalEventHandlers/onclick) = functionRef                                                                               | 대상 클릭 시 함수 호출                                                                                                                                                                                                   |
-| .[classList](https://developer.mozilla.org/ko/docs/Web/API/Element/classList)<br>ㅤ.add(String [, String [, ...]])<br>ㅤ.remove(String [, String [, ...]])<br>ㅤ.contains(String) | <br>클래스 추가<br>클래스 삭제<br>클래스 포함 여부                                                                                                                                                                       |
-| .[setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)("attribute", "value")<br>.[attribute] = "value"                                            | 속성(HTML) 할당                                                                                                                                                                                                          |
-| .[style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style).[property] = "value"                                                                                 | 특성(CSS) 할당                                                                                                                                                                                                           |
-| .[textContent](https://developer.mozilla.org/ko/docs/Web/API/Node/textContent) = "content"                                                                                        | 내용 할당<br>\*[~~innerText~~](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/innerText)(보안상 사용 금지)와 유사                                                                                             |
-| .remove()                                                                                                                                                                         | 노드를 메모리에서 삭제                                                                                                                                                                                                   |
-| .removeChild(aChild)                                                                                                                                                              | 대상과 자식 노드의 연결을 끊음                                                                                                                                                                                           |
-| .children                                                                                                                                                                         | 자식 요소 목록<br>\*.firstElementChild는 첫 번째 자식<br>\*.lastElementChild는 마지막 자식                                                                                                                               |
-| .parentsElement                                                                                                                                                                   | 부모 요소                                                                                                                                                                                                                |
+| API                                                                                                                                                                               | Details                                                                                                                                                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| document.[querySelector](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector)("selector")                                                                        | 문서 내에서 selector와 일치하는 첫 번째 요소                                                                                                                                                                                 |
+| document.[querySelectorAll](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelectorAll)("selector")                                                                  | 문서 내에서 selector와 일치하는 NodeList<br>\*_NodeList[i]로 개별 요소 선택_<br>\*_for이나 forEach로 요소들 반복처리_                                                                                                        |
+| document.[createElement](https://developer.mozilla.org/ko/docs/Web/API/Document/createElement)("tag")                                                                             | 문서 내에 해당 tag 요소 생성<br>\*_아직 DOM tree에 연결 X_                                                                                                                                                                   |
+| .[appendChild](https://developer.mozilla.org/ko/docs/Web/API/Node/appendChild)(aChild)                                                                                            | 대상의 마지막 자식 노드로 붙임<br>\*D*OM tree에 연결*                                                                                                                                                                        |
+| .[addEventListener](https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener)("event", functionRef)                                                             | 이벤트 발생 시 함수 호출<br>\*_[event](https://developer.mozilla.org/ko/docs/Web/Events): click\|focus\|blur\|scroll_<br>\*_[event.target](https://developer.mozilla.org/ko/docs/Web/API/Event/target)은 이벤트의 대상 요소_ |
+| .[onclick](https://developer.mozilla.org/ko/docs/Web/API/GlobalEventHandlers/onclick) = functionRef                                                                               | 대상 클릭 시 함수 호출                                                                                                                                                                                                       |
+| .[classList](https://developer.mozilla.org/ko/docs/Web/API/Element/classList)<br>ㅤ.add(String [, String [, ...]])<br>ㅤ.remove(String [, String [, ...]])<br>ㅤ.contains(String) | <br>클래스 추가<br>클래스 삭제<br>클래스 포함 여부                                                                                                                                                                           |
+| .[setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)("attribute", "value")<br>.[attribute] = "value"                                            | 속성(HTML) 할당                                                                                                                                                                                                              |
+| .[style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style).[property] = "value"                                                                                 | 특성(CSS) 할당                                                                                                                                                                                                               |
+| .[textContent](https://developer.mozilla.org/ko/docs/Web/API/Node/textContent) = "content"                                                                                        | 내용 할당<br>\*_[~~innerText~~](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/innerText)(보안상 사용 금지)와 유사_                                                                                               |
+| .remove()                                                                                                                                                                         | 노드를 메모리에서 삭제                                                                                                                                                                                                       |
+| .removeChild(aChild)                                                                                                                                                              | 대상과 자식 노드의 연결을 끊음                                                                                                                                                                                               |
+| .children                                                                                                                                                                         | 자식 요소 목록<br>\*_.firstElementChild는 첫 번째 자식_<br>\*_.lastElementChild는 마지막 자식_                                                                                                                               |
+| .parentsElement                                                                                                                                                                   | 부모 요소                                                                                                                                                                                                                    |
 
-\***functionRef** (Event Handler)
+**functionRef** (Event Handler)
 
 - 함수의 실행이 아닌 함수 자체를 넣어야함
 - 아무런 인자를 담지 않으면 event 객체만 전달
@@ -661,8 +665,8 @@ const 객체 = new 클래스();
 | ~~Function Level Scope~~ | ~~var~~<br/>~~중복 선언 가능~~                                                                                                                                                  |
 | Block Level Scope        | let<br/>ㅤ중복 선언 불가능<br/>ㅤ값의 재할당 가능<br/>const<br/>ㅤ중복 선언 불가능<br/>ㅤ값의 재할당 불가능, 초깃값 필수<br/>ㅤ참조형 데이터의 요소는 재할당, 추가, 삭제 가능ㅤ |
 
-\*Scope Chaining (하위 스코프 우선)  
-\*Lexical Scoping은 선언(호출 X)된 위치에 따라 상위 스코프 결정
+\*_Scope Chaining (하위 스코프 우선)_  
+\*_Lexical Scoping은 선언(호출 X)된 위치에 따라 상위 스코프 결정_
 
 ### 3. This
 
@@ -671,7 +675,7 @@ const 객체 = new 클래스();
 | 일반 함수   | 호출      | 1. 일반 호출: 전역 객체<br/>2. 메서드 호출: 호출 객체 |
 | 화살표 함수 | 선언      | 화살표 함수를 감싸고 있는 외부 함수의 객체            |
 
-\*[This 예제](/storage/wil/javascript/ex-javascript/#this)
+_\*_[This 예제](/storage/wil/javascript/ex-javascript/#this)\_
 
 ### 4. JSON
 
@@ -680,7 +684,7 @@ const 객체 = new 클래스();
 | JSON.stringify(obj) | obj -> jsonStr, 직렬화(serialize)     |
 | JSON.parse(jsonSrt) | jsonStr -> obj, 역직렬화(deserialize) |
 
-\*JSON(JavaScript Object Notation)문자열은 쌍따옴표("")만 사용 가능
+\*_JSON(JavaScript Object Notation)문자열은 쌍따옴표("")만 사용 가능_
 
 ### 5. Export & Import
 

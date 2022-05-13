@@ -211,9 +211,9 @@ Transform (변환)
 1. module.css[⋯](/storage/wil/html-css/ex-css/#css-module--classnames)
 1. Etc
    - 우선순위는 `inline` > `#id` > `.class` > `tag` > `*` > 나중에 적힌 순  
-     \*`value !important;`는 최우선 순위
+     \*_`value !important;`는 최우선 순위_
    - 방향 단축 특성은 "상하 좌우", "상 좌우 하", "상 우 하 좌"  
-     \*`margin`, `padding`, `gap`에 적용
+     \*_`margin`, `padding`, `gap`에 적용_
    - 문자관련 특성은 자동 상속
    - 색상: white, #fff, rgb(0,0,0), rgba(0,0,0,.5)
    - 크기: px, %, vw, vh, em, rem

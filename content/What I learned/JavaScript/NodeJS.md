@@ -49,8 +49,7 @@ tags:
 | npm run [명령]                        | package.json의 script에 "명령": "명령어" 등록 후 사용                     |
 | npx [명령어]                          | 패키지의 명령어 바로 사용                                                 |
 
-\*[패키지명]@[패키지 버전]으로 특정 버전 패키지 설치 가능<br/>
-\*.cache/, dist/, node_modules/는 package.json에 기록되어 있어서 버전 관리 제외 필요
+\*_[패키지명]@[패키지 버전]으로 특정 버전 패키지 설치 가능_<br/>\*_.cache/, dist/, node_modules/는 package.json에 기록되어 있어서 버전 관리 제외 필요_
 
 ## PACKAGE
 

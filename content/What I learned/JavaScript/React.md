@@ -103,7 +103,7 @@ export default function Component() {
   /* useState */
   const [state, setState] = useState(initialState);
 
-  // setState
+  // setState로만 state 변경 가능
   const setStateFunc = (event) => {
     setState(event.target.value);
   };
@@ -124,7 +124,7 @@ const [state, setState] = useState({});
 setState((prevState) => ({ ...prevState, ...updatedValues }));
 ```
 
-\*참조형 데이터 요소의 값은 변경해도 감지하지 못함
+\*참조형 데이터의 요소는 변경해도 재랜더링이 일어나지 않음
 
 ## React Hooks
 
@@ -138,18 +138,14 @@ useEffect(() => {
 }[, [dependency]]])
 ```
 
-- side-effect를 다룸
-- 최초 수행 후 "부모 컴포넌트 재랜더링" 혹은 "props 및 state의 변화" 시마다 수행
-- useEffect의 effect를 정리(clean-up)하는 함수 반환 가능
-- dependency가 []일 때, 최초에만 수행
-- dependency가 있을 때, 최초 수행 후 dependency의 요소 변화 시마다 수행
-
-\*Primitive Type의 변화만 감지 가능
+- Side Effect를 다룸
+- 최초 수행 후 컴포넌트 재랜더링 마다 수행  
+  \*_부모 컴포넌트 재랜더링, props 및 state 변경_
+- useEffect의 effect를 정리하는 함수 반환 가능 (clean-up)
+- 최초 수행 후 dependency 요소 변화 시만 수행  
+  \*_dependency가 []일 때는 최초에만 수행_
 
 ### 2. useRef()[^](https://ko.reactjs.org/docs/hooks-reference.html#useref) [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-UseRef.md)
-
-> 리액트에서 DOM에 접근 가능  
-> \*ref.current는 값이 변해도 재랜더링이 일어나지 않아, 변화가 일어나면 안 되는 값을 저장할 때도 사용
 
 ```jsx
 /* 1) useRef */
@@ -165,6 +161,9 @@ return (
 // 3) .current
 const currentDom = ContainerRef.current;
 ```
+
+- 리액트에서 DOM에 접근 가능
+- ref.current는 값이 변해도 재랜더링이 일어나지 않아, 변화가 일어나면 안 되는 값을 저장할 때도 사용
 
 ### 3) [useCallback](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)() & [useMemo](https://ko.reactjs.org/docs/hooks-reference.html#usememo)() [⋯](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-React-useCallbackMemo.md)
 

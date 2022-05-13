@@ -23,7 +23,7 @@ tags:
 | 8   | Scalability          | How your application adapts as your team, data, and traffic grow.                         |
 | 9   | Developer Experience | Your team’s experience building and maintaining your application.                         |
 
-\*For each part of your application, you will need to decide whether you will build a solution yourself or use other tools such as libraries and frameworks.
+\*_For each part of your application, you will need to decide whether you will build a solution yourself or use other tools such as libraries and frameworks._
 
 ### 2. What is React?
 
@@ -115,7 +115,7 @@ When a user visits a web page, the server returns an HTML file to the browser. T
 - You need a JavaScript compiler, such as a **Babel**, to transform your JSX code into regular JavaScript.
 - React is a library that contains reusable snippets of code that perform tasks on your behalf - in this case, updating the UI.
 
-\*If you’d like to learn more, take a look at the [UI trees](https://beta.reactjs.org/learn/preserving-and-resetting-state#the-ui-tree) and the [render method](https://beta.reactjs.org/apis/render) sections in the React Documentation.
+\*_If you’d like to learn more, take a look at the [UI trees](https://beta.reactjs.org/learn/preserving-and-resetting-state#the-ui-tree) and the [render method](https://beta.reactjs.org/apis/render) sections in the React Documentation._
 
 ### 3. Building UI with Components
 
@@ -201,7 +201,7 @@ function HomePage() {
 }
 ```
 
-\*If you’d like to learn more, take a look at the [Adding Interactivity](https://beta.reactjs.org/learn/adding-interactivity) and [Managing State](https://beta.reactjs.org/learn/managing-state) sections in the React Documentation.
+\*_If you’d like to learn more, take a look at the [Adding Interactivity](https://beta.reactjs.org/learn/adding-interactivity) and [Managing State](https://beta.reactjs.org/learn/managing-state) sections in the React Documentation._
 
 ## From React to Next.js
 

@@ -56,7 +56,7 @@ export async function getStaticProps() {
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   ```
 
-  \*Each markdown file has a metadata section at the top containing title and date. This is called **YAML Front Matter**, which can be parsed using a library called **gray-matter**.
+  \*_Each markdown file has a metadata section at the top containing title and date. This is called **YAML Front Matter**, which can be parsed using a library called **gray-matter**._
 
   ```
   npm install gray-matter
@@ -104,7 +104,7 @@ export async function getStaticProps() {
   }
   ```
 
-  \*It's usually convention to use lib or utils
+  \*_It's usually convention to use lib or utils._
 
 - Update `pages/index.js`
 
@@ -200,7 +200,7 @@ Create a page at /pages/posts/[id].js
   }
   ```
 
-  \***Important**: Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name). Otherwise, getStaticPaths will fail.
+  \*_**Important**: Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name). Otherwise, getStaticPaths will fail._
 
 - Create `pages/posts/[id].js`
 

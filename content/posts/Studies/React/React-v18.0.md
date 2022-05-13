@@ -121,8 +121,8 @@ this is an in-depth feature that we don’t expect most users to need to think a
   - `createRoot`: 루트를 만드는 새로운 방법. `ReactDOM.render` 대신 사용.
   - `hydrateRoot`: 서버 렌더링 응용 프로그램을 hydrate 하는 새로운 방법. 새로운 React DOM Server API와 함께 `ReactDOM.hydrate` 대신 사용.
 
-  \*hydrate란? Server에서 렌더링 된 HTML 코드를 Client에서 JS 코드와 매칭 시키는 것.  
-  \*createRoot와 hydrateRoot 모두 "렌더링 중 오류에서 복구" 또는 "로깅을 위한 수화" 시 알림을 받기를 원하는 경우 `onRecoverableError`라는 새로운 옵션을 허용.
+  \*_hydrate란? Server에서 렌더링 된 HTML 코드를 Client에서 JS 코드와 매칭 시키는 것._  
+  \*_createRoot와 hydrateRoot 모두 "렌더링 중 오류에서 복구" 또는 "로깅을 위한 수화" 시 알림을 받기를 원하는 경우 `onRecoverableError`라는 새로운 옵션을 허용._
 
 #### React DOM Server[^](https://reactjs.org/docs/react-dom-server.html)
 
@@ -131,7 +131,7 @@ this is an in-depth feature that we don’t expect most users to need to think a
   - `renderToPipeableStream`: Node 환경용.
   - `renderToReadableStream`: Deno와 Cloudflare workers 같은 최신 Edge runtime 환경용.
 
-  \*기존 `renderToString`은 작동하지만 권장하지 않음.
+  \*_기존 `renderToString`은 작동하지만 권장하지 않음._
 
 ### 5. Strict Mode[^](https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state)
 
@@ -176,7 +176,7 @@ const id = useId();
 const [isPending, startTransition] = useTransition();
 ```
 
-\*앞선 [Transitions](#2-transitions-httpsreactjsorgdocsreact-apihtmltransitions)에서 설명.
+\*_앞선 [Transitions](#2-transitions-httpsreactjsorgdocsreact-apihtmltransitions)에서 설명._
 
 #### useDeferredValue[^](https://reactjs.org/docs/hooks-reference.html#usedeferredvalue)
 

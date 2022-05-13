@@ -17,7 +17,7 @@ tags:
    npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
    ```
 
-   \*If it doesn’t work, please take a look at this [page](https://github.com/vercel/next-learn/blob/master/basics/errors/install.md).
+   \*_If it doesn’t work, please take a look at this [page](https://github.com/vercel/next-learn/blob/master/basics/errors/install.md)._
 
 2. Run the development server
 
@@ -47,7 +47,7 @@ Simply create a JS file under the pages directory, and the path to the file beco
   }
   ```
 
-  \*The component can have any name, but you must export it as a default export.
+  \*_The component can have any name, but you must export it as a default export._
 
 ### Link Component
 
@@ -68,7 +68,7 @@ In Next.js, you use the Link Component from next/link to wrap the \<a> tag. \<Li
   </h1>
   ```
 
-  \*`{' '}` adds an empty space, which is used to divide text over multiple lines.
+  \*_`{' '}` adds an empty space, which is used to divide text over multiple lines._
 
 - pages/posts/first-post.js
 
@@ -89,8 +89,8 @@ In Next.js, you use the Link Component from next/link to wrap the \<a> tag. \<Li
   }
   ```
 
-\*If you need to add attributes like, for example, className, add it to the a tag, not to the Link tag. [Here’s an example](https://github.com/vercel/next-learn/blob/master/basics/snippets/link-classname-example.js).  
-\*You can learn more about the Link component [in the API reference for next/link](https://nextjs.org/docs/api-reference/next/link) and routing in general [in the routing documentation](https://nextjs.org/docs/routing/introduction).
+\*_If you need to add attributes like, for example, className, add it to the a tag, not to the Link tag. [Here’s an example](https://github.com/vercel/next-learn/blob/master/basics/snippets/link-classname-example.js)._  
+\*_You can learn more about the Link component [in the API reference for next/link](https://nextjs.org/docs/api-reference/next/link) and routing in general [in the routing documentation](https://nextjs.org/docs/routing/introduction)._
 
 ### Code splitting and prefetching
 
@@ -119,8 +119,8 @@ Next.js can serve static assets, like images, under the top-level public directo
   );
   ```
 
-\*To learn more about Automatic Image Optimization, check out the [documentation](https://nextjs.org/docs/basic-features/image-optimization).  
-\*To learn more about the Image component, check out the [API reference for next/image](https://nextjs.org/docs/api-reference/next/image).
+\*_To learn more about Automatic Image Optimization, check out the [documentation](https://nextjs.org/docs/basic-features/image-optimization)._  
+\*_To learn more about the Image component, check out the [API reference for next/image](https://nextjs.org/docs/api-reference/next/image)._
 
 ### Metadata
 
@@ -137,8 +137,8 @@ Next.js can serve static assets, like images, under the top-level public directo
   </Head>
   ```
 
-\*To learn more about the Head component, check out the [API reference for next/head](https://nextjs.org/docs/api-reference/next/head).  
-\*If you want to customize the \<html> tag, for example to add the lang attribute, you can do so by creating a `pages/\_document.js` file. Learn more in the [custom Document documentation](https://nextjs.org/docs/advanced-features/custom-document).
+\*_To learn more about the Head component, check out the [API reference for next/head](https://nextjs.org/docs/api-reference/next/head)._  
+\*_If you want to customize the \<html> tag, for example to add the lang attribute, you can do so by creating a `pages/\_document.js` file. Learn more in the [custom Document documentation](https://nextjs.org/docs/advanced-features/custom-document)._
 
 ### Third-Party JavaScript
 
@@ -163,7 +163,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   - strategy controls when the third-party script should load. A value of lazyOnload tells Next.js to load this particular script lazily during browser idle time
   - onLoad is used to run any JavaScript code immediately after the script has finished loading. In this example, we log a message to the console that mentions that the script has loaded correctly
 
-\*To learn more about the Script component, check out the [documentation](https://nextjs.org/docs/basic-features/script).
+\*_To learn more about the Script component, check out the [documentation](https://nextjs.org/docs/basic-features/script)._
 
 ### Layout Component
 
@@ -223,7 +223,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   }
   ```
 
-  \*You need to restart the development server when you add pages/\_app.js.
+  \*_You need to restart the development server when you add pages/\_app.js._
 
 - styles/global.css
 
@@ -257,7 +257,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   }
   ```
 
-  \*Only inside pages/\_app.js you can import global CSS files.
+  \*_Only inside pages/\_app.js you can import global CSS files._
 
 ### Polishing Layout
 
@@ -441,8 +441,7 @@ In addition to metadata, scripts that need to load and execute as soon as possib
   }
   ```
 
-\*[Styling Tips](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)
-
 ---
 
+\*Ps. [Styling Tips](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)  
 \*Ref. [https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)
