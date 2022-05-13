@@ -1,7 +1,7 @@
 ---
 title: "React Example"
 showDate: false
-showTableOfContents: false
+showTableOfContents: true
 showPagination: false
 showAuthor: false
 ---

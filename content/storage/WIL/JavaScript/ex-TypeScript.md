@@ -1,7 +1,7 @@
 ---
 title: "TS Example"
 showDate: false
-showTableOfContents: false
+showTableOfContents: true
 showPagination: false
 showAuthor: false
 ---
@@ -140,7 +140,7 @@ const pickPerson: PickPerson = {
 };
 ```
 
-## as const
+### as const
 
 ```ts
 let hello = "world";

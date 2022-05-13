@@ -1,7 +1,7 @@
 ---
 title: "CSS Example"
 showDate: false
-showTableOfContents: false
+showTableOfContents: true
 showPagination: false
 showAuthor: false
 ---
@@ -18,7 +18,7 @@ body {
 }
 ```
 
-### Pseudo Selector
+### is Pseudo Selector
 
 ```css
 :is(section, article, aside, nav) :is(h1, h2, h3, h4, h5, h6) {
