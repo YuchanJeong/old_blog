@@ -90,7 +90,7 @@ export default function SubComponent2({propsName}) => {
 }
 ```
 
-\*[Props Composition](https://ko.reactjs.org/docs/context.html#before-you-use-context): Component를 Props로 넘겨줌
+\*_[Props Composition](https://ko.reactjs.org/docs/context.html#before-you-use-context): Component를 Props로 넘겨줌_
 
 **4\) State with useState()**[^](https://ko.reactjs.org/docs/hooks-reference.html#usestate)
 

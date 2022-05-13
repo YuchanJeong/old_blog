@@ -27,23 +27,22 @@ data: valueType; //Type annotation
 
 ### 2. tsconfig.json[^](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
-| Property        | Details                                                                                                                                             |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "compileOnSave" | 저장 후 자동 컴파일                                                                                                                                 |
-| "extends"       | 컴파일러 옵션 상속 경로                                                                                                                             |
-| "files"         | 컴파일 할 것들 배열 (>exclude)                                                                                                                      |
-| "include"       | 컴파일 할 것들 배열<br/>\*확장자를 선언하지 않으면, .ts, .tsx, .d.ts만 포함                                                                         |
-| "exclude"       | include에 포함된 것들 중 제외할 것들 배열<br/>\*설정하지 않으면, 4개 경로 자동 제외(<br/>node_modules, bower_components,<br/>jspm_packages, outDir) |
+| Property        | Details                                                                                                                                               |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "compileOnSave" | 저장 후 자동 컴파일                                                                                                                                   |
+| "extends"       | 컴파일러 옵션 상속 경로                                                                                                                               |
+| "files"         | 컴파일 할 것들 배열 (>exclude)                                                                                                                        |
+| "include"       | 컴파일 할 것들 배열<br/>\*확장자를 선언하지 않으면, .ts, .tsx, .d.ts만 포함                                                                           |
+| "exclude"       | include에 포함된 것들 중 제외할 것들 배열<br/>\*_설정하지 않으면, 4개 경로 자동 제외(<br/>node_modules, bower_components,<br/>jspm_packages, outDir)_ |
 
-\*""를 입력하면 최상위 프로퍼티 목록 확인 가능<br/>
-\*files, include, exclude를 셋다 설정하지 않으면 모든 관련 파일 컴파일<br/>
+\*_""를 입력하면 최상위 프로퍼티 목록 확인 가능_<br/>\*_files, include, exclude를 셋다 설정하지 않으면 모든 관련 파일 컴파일_<br/>
 
-| "compileOptions" | Details                                                        |
-| ---------------- | -------------------------------------------------------------- |
-| "target"         | 빌드 결과물의 버전을 지정<br/>\*화살표 함수, 클래스는 es6 이상 |
-| "outDir"         | 컴파일 된 결과물을 모을 폴더 지정 (Ex. ./dist/)                |
-| "rootDir"        | 컴파일 할 소스를 모을 폴더 지정 (Ex. ./src/)                   |
-| "strict"         | 엄격 모드                                                      |
+| "compileOptions" | Details                                                          |
+| ---------------- | ---------------------------------------------------------------- |
+| "target"         | 빌드 결과물의 버전을 지정<br/>\*_화살표 함수, 클래스는 es6 이상_ |
+| "outDir"         | 컴파일 된 결과물을 모을 폴더 지정 (Ex. ./dist/)                  |
+| "rootDir"        | 컴파일 할 소스를 모을 폴더 지정 (Ex. ./src/)                     |
+| "strict"         | 엄격 모드                                                        |
 
 ## TS Data Type
 
@@ -107,7 +106,7 @@ interface 하위_인터페이스 extends 상위_인터페이스, ... { }
 class 클래스 implements 인터페이스 { }
 ```
 
-\*인터페이스는 중복 작성했을 때, 자동으로 병합됨 (Declaration Merging)
+\*_인터페이스는 중복 작성했을 때, 자동으로 병합됨 (Declaration Merging)_
 
 ### 3. Class
 
@@ -136,13 +135,13 @@ class 하위_클래스 extends 상위_클래스 {
 | Access Modifier | Details                                                                                                                                                                                                          |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | public          | 외부에서도 접근 가능 (def)                                                                                                                                                                                       |
-| private         | 내부에서만 접근 가능<br/>\*관습적으로 앞에 \_사용                                                                                                                                                                |
+| private         | 내부에서만 접근 가능<br/>\*_관습적으로 앞에 \_사용_                                                                                                                                                              |
 | protected       | 내부와 하위 클래스에서만 접근 가능                                                                                                                                                                               |
-| static          | 클래스 자체에서만 호출 가능<br/>\*인스턴스에서 호출 불가능                                                                                                                                                       |
+| static          | 클래스 자체에서만 호출 가능<br/>\*_인스턴스에서 호출 불가능_                                                                                                                                                     |
 | abstract        | 추상 메서드는 정의만 되어있을 뿐 구현되어 있지 않음<br/>추상 클래스는 특정 클래스의 상속 대상이 되는 클래스</br>상속하는 클래스는 반듯이 정의된 추상 메서드를 구현해야 함<br/>추상 클레스는 인스턴스 생성 불가능 |
 | readonly        | 초깃값만 할당 가능                                                                                                                                                                                               |
 
-\*[getter & setter 예제](/storage/wil/javascript/ex-typescript/#getter--setter)
+\*_[getter & setter 예제](/storage/wil/javascript/ex-typescript/#getter--setter)_
 
 ### 4. Generic[^](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html) [⋯](/storage/wil/javascript/ex-typescript/#generic)
 
