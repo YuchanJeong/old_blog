@@ -9,42 +9,15 @@ tags:
 ---
 
 \*Ref. [Redux-toolkit Usage Guide
-](https://redux-toolkit.js.org/usage/usage-guide)
+](https://redux-toolkit.js.org/usage/usage-guide)<br/>\*_[Redux-toolkit 예시](/storage/wil/javascript/ex-redux-toolkit)_
 
-## 1. Initial Setting
+## Init
 
 ```bash
 npm i redux @reduxjs/toolkit react-redux
 ```
 
-### 1) rootReducer
-
-```js
-/* redux/modules/rootReducer.js */
-import { combineReducers } from "redux";
-
-const rootReducer = combineReducers({});
-
-export default rootReducer;
-```
-
-### 2) store
-
-```js
-/* redux/store.js */
-import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./modules/rootReducer";
-
-const store = configureStore({
-  reducer: rootReducer,
-  // middleware: [...getDefaultMiddleware()]
-  devTools: process.env.NODE_ENV !== "production",
-});
-
-export default store;
-```
-
-### 3) Provider
+### 1. Provider
 
 ```js
 import React from "react";
@@ -63,66 +36,104 @@ ReactDOM.render(
 );
 ```
 
-## 2. Reducer
+### 2. store
 
-### 1) createSlice()
+```js
+/* redux/store.js */
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "./modules/rootReducer";
+
+const store = configureStore({
+  reducer: rootReducer,
+  // middleware: [...getDefaultMiddleware()]
+  // devTools: process.env.NODE_ENV !== "production",
+});
+
+export default store;
+```
+
+### 3. rootReducer
+
+```js
+/* redux/modules/rootReducer.js */
+import { combineReducers } from "redux";
+import reducer from "./reducer";
+
+const rootReducer = combineReducers({
+  reducer,
+});
+
+export default rootReducer;
+```
+
+## Reducer
+
+### 1. createSlice
 
 ```js
 /* redux/modules/example.js */
 import { createSlice } from "@reduxjs/toolkit";
 
-const 리듀서_슬라이스 = createSlice({
-  name: "prefix로 사용됨",
-  initialState: 초기_상태,
+const reducer_slice = createSlice({
+  name: "reducer",
+  initialState: initial_state,
   reducers: {
-    액션_생성자: (state, action) => {
-      // 상태 변경은 mutable, immutable 둘 다 가능
-      // action.payload는 액션_생성자의 params
-      // *state=...(x)
+    action_creator: (state, action) => {
+      // action.payload는 action_creator의 params
+      // state 변경은 mutable, immutable 둘 다 가능
+      // state=value로 직접 변경은 안됨
     },
   },
 });
 
-export default 리듀서_슬라이스.reducer;
-export const { 액션_생성자 } = 리듀서_슬라이스.actions;
+export default reducer_slice.reducer;
+export const { action_creator } = reducer_slice.actions;
 ```
 
-### 2) createAsyncThunk() [\*](https://redux-toolkit.js.org/api/createAsyncThunk#examples)
+### 2) createAsyncThunk[^](https://redux-toolkit.js.org/api/createAsyncThunk#examples)
 
 ```js
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const 비동기_액션_생성자 = createAsyncThunk(
-  "리듀서/비동기_액션_생성자",
+export const async_action_creator = createAsyncThunk(
+  "reducer/async_action_creator",
   async () => {
     const response = await axios.get("");
     return response.data;
   }
 );
 
-const 리듀서_슬라이스 = createSlice({
-  name: "prefix로 사용됨",
-  initialState: 초기_상태,
+const async_reducer_slice = createSlice({
+  name: "async_reducer",
+  initialState: { loading: true, error: null, data: initial_data }
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchExample.pending, (state, action) => {});
-    builder.addCase(fetchExample.fulfilled, (state, action) => {});
-    builder.addCase(fetchExample.rejected, (state, action) => {});
+    builder.addCase(async_action_creator.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(async_action_creator.fulfilled, (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(async_action_creator.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error;
+    });
   },
 });
 
-export default 리듀서_슬라이스.reducer;
+export default async_reducer_slice.reducer;
 ```
 
-## 3. Component
+## Component
 
 ### 1) useSelect
 
 ```js
 import { useSelector } from "react-redux";
 
-const 리듀서_상태 = useSelector((store) => store.리듀서);
+const reducer_state = useSelector((store) => store.reducer);
 ```
 
 ### 2) useDispatch
@@ -132,5 +143,5 @@ import { useDispatch } from "react-redux";
 
 const dispatch = useDispatch();
 
-dispatch(액션_생성자(params));
+dispatch(action_creator(params));
 ```
