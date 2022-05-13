@@ -66,7 +66,7 @@ data: valueType; //Type annotation
 3. tuple
    - : [타입1, 타입2, ...]
 4. ~~any~~
-5. unknown [^](/storage/wil/javascript/ex-typescript)
+5. unknown [^](/storage/wil/javascript/ex-typescript/#unknown)
    - 타입을 확정한 뒤 할당 및 사용 가능
 6. never
    - 항상 오류를 출력하거나, 절대 값을 반환하지 않는 함수의 리턴 타입
@@ -107,7 +107,7 @@ interface 하위_인터페이스 extends 상위_인터페이스, ... { }
 class 클래스 implements 인터페이스 { }
 ```
 
-\*인터페이스는 중복 작성했을 때, 자동으로 병합됨(Declaration Merging)
+\*인터페이스는 중복 작성했을 때, 자동으로 병합됨 (Declaration Merging)
 
 ### 3. Class
 
@@ -133,27 +133,24 @@ class 하위_클래스 extends 상위_클래스 {
 }
 ```
 
-| 접근 제어자 | Details                                                                                                                      |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| public      | - 외부에서 접근 가능<br/>- default 값                                                                                        |
-| private     | - 내부에서만 접근 가능<br/>- 관습적으로 앞에 \_사용                                                                          |
-| protected   | - 정의만 있을 뿐 구현되어 있지 않음<br>- 추상을 상속하는 클래스는 추상 클래스에 정의된<br>ㅤ추상 메서드를 반드시 구현해야 함 |
+| Access Modifier | Details                                                                                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| public          | 외부에서도 접근 가능 (def)                                                                                                                                                                                       |
+| private         | 내부에서만 접근 가능<br/>\*관습적으로 앞에 \_사용                                                                                                                                                                |
+| protected       | 내부와 하위 클래스에서만 접근 가능                                                                                                                                                                               |
+| static          | 클래스 자체에서만 호출 가능<br/>\*인스턴스에서 호출 불가능                                                                                                                                                       |
+| abstract        | 추상 메서드는 정의만 되어있을 뿐 구현되어 있지 않음<br/>추상 클래스는 특정 클래스의 상속 대상이 되는 클래스</br>상속하는 클래스는 반듯이 정의된 추상 메서드를 구현해야 함<br/>추상 클레스는 인스턴스 생성 불가능 |
+| readonly        | 초깃값만 할당 가능                                                                                                                                                                                               |
 
-- static
-  - 클래스 자체에서만 호출 가능  
-    (생성자로 생성한 객체에서 호출 불가능)
-- abstract
-  - 추상 클래스는 특정 클래스의 상속 대상이 되는 클래스
-  - 추상 클래스를 상속하는 클래스는 추상 클래스에 정의된  
-    추상 메서드를 반드시 구현해야 함
-- getter & setter [^](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-TS-GetterSetter.md)
+\*[getter & setter 예제](/storage/wil/javascript/ex-typescript/#getter--setter)
 
-### 4. [Generic](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html) [^](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-TS-Generic.md)
+### 4. Generic [\*](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html) [^](/storage/wil/javascript/ex-typescript/#generic)
 
-> Type Parameter (Obvious naming is needed)
-
-- \<Type>
-- \<Type extends 타입>
+| Questions   | Answers                    |
+| ----------- | -------------------------- |
+| 제네릭이란? | 일종의 타입 변수           |
+| 형태는?     | \<Type>                    |
+| 상속은?     | \<Type extends Super_Type> |
 
 | Utility Types         | Details                                                       |
 | --------------------- | ------------------------------------------------------------- |
@@ -168,21 +165,30 @@ class 하위_클래스 extends 상위_클래스 {
 
 ## TS Etc
 
-- Index Signatures
-  - \[index: string]: valueType
-  - 이름, 존재 여부 상관없는 key들의 value의 타입 지정
-- Optional Type
-  - ?:
-  - 해당 요소가 있어도 되고 없어도 됨
-- Non-Null Assertion Operator
-  - !.
-  - 해당 피연산자가 null, undefined가 아니라고 단언
-  - [Non-Null Assertion Operator와 Optional Chaining의 차이](https://www.typescriptlang.org/play?ssl=7&ssc=66&pln=3&pc=1#code/MYewdgzgLgBAhgJwTAvDA2gbwG5wDYCuApgFwwCMAvgDQw77FkBMlAugNwBQoksAllCIBbVPCQA6AGZ8wAEwAURPKgB8MJeNyEiqFGiYBKLj2gwERCATyw0A4ZoY6A1BXYwA9O4AqAZXVIQBFoIGWAdOxE+CBh5fDwiAHMiWTwATwMYAAcQCBCAIzSYAjkiaTBkzm5wU3NLawB1AQALAHlMqD5wfFEIgH4HbRgXcjdPHw68ZTgwfwRAgEIYPoHiGCXo6D5JrJz8wuLZUpkKqt4zCysoRqhWzKIEOChAnsEheZXnVw93AEEm2hujwA5NEbjpwER5pwgA)
-- readonly ...
-  - 해당 요소에 초기값만 할당 가능
-- keyof 타입
-  - 해당 타입의 모든 키값을 union 멤버로 반환
-- Type Assertion
-  - ... as 타입
-  - ... as const (readonly) [^](https://github.com/YuchanJeong/_WIL/blob/master/JavaScript/ex/ex-TS-as_const.md)
-    - 선언의 타입 추론 시 정확하게 해당 값으로 추론
+**1\) Index Signatures**
+
+- \[index: string]: valueType
+- 이름, 존재 여부 상관없는 key들의 value의 타입 지정
+
+**2\) Optional Type**
+
+- ?:
+- 해당 요소가 있어도 되고 없어도 됨
+
+**3\) Non-Null Assertion Operator** [\*](https://www.typescriptlang.org/play?ssl=7&ssc=66&pln=3&pc=1#code/MYewdgzgLgBAhgJwTAvDA2gbwG5wDYCuApgFwwCMAvgDQw77FkBMlAugNwBQoksAllCIBbVPCQA6AGZ8wAEwAURPKgB8MJeNyEiqFGiYBKLj2gwERCATyw0A4ZoY6A1BXYwA9O4AqAZXVIQBFoIGWAdOxE+CBh5fDwiAHMiWTwATwMYAAcQCBCAIzSYAjkiaTBkzm5wU3NLawB1AQALAHlMqD5wfFEIgH4HbRgXcjdPHw68ZTgwfwRAgEIYPoHiGCXo6D5JrJz8wuLZUpkKqt4zCysoRqhWzKIEOChAnsEheZXnVw93AEEm2hujwA5NEbjpwER5pwgA)
+
+- !.
+- 해당 피연산자가 null, undefined가 아니라고 단언
+
+**4\) readonly ...**
+
+- 해당 요소에 초기값만 할당 가능
+
+**5\) keyof 타입**
+
+- 해당 타입의 모든 키값을 union 멤버로 반환
+
+**6\)Type Assertion**
+
+- ... as 타입
+- ... as const (readonly) [^](/storage/wil/javascript/ex-typescript/#as-const)
