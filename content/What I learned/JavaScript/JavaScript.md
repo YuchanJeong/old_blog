@@ -664,7 +664,7 @@ const 객체 = new 클래스();
 \*Scope Chaining (하위 스코프 우선)  
 \*Lexical Scoping은 선언(호출 X)된 위치에 따라 상위 스코프 결정
 
-### 3) This
+### 3. This
 
 | Type        | Condition | Target                                                |
 | ----------- | --------- | ----------------------------------------------------- |
@@ -673,7 +673,7 @@ const 객체 = new 클래스();
 
 \*[This 예제](/storage/javascript/ex-javascript/#this)
 
-### 4) JSON
+### 4. JSON
 
 | API                 | Details                               |
 | ------------------- | ------------------------------------- |
@@ -682,7 +682,7 @@ const 객체 = new 클래스();
 
 \*JSON(JavaScript Object Notation)문자열은 쌍따옴표("")만 사용 가능
 
-### 5) Export & Import
+### 5. Export & Import
 
 ```js
 // 이름 필수 X, 파일 하나당 하나만 가능
@@ -700,7 +700,7 @@ import { 데이터명 as 임의_데이터명 } from "경로";
 import * as 임의_객체명 from "경로";
 ```
 
-### 6) Storage API
+### 6. Storage API
 
 Local Storage
 
