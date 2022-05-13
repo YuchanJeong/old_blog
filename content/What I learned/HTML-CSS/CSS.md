@@ -1,5 +1,5 @@
 ---
-title: "CSS(Cascading Style Sheets)"
+title: "CSS"
 showDate: false
 showPagination: false
 categories:
@@ -8,11 +8,13 @@ tags:
   - CSS
 ---
 
-> ```css
-> selector {
->   property: value;
-> }
-> ```
+> Cascading Style Sheets
+
+```css
+selector {
+  property: value;
+}
+```
 
 ## Selector
 

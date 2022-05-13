@@ -1,5 +1,5 @@
 ---
-title: "HTML(HyperText Markup Language)"
+title: "HTML"
 showDate: false
 showPagination: false
 categories:
@@ -8,9 +8,11 @@ tags:
   - HTML
 ---
 
-> ```html
-> <tag attribute="value">contents</tag>
-> ```
+> HyperText Markup Language
+
+```html
+<tag attribute="value">contents</tag>
+```
 
 ## Head
 
