@@ -5,7 +5,7 @@ showPagination: false
 categories:
   - <What I learned>
 tags:
-  - Regular Expression
+  - RegEx
 ---
 
 \*Ref. [https://regexr.com](https://regexr.com/)
