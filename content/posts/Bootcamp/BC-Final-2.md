@@ -8,9 +8,7 @@ tags:
   - (Retrospect)
 ---
 
-> 실시간 토론 기능 구현 회고
-
-\*전체적인 회고는 따로 [회고록](https://yuchanjeong.github.io/posts/bootcamp/bc-final-1/)에 작성
+\*_전체적인 회고는 따로 [회고록](https://yuchanjeong.github.io/posts/bootcamp/bc-final-1/)에 작성_
 
 # Debate Ducks
 
