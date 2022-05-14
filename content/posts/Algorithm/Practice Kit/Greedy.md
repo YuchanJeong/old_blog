@@ -84,3 +84,5 @@ function solution(name) {
   return upDownCnt + Math.min(...leftRightArr);
 }
 ```
+
+### 3. 큰 수 만들기 (Lv.2) [^](https://programmers.co.kr/learn/courses/30/lessons/42883?language=javascript)
