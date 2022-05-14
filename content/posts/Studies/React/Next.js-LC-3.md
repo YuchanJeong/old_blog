@@ -444,4 +444,4 @@ In addition to metadata, scripts that need to load and execute as soon as possib
 ---
 
 \*Ps. [Styling Tips](https://nextjs.org/learn/basics/assets-metadata-css/styling-tips)  
-\*Ref. [https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)
+Ref. [https://nextjs.org/learn/basics/create-nextjs-app](https://nextjs.org/learn/basics/create-nextjs-app)

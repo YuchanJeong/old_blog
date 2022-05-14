@@ -8,7 +8,7 @@ tags:
   - TypeScript
 ---
 
-\*Ref. [TypeScript Cheat sheets](https://www.typescriptlang.org/cheatsheets)
+Ref. [TypeScript Cheat sheets](https://www.typescriptlang.org/cheatsheets)
 
 ## TS Init
 

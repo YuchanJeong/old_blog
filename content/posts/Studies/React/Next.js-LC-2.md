@@ -127,4 +127,4 @@ The beauty of Next.js is that you can choose the most appropriate rendering meth
 
 ---
 
-\*Ref. [https://nextjs.org/learn/foundations/how-nextjs-works](https://nextjs.org/learn/foundations/how-nextjs-works)
+Ref. [https://nextjs.org/learn/foundations/how-nextjs-works](https://nextjs.org/learn/foundations/how-nextjs-works)

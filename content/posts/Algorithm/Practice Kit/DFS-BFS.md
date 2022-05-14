@@ -9,6 +9,10 @@ tags:
 
 > 깊이/너비 우선 탐색을 사용해 원하는 답을 찾아보세요.
 
+| 출제 빈도 | 난이도 |
+| --------- | ------ |
+| 높음      | 어려움 |
+
 ## 문제
 
 ### 1. 타겟 넘버 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/43165)
@@ -214,4 +218,4 @@ function solution(tickets) {
 
 ---
 
-\*Ref. [프로그래머스 고득점 Kit - 깊이/너비 우선 탐색(DFS/BFS)](https://programmers.co.kr/learn/courses/30/parts/12421)
+Ref. [프로그래머스 고득점 Kit - 깊이/너비 우선 탐색(DFS/BFS)](https://programmers.co.kr/learn/courses/30/parts/12421)

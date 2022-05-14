@@ -237,4 +237,4 @@ useInsertionEffect is intended to be used by libraries, not application code.
 \*Ps. [Youtube: 완전 새로운 리액트가 온다? 핵심정리 10분컷](https://www.youtube.com/watch?v=7mkQi0TlJQo)  
 \*Ps. [Youtube: useTransition vs useDeferredValue | React 18](https://www.youtube.com/watch?v=lDukIAymutM)
 
-\*Ref. [React Blog: React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
+Ref. [React Blog: React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)

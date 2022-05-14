@@ -9,6 +9,10 @@ tags:
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.
 
+| 출제 빈도 | 난이도 |
+| --------- | ------ |
+| 높음      | 쉬움   |
+
 Tip. [객체 정렬 및 다중 정렬](https://yuchanjeong.github.io/posts/algorithm/practice-kit/hash/#sort)
 
 ## 문제
@@ -63,4 +67,4 @@ const solution = (citations) =>
 
 ---
 
-\*Ref. [프로그래머스 고득점 Kit - 정렬](https://programmers.co.kr/learn/courses/30/parts/12198)
+Ref. [프로그래머스 고득점 Kit - 정렬](https://programmers.co.kr/learn/courses/30/parts/12198)

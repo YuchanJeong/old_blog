@@ -8,7 +8,7 @@ tags:
   - RegEx
 ---
 
-\*Ref. [https://regexr.com](https://regexr.com/)
+Ref. [https://regexr.com](https://regexr.com/)
 
 ### 1. 표현 방식
 

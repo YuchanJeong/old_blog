@@ -9,6 +9,10 @@ tags:
 
 > LIFO, FIFO, push & pop! 스택과 큐를 이용해서 문제를 풀어보세요.
 
+| 출제 빈도 | 난이도 |
+| --------- | ------ |
+| 보통      | 쉬움   |
+
 ## 개념 정리
 
 | Stack          | Queue          |
@@ -137,4 +141,4 @@ function solution(bridge_length, weight, truck_weights) {
 
 ---
 
-\*Ref. [프로그래머스 고득점 Kit - 스택/큐](https://programmers.co.kr/learn/courses/30/parts/12081)
+Ref. [프로그래머스 고득점 Kit - 스택/큐](https://programmers.co.kr/learn/courses/30/parts/12081)

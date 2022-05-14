@@ -8,7 +8,7 @@ tags:
   - Redux
 ---
 
-\*Ref. [Redux-toolkit Usage Guide
+Ref. [Redux-toolkit Usage Guide
 ](https://redux-toolkit.js.org/usage/usage-guide)<br/>\*_[Redux-toolkit 예시](/storage/wil/javascript/ex-redux-toolkit)_
 
 ## Init

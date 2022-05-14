@@ -9,6 +9,10 @@ tags:
 
 > Key-value쌍으로 데이터를 빠르게 찾아보세요.
 
+| 출제 빈도 | 난이도 |
+| --------- | ------ |
+| 높음      | 보통   |
+
 ## 개념 정리
 
 ### Hash Table
@@ -344,5 +348,5 @@ function solution(genres, plays) {
 
 ---
 
-\*Ref. [프로그래머스 고득점 Kit - 해시](https://programmers.co.kr/learn/courses/30/parts/12077)
-\*Ref. [ratsgo's blog - 해싱, 해시함수, 해시테이블](https://ratsgo.github.io/data%20structure&algorithm/2017/10/25/hash/)
+Ref. [프로그래머스 고득점 Kit - 해시](https://programmers.co.kr/learn/courses/30/parts/12077)
+Ref. [ratsgo's blog - 해싱, 해시함수, 해시테이블](https://ratsgo.github.io/data%20structure&algorithm/2017/10/25/hash/)

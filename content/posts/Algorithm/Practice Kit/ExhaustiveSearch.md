@@ -9,6 +9,10 @@ tags:
 
 > 무식해 보여도 사실은 최고의 방법일 때가 있지요.
 
+| 출제 빈도 | 난이도 |
+| --------- | ------ |
+| 높음      | 쉬움   |
+
 ## 문제
 
 ### 1. 모의고사 (Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript)
@@ -218,4 +222,4 @@ const getDivisors = (num) => {
 
 ---
 
-\*Ref. [프로그래머스 고득점 Kit - 완전탐색](https://programmers.co.kr/learn/courses/30/parts/12230)
+Ref. [프로그래머스 고득점 Kit - 완전탐색](https://programmers.co.kr/learn/courses/30/parts/12230)
