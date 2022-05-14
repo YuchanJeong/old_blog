@@ -22,7 +22,7 @@ tags:
 
 ## 문제
 
-### 1. 기능개발 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42586?language=javascript)
+### 1. 기능개발(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42586?language=javascript)
 
 ```js
 function solution(progresses, speeds) {
@@ -49,7 +49,7 @@ function solution(progresses, speeds) {
 }
 ```
 
-### 2. 프린터 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42587)
+### 2. 프린터(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42587)
 
 ```js
 // Idea: location 조정!!
@@ -77,7 +77,7 @@ function solution(priorities, location) {
 }
 ```
 
-### 3. 다리를 지나는 트럭 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42583?language=javascript)
+### 3. 다리를 지나는 트럭(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42583?language=javascript)
 
 ```js
 // Buffer

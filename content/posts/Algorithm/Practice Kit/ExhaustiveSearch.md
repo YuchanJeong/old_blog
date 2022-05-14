@@ -15,7 +15,7 @@ tags:
 
 ## 문제
 
-### 1. 모의고사 (Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript)
+### 1. 모의고사(Lv.1)[^](https://programmers.co.kr/learn/courses/30/lessons/42840?language=javascript)
 
 ```js
 function solution(answers) {
@@ -41,7 +41,7 @@ function solution(answers) {
 }
 ```
 
-### 2. 소수 찾기 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42839?language=javascript)
+### 2. 소수 찾기(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42839?language=javascript)
 
 ```js
 function solution(numbers) {
@@ -75,7 +75,7 @@ function solution(numbers) {
 }
 ```
 
-### 3. 카펫 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42842?language=javascript)
+### 3. 카펫(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42842?language=javascript)
 
 ```js
 function solution(brown, yellow) {

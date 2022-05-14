@@ -15,7 +15,7 @@ tags:
 
 ## 문제
 
-### 1. 타겟 넘버 (Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/43165)
+### 1. 타겟 넘버(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/43165)
 
 ```js
 // DFS(재귀)
@@ -63,7 +63,7 @@ function solution(numbers, target) {
 }
 ```
 
-### 2. 네트워크 (Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43162)
+### 2. 네트워크(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43162)
 
 ```js
 // DFS(재귀)
@@ -93,7 +93,7 @@ function solution(n, computers) {
 }
 ```
 
-### 3. 단어 변환 (Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43163?language=javascript)
+### 3. 단어 변환(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43163?language=javascript)
 
 ```js
 // BFS(큐)
@@ -142,7 +142,7 @@ if (equal === word.length - 1) {
 */
 ```
 
-### 4. 여행경로 (Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43164?language=javascript)
+### 4. 여행경로(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/43164?language=javascript)
 
 ```js
 // DFS(재귀)
