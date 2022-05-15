@@ -86,3 +86,42 @@ function solution(name) {
 ```
 
 ### 3. 큰 수 만들기(Lv.2) [^](https://programmers.co.kr/learn/courses/30/lessons/42883?language=javascript)
+
+```js
+function solution(number, k) {
+  const nums = [...number].map((num) => parseInt(num));
+  let stack = [0];
+  let deleteCount = -1;
+
+  for (let num of nums) {
+    // Idea: deleteCount 조정!
+    while (deleteCount < k && num > stack[stack.length - 1]) {
+      stack.pop();
+      deleteCount += 1;
+    }
+
+    // Edge: deleteCount가 k보다 작게 남았을 경우!!!
+    if (stack.length < number.length - k) stack.push(num);
+  }
+
+  return stack.join("");
+}
+```
+
+Ex. "98675", 2
+
+- Edge Case를 처리했을 경우
+
+  | Variable    |     |     |        |           |           |           |
+  | ----------- | --- | --- | ------ | --------- | --------- | --------- |
+  | num         | 0   | 9   | 8      | 6         | 7         | 5         |
+  | stack       | [0] | [9] | [9, 8] | [9, 8, 6] | [9, 8, 7] | [9, 8, 7] |
+  | deleteCount | -1  | 0   | 0      | 0         | 1         | 1         |
+
+- Edge Case를 처리하지 않았을 경우
+
+  | Variable    |     |     |        |           |           |              |
+  | ----------- | --- | --- | ------ | --------- | --------- | ------------ |
+  | num         | 0   | 9   | 8      | 6         | 7         | 5            |
+  | stack       | [0] | [9] | [9, 8] | [9, 8, 6] | [9, 8, 7] | [9, 8, 7, 5] |
+  | deleteCount | -1  | 0   | 0      | 0         | 1         | 1            |
