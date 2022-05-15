@@ -125,3 +125,30 @@ Ex. "98675", 2
   | num         | 0   | 9   | 8      | 6         | 7         | 5            |
   | stack       | [0] | [9] | [9, 8] | [9, 8, 6] | [9, 8, 7] | [9, 8, 7, 5] |
   | deleteCount | -1  | 0   | 0      | 0         | 1         | 1            |
+
+### 4. 구명보트(Lv.2)[^](https://programmers.co.kr/learn/courses/30/lessons/42885)
+
+```js
+function solution(people, limit) {
+  people.sort((a, b) => a - b);
+  let cnt = 0;
+
+  while (people.length > 0) {
+    /*
+    if (people[0] + people[people.length - 1] <= limit) {
+      people.pop();
+      people.shift();
+    } else {
+      people.pop();
+    }
+    cnt += 1;
+    */
+    let person = people.pop();
+    person += people[0];
+    if (person <= limit) people.shift();
+    cnt += 1;
+  }
+
+  return cnt;
+}
+```
