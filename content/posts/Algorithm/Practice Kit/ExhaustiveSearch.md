@@ -206,7 +206,7 @@ const isPrime = (num) => {
   };
   ```
 
-\*forEach에 rest_arr가 하나씩 줄어서 따로 탈출 조건은 필요 없음.
+\*forEach에 restArr가 하나씩 줄어서 따로 탈출 조건은 필요 없음.
 
 ### 효율적인 약수 쌍 구하기
 
