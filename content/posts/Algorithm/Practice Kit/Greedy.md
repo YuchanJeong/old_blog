@@ -152,3 +152,57 @@ function solution(people, limit) {
   return cnt;
 }
 ```
+
+### 5. 섬 연결하기(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/42861?language=javascript)
+
+```js
+// # 최소 비용 신장 트리(MST)
+// # Union-Find in 그루스칼(Kruskal) 알고리즘
+// Ps. 간선(Edge; E)의 수는 노드(Node; N)의 수 - 1
+function solution(n, costs) {
+  // 1. x의 최상위 노드(기원)를 찾는 함수
+  // 재귀 함수로 최상위 노드를 찾을 때까지 부모 노드 탐색
+  const getOrigin = (parent, x) => {
+    if (parent[x] === x) return x;
+    return (parent[x] = getOrigin(parent, parent[x]));
+  };
+
+  // 2. 최상위 노드를 같은 값으로 병합하는 함수
+  // 최상위 노드가 다를 경우 더 낮은 값으로 최상위 노드 병합
+  const unionParent = (parent, a, b) => {
+    const n1 = getOrigin(parent, a);
+    const n2 = getOrigin(parent, b);
+    if (n1 < n2) return (parent[n2] = n1);
+    else return (parent[n1] = n2);
+  };
+
+  // 3. 최상위 노드가 같은지 판단하는 함수
+  const findParent = (parent, a, b) => {
+    const n1 = getOrigin(parent, a);
+    const n2 = getOrigin(parent, b);
+    if (n1 === n2) return true;
+    else return false;
+  };
+
+  let result = 0;
+  // 1) 자기 자신을 부모로 가지는 최상위 노드 생성
+  const parent = [];
+  for (let i = 0; i < n; i += 1) {
+    parent.push(i);
+  }
+
+  // 2) 최소 비용이라 가중치가 낮은 순으로 정렬
+  costs.sort((a, b) => a[2] - b[2]);
+
+  // 3) 가중치가 낮은 순으로 연결 후 가중치 저장
+  // 전부 연결되는 순간 더이상 if문 작동 안함
+  for (const cost of costs) {
+    if (!findParent(parent, cost[0], cost[1])) {
+      result += cost[2];
+      unionParent(parent, cost[0], cost[1]);
+    }
+  }
+
+  return result;
+}
+```
