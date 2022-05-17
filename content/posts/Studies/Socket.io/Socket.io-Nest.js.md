@@ -8,14 +8,14 @@ tags:
   - Nest.js
 ---
 
-### 설치
+## 설치
 
 ```bash
 npm i @nestjs/websockets @nestjs/platform-socket.io
 npm i -D @types/socket.io
 ```
 
-### 기본 설정
+## 기본 설정
 
 ```bash
 npx nest g module events
@@ -30,7 +30,7 @@ npx nest g ga events
   EventsGateway를 여러 곳에서 provider 하면 매번 서버가 새로 생성  
   그래서 EventsModule에서 한 번만 provider 하고 exports 한 뒤 여러 곳에서 사용
 
-#### 1. EventsModule
+### 1. EventsModule
 
 ```ts
 import { EventsGateway } from "./events.gateway";
@@ -43,7 +43,7 @@ import { Module } from "@nestjs/common";
 export class EventsModule {}
 ```
 
-#### 2. EventsGateway
+### 2. EventsGateway
 
 ```ts
 import { channel } from "diagnostics_channel";
@@ -123,4 +123,5 @@ export const onlineMap = {};
 
 ---
 
+Ref. [Nest.js WebSockets Official Document](https://docs.nestjs.com/websockets/gateways)  
 Ref. [Nest.js + Socket.io(EventsGateway) 강좌](https://www.youtube.com/watch?v=gkJ1N6PDCEc)

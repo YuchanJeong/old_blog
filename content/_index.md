@@ -14,7 +14,7 @@ Information about me.
 
 ## Posts [📑](/posts)
 
-List of all posts. (except diaries and WIL)
+List of all posts. (except WIL)
 
 ## Categories [🗂](/categories)
 
@@ -22,7 +22,7 @@ Posts by category.
 
 | Type                                            | Details                                                |
 | ----------------------------------------------- | ------------------------------------------------------ |
-| [\<Algorithm>](/categories/algorithm)           | 코딩 테스트를 위해 학습한 알고리즘 관련 내용           |
+| [\<Algorithm>](/categories/algorithm)           | 알고리즘과 관련된 학습 내용                            |
 | [\<Bootcamp>](/categories/bootcamp)             | 부트 캠프 기간 동안 기록한 TIL(Today I learned)과 회고 |
 | [\<Diaries>](/categories/diaries)               | 개발과 직접적인 관련이 없는 가벼운 기록                |
 | [\<Etc>](/categories/etc)                       | 개발과 관련된 기타 내용                                |
