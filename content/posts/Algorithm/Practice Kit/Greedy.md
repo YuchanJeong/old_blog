@@ -1,6 +1,6 @@
 ---
 title: "[Practice Kit] 탐욕법(Greedy)"
-date: 2022-05-08
+date: 2022-05-16
 categories:
   - <Algorithm>
 tags:
@@ -206,3 +206,65 @@ function solution(n, costs) {
   return result;
 }
 ```
+
+### 6. 단속카메라(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/42884)
+
+```js
+function solution(routes) {
+  // 진입 시점을 기준으로 오름차순 정렬
+  routes.sort((a, b) => a[0] - b[0]);
+
+  // 첫 카메라는 무조건 설치
+  let camera = 1;
+
+  // 첫 진출 시점
+  let out = routes[0][1];
+
+  for (let route of routes) {
+    // Idea:
+    // 현재의 진입 시점이 마지막 진출 시점 이후라면
+    // 카메라 추가 설치 및 마지막 진출 시점 갱신
+    if (out < route[0]) {
+      camera += 1;
+      out = route[1];
+    }
+
+    // Edge:
+    // 마지막 진출 시점이 현재의 진출 시점 이후라면
+    // 마지막 진출 시점 갱신
+    // 그래야 앞의 경로가 뒤의 경로를 덮어도
+    // 내부에서 카운팅 가능
+    if (route[1] < out>) {
+      out = route[1];
+    }
+  }
+
+  return camera;
+}
+```
+
+```js
+function solution(routes) {
+  let cnt = 0;
+  // Idea: 카메라가 설치되어 있지 않을 때
+  let camera = -30001;
+
+  // 진출 시점을 기준으로 오름차순 정렬
+  routes.sort((a, b) => a[1] - b[1]);
+
+  for (let route of routes) {
+    // 현재의 진입 시점이 마지막 카메라 이후라면
+    // 카메라 추가 설치 및 마지막 카메라 갱신
+    if (camera < route[0]) {
+      cnt++;
+      camera = route[1];
+    }
+  }
+
+  return cnt;
+}
+```
+
+---
+
+Ref. [프로그래머스 고득점 Kit - 탐욕법(Greedy)](https://programmers.co.kr/learn/courses/30/parts/12244)

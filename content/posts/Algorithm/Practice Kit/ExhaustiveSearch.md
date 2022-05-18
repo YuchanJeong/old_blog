@@ -1,6 +1,6 @@
 ---
 title: "[Practice Kit] 완전탐색(Exhaustive Search, Brute-force Search)"
-date: 2022-05-05
+date: 2022-05-06
 categories:
   - <Algorithm>
 tags:

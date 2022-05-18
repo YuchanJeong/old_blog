@@ -1,6 +1,6 @@
 ---
 title: "[Practice Kit] 스택/큐(Stack/Queue)"
-date: 2022-05-07
+date: 2022-05-10
 categories:
   - <Algorithm>
 tags:
