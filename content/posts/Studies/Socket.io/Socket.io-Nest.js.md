@@ -46,7 +46,6 @@ export class EventsModule {}
 ### 2. EventsGateway
 
 ```ts
-import { channel } from "diagnostics_channel";
 import {
   WebSocketGateway,
   WebSocketServer,
