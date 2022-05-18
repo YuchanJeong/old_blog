@@ -18,7 +18,29 @@ Nest.js에 대한 지식 없이 Socket.io를 적용시키려고 하니 어려움
 
 ## WebSocket 클라이언트
 
-Next.js를 사용하였지만 이미 충분히 학습 하였고, 기본적으로 React에서의 사용법과 크게 다르지 않아 쉽게 적용할 수 있었다.
+Next.js를 사용하였지만 이미 충분히 학습하였고, 기본적으로 React에서의 사용법과 크게 다르지 않아 쉽게 적용할 수 있었다. 다만 TypeScript를 실전에서 처음 써봐서 아직은 조금 적응이 덜 되었다.
+
+```ts
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { io, Socket } from "socket.io-client";
+
+export default function Debateroom() {
+  const router = useRouter();
+  const { debateId } = router.query;
+  const [socket, setSocket] = useState<Socket | undefined>();
+
+  useEffect(() => {
+    setSocket(io(`${process.env.NEXT_PUBLIC_API_URL}`));
+  }, []);
+
+  return (
+    <div>
+      <h1>Debateroom: {debateId}</h1>
+    </div>
+  );
+}
+```
 
 \*_환경 변수로 NEXT_PUBLIC\_... 사용_  
 \*_import 순서 컨벤션_  
