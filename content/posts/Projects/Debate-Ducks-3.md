@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket Room"
+title: "[Debate-Ducks] WebSocket 방 입장"
 date: 2022-05-18
 categories:
   - <Projects>
