@@ -1,6 +1,6 @@
 ---
 title: "[Practice Kit] 탐욕법(Greedy)"
-date: 2022-05-18
+date: 2022-05-12
 categories:
   - <Algorithm>
 tags:

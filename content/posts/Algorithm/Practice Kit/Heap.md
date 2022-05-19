@@ -1,6 +1,6 @@
 ---
 title: "[Practice Kit] 힙(Heap)"
-date: 2022-05-16
+date: 2022-05-19
 categories:
   - <Algorithm>
 tags:
@@ -35,6 +35,147 @@ tags:
      - 루트 노드 삭제 후 마지막 노드를 루트 노드로 이동
      - 자식 노드 둘과 조건 비교 후 교환
      - 자식 노드가 없으면 중지
+
+## 문제
+
+### 1. 디스크 컨트롤러(Lv.3)[^](https://programmers.co.kr/learn/courses/30/lessons/42627?language=javascript)
+
+SJF(Shortest Job First) 알고리즘
+
+"하드디스크가 작업을 수행하고 있지 않을 때에는 먼저 요청이 들어온 작업부터 수행"  
+-> 현재 수행 중인 작업이 없을 경우 들어온 작업 수행  
+-> 현재 수행 중인 작업이 있을 경우 작업 시간이 짧은 순으로 대기목록에 추가  
+-> 대기 목록의 순서데로 작업 수행
+
+1. Heap
+
+```js
+class MinHeap {
+  constructor() {
+    this.heap = [null];
+  }
+
+  size() {
+    return this.heap.length - 1;
+  }
+
+  getMin() {
+    return this.heap[1] ? this.heap[1] : null;
+  }
+
+  swap(a, b) {
+    [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
+  }
+
+  heapPush(value) {
+    this.heap.push(value);
+    let curIdx = this.heap.length - 1;
+    let parIdx = parseInt(curIdx / 2);
+
+    while (curIdx > 1 && this.heap[parIdx][1] > this.heap[curIdx][1]) {
+      this.swap(parIdx, curIdx);
+      curIdx = parIdx;
+      parIdx = parseInt(curIdx / 2);
+    }
+  }
+
+  heapPop() {
+    const min = this.heap[1];
+    if (this.heap.length <= 2) this.heap = [null];
+    else this.heap[1] = this.heap.pop();
+
+    let curIdx = 1;
+    let leftIdx = curIdx * 2;
+    let rightIdx = curIdx * 2 + 1;
+
+    if (!this.heap[leftIdx]) return min;
+    if (!this.heap[rightIdx]) {
+      if (this.heap[leftIdx][1] < this.heap[curIdx][1]) {
+        this.swap(leftIdx, curIdx);
+      }
+      return min;
+    }
+
+    while (
+      this.heap[leftIdx][1] < this.heap[curIdx][1] ||
+      this.heap[rightIdx][1] < this.heap[curIdx][1]
+    ) {
+      const minIdx =
+        this.heap[leftIdx][1] > this.heap[rightIdx][1] ? rightIdx : leftIdx;
+      this.swap(minIdx, curIdx);
+      curIdx = minIdx;
+      leftIdx = curIdx * 2;
+      rightIdx = curIdx * 2 + 1;
+
+      if (leftIdx >= this.size()) break;
+    }
+
+    return min;
+  }
+}
+
+function solution(jobs) {
+  const cnt = jobs.length;
+  const minHeap = new MinHeap();
+  jobs.sort((a, b) => a[0] - b[0]);
+
+  let time = 0;
+  let complete = 0;
+  let total = 0;
+
+  while (jobs.length || minHeap.size()) {
+    while (jobs.length) {
+      if (jobs[0][0] === time) {
+        minHeap.heapPush(jobs.shift());
+      } else break;
+    }
+
+    if (minHeap.size() && time >= complete) {
+      const task = minHeap.heapPop();
+      complete = task[1] + time;
+      total += complete - task[0];
+    }
+    time += 1;
+  }
+
+  return parseInt(total / cnt);
+}
+```
+
+2. Sort
+
+```js
+function solution(jobs) {
+  // 새로운 다중 정렬!!
+  jobs.sort(([a, b], [c, d]) => a - c || b - d);
+  const waiting = [];
+  const total = jobs.length;
+  let processedTime = 0;
+  let time = 0;
+
+  while (jobs.length || waiting.length) {
+    let task;
+    // 요청 시간이 현재 이전일 때, 대기에 집어넣음 (한번에 넣는 개념)!!
+    while (jobs.length && jobs[0][0] <= time) {
+      waiting.push(jobs.shift());
+    }
+
+    // 대기가 있을 때, 작업시간이 가장 짧은거 작업!
+    // 대기가 없을 때, 다음 작업 시간으로 점프!!!
+    if (waiting.length) {
+      task = waiting.sort(([a, b], [c, d]) => b - d || a - c).shift();
+    } else {
+      task = jobs.shift();
+      time = task[0];
+    }
+
+    // 작업 시간만큼 점프 (bcs, 작업 중에는 어차피 다른 작업 시작 못함)!!!
+    time += task[1];
+    processedTime += time - task[0];
+  }
+  return parseInt(processedTime / total);
+}
+```
 
 ---
 
