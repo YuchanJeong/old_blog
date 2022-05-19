@@ -143,3 +143,9 @@ export default function Room({ debateId, socket }: IRoom) {
 
 <img width="244" alt="useRef 1번" src="https://user-images.githubusercontent.com/84524514/169261494-559f58d4-e37f-4ec3-af48-7fdc5006824f.png">
 <img width="242" alt="useRef 2번" src="https://user-images.githubusercontent.com/84524514/169261521-436df3de-09c4-4e13-8a3d-56c358b60346.png">
+
+## 반성할 점 및 잘한 점
+
+이전에 한번 만든 적 있는 기능이다 보니 이전의 코드를 참조하면서 만들고 있다. 참조만 하고 더 많이 생각하며 발전시킨 코드를 작성해야 하는데 이전의 코드를 답습하며 현재의 스택에 맞게 적용만 하고 있었다.
+
+이제부터는 지난 프로젝트 이후에 배운 내용들을 활용하고 더 많이 생각하며 발전된 코드를 작성할 것이다. 🔥🔥🔥

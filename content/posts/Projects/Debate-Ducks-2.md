@@ -55,7 +55,7 @@ export default function Debateroom() {
 
 <img width="400" alt="CORS 에러 해결" src="https://user-images.githubusercontent.com/84524514/168922409-6cc999cd-3592-4402-a5d7-e99aaf5ab40d.png">
 
-## 잘못한 점
+## 반성할 점
 
 이전 프로젝트 때 `package-lock.json`이 자주 충돌이 났다. `package-lock.json`이 `package.json`의 보조하는 역할이라고 대충 알고 있던 우리는 둘을 함께 버전 관리에서 제외하였다. 프로젝트는 아무 이상이 없었고, 그래서 이번에도 `package-lock.json`을 버전 관리에서 제외하였다.
 
