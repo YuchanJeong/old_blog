@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket 연결"
+title: "[Debate-Ducks] WebSocket - Init"
 date: 2022-05-17
 categories:
   - <Projects>
@@ -47,7 +47,7 @@ export default function Debateroom() {
 \- 패키지, 라이브러리 > api, styles, utils > components > Etc  
 \- 각 순서마다 개행으로 구분
 
-## 문제 해결
+## 문제 및 문제 해결
 
 처음 Youtube의 강의만 보고 서버를 열었을 때 CORS 에러가 발생하였다. 기본 express에서는 `new Server`에 `{ cors: { origin: "..." } }`을 설정해서 해결했었던 문제였다. Nest.js에서는 `@WebSocketGateway`에 `{ cors: { origin: "..." } }`을 설정해서 해결하였다.
 

@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket 방 입장"
+title: "[Debate-Ducks] WebSocket - Room"
 date: 2022-05-18
 categories:
   - <Projects>
@@ -123,14 +123,14 @@ export default function Room({ debateId, socket }: IRoom) {
 }
 ```
 
-## 문제 해결
+## 문제 및 문제 해결
 
-처음에는 useEffect 내부에서 setState로 socket을 받아서 저장했다. 그러자 한 번의 입장에 여러 번의 연결 시도를 하는 문제가 있었다. _(bcs, 재랜더링)_
+처음에는 `useEffect()` 내부에서 `setState`로 socket을 받아서 저장했다. 그러자 한 번의 입장에 여러 번의 연결 시도를 하는 문제가 있었다. _(bcs, 재랜더링)_
 
 <img width="246" alt="useState 1번" src="https://user-images.githubusercontent.com/84524514/169258595-7a513e2f-ae1e-4c94-8eac-e9481ab0a68f.png">
 <img width="231" alt="useState 2번" src="https://user-images.githubusercontent.com/84524514/169258523-c649af87-a15e-4f78-8b71-68ebcefe2726.png">
 
-두 번째에는 useEffect 내부에서 바로 const로 socket을 저장한 다음 내부에서 바로 socket의 event를 작성 하였다. 하지만 useState를 사용했을 때와 같은 문제가 여전히 발생 하였고, 두 번째 브라우저에서 입장하자 이미 정원을 초과하였다고 입장을 거절당하는 추가적인 문제도 발생하였다.
+두 번째에는 `useEffect()` 내부에서 바로 const로 socket을 저장한 다음 내부에서 바로 socket의 event를 작성 하였다. 하지만 `useState()`를 사용했을 때와 같은 문제가 여전히 발생 하였고, 두 번째 브라우저에서 입장하자 이미 정원을 초과하였다고 입장을 거절당하는 추가적인 문제도 발생하였다.
 
 <img width="232" alt="const 1번" src="https://user-images.githubusercontent.com/84524514/169260185-921edb9f-0616-46f3-9758-89c8d1d4ce1d.png">
 <img width="240" alt="const 2번" src="https://user-images.githubusercontent.com/84524514/169260201-590ee288-4893-48d2-b9bd-7fdd873fe170.png">
@@ -139,12 +139,12 @@ export default function Room({ debateId, socket }: IRoom) {
 
 <img width="245" alt="const 3번" src="https://user-images.githubusercontent.com/84524514/169260664-c8d58982-e2c7-4466-9060-afd7030033a0.png">
 
-마지막으로 useState 대신에 useRef를 사용하였다. _(bcs, useRef는 재랜더링이 일어나지 않음)_ 그러자 모든 문제가 말끔히 해결되었다.
+마지막으로 `useState()` 대신에 `useRef()`를 사용하였다. _(bcs, useRef는 재랜더링이 일어나지 않음)_ 그러자 모든 문제가 말끔히 해결되었다.
 
 <img width="244" alt="useRef 1번" src="https://user-images.githubusercontent.com/84524514/169261494-559f58d4-e37f-4ec3-af48-7fdc5006824f.png">
 <img width="242" alt="useRef 2번" src="https://user-images.githubusercontent.com/84524514/169261521-436df3de-09c4-4e13-8a3d-56c358b60346.png">
 
-## 반성할 점 및 잘한 점
+## 반성할 점
 
 이전에 한번 만든 적 있는 기능이다 보니 이전의 코드를 참조하면서 만들고 있다. 참조만 하고 더 많이 생각하며 발전시킨 코드를 작성해야 하는데 이전의 코드를 답습하며 현재의 스택에 맞게 적용만 하고 있었다.
 
