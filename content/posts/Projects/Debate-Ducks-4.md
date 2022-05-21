@@ -8,6 +8,10 @@ tags:
   - (Devlog)
 ---
 
+## 개요
+
+simple-peer를 사용해서 사용자를 1 대 1로 연결하여 서로의 미디어를 주고받을 수 있게 만들었다.
+
 <img width="1440" alt="WebRTC" src="https://user-images.githubusercontent.com/84524514/169651461-ce53935d-9bb4-476f-88bf-dfdcdbcaca94.png">
 
 ## 클라이언트 WebRTC 코드

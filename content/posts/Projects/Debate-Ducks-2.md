@@ -8,6 +8,10 @@ tags:
   - (Devlog)
 ---
 
+## 개요
+
+socket.io를 사용해 WebSocket 서버를 구축하고 클라이언트에서 접속 가능하게 만들었다.
+
 ## WebSocket 서버
 
 \*_["[Socket.io] Nest.js에서 Socket.io 연결 기초"](/posts/studies/socket.io/socket.io-nest.js) 참조_
