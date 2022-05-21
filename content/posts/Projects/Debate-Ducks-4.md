@@ -8,6 +8,75 @@ tags:
   - (Devlog)
 ---
 
+<img width="1440" alt="WebRTC" src="https://user-images.githubusercontent.com/84524514/169651461-ce53935d-9bb4-476f-88bf-dfdcdbcaca94.png">
+
+## 클라이언트 WebRTC 코드
+
+기존에 한 파일에 작성했던 코드를 외부 파일로 이동해 가독성을 높였다. 또한 `useRef()`를 적극 활용해 불필요한 재랜더링을 방지하였다.
+
+```tsx
+// Room.tst 일부
+socket.on("guestJoin", () => {
+  connectHostPeer(
+    debateId,
+    socket,
+    peerRef.current,
+    myStreamRef.current,
+    peerStreamRef.current,
+    peerVideoRef.current
+  );
+});
+```
+
+```ts
+// simple-peer.ts 일부
+export const connectHostPeer = (
+  debateId: string | string[],
+  socket: Socket,
+  peer: Peer.Instance | undefined,
+  myStream: MediaStream | undefined,
+  peerStream: MediaStream | undefined,
+  peerVideo: HTMLVideoElement | null
+) => {
+  const simplePeer = new Peer({
+    initiator: true,
+    trickle: false,
+    config: {
+      iceServers: [
+        { urls: "stun:stun.l.google.com:19302" },
+        { urls: "stun:stun1.l.google.com:19302" },
+        { urls: "stun:stun2.l.google.com:19302" },
+        { urls: "stun:stun3.l.google.com:19302" },
+        { urls: "stun:stun4.l.google.com:19302" },
+        { urls: "stun:stun.nextcloud.com:443" },
+      ],
+    },
+    stream: myStream,
+  });
+
+  peer = simplePeer;
+
+  simplePeer.on("signal", (signal) => {
+    socket.emit("offer", { debateId, signal });
+  });
+
+  simplePeer.on("stream", (stream) => {
+    peerStream = stream;
+    if (peerVideo) {
+      peerVideo.srcObject = stream;
+    }
+  });
+
+  simplePeer.on("error", (err) => {
+    console.log("error", err); //*
+  });
+
+  socket.on("answer", (signal: Peer.SignalData) => {
+    simplePeer.signal(signal);
+  });
+};
+```
+
 ## 문제 및 문제 해결
 
 ### 문제 1 - WebSocket Issue
@@ -78,3 +147,22 @@ if (myStreamRef.current) {
   });
 }
 ```
+
+## "simple-peer" 사용 이유
+
+```bash
+npm i simple-peer
+npm i -D @types/simple-peer
+```
+
+기본 WebRTC로 코드를 작성하였을 때, 연결될 때까지 "IceCandidate"를 socket을 통해 여러번 주고받아야 했다. (물론 해결 방법이 있겠지만 나는 구현하는데 실패하였다. 😢😢😢) 그래서 조금 더 효율적으로 코드를 작성하기 위해 관련 라이브러리를 찾아보았다. 그중 "simple-peer"를 선택하였는데 그 이유는 우선 가장 많이 설치된 라이브러리라서이고, 또 공식 문서를 확인하였을 때 사용 방법을 가장 쉽게 이해할 수 있었기 때문이다.
+
+<img width="1323" alt="WebRTC Libraries" src="https://user-images.githubusercontent.com/84524514/169651454-5df86c85-47f6-4caf-bdab-681e4156c011.png">
+
+## "TypeScript" 사용 후기
+
+TypeScript를 사용하면서 장점들을 체감하였고 매우 마음에 들었다. 단순히 데이터의 타입을 정해둘 뿐이지만 이 덕분에 코드의 구조와 작동 원리를 더 쉽고 명확하게 파악할 수 있었다.
+
+특히 서버 코드와 클라이언트 코드를 각각 작성할 때 TypeScript의 이점이 두드러졌다. 사실 지금 WebSocket 기능을 혼자서 구현하고 있기 때문에 엄청 큰 이점으로 작용하지는 않지만, 그럼에도 구조를 헷갈리지 않고 서버 코드와 클라이언트 코드를 좀 더 쉽게 연동시킬 수 있었다. 서버와 클라이언트를 각각 작업하게 되는 상황에서는 훨씬 유용할 것이다.
+
+❗️ 추천 이유: 안정성 up, 작업시간 down 👍👍👍
