@@ -8,6 +8,12 @@ tags:
   - (Devlog)
 ---
 
+## 개요
+
+오디오 및 비디오의 끄기/켜기 기능과 화면 공유 기능을 추가했다.
+
+<img width="800" alt="details" src="https://user-images.githubusercontent.com/84524514/169694021-488bfbde-4488-4e95-bafa-0b9472e6fc9c.png">
+
 ## 문제 및 문제 해결
 
 ### 문제 1 - useRef를 하위 요소로 보낼 때
