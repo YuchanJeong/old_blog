@@ -121,7 +121,7 @@ socket?.on("connect", () => {
 
 ### 문제 2 - Type Error
 
-addTrack 내부의 myStreamRef.current에 타입 에러가 발생하였다.
+`addTrack` 내부의 `myStreamRef.current`에 타입 에러가 발생하였다.
 
 ```ts
 const myStreamRef = useRef<MediaStream>();
@@ -138,7 +138,7 @@ Argument of type 'MediaStream | undefined' is not assignable to parameter of typ
 Type 'undefined' is not assignable to type 'MediaStream'.
 ```
 
-아래와 같이 `if` 문으로 한 번 더 undefined 일 가능성을 없애주면 더 이상 에러가 나지 않는다. 하지만 이미 제일 바깥에서 `if` 문으로 undefined 일 가능성을 없애주었는데 왜 한 번 더 묶어줘야 하는지 아직 모르겠다. 그래서 Issue를 통해 팀원들과 공유하고, 동시에 Stackoverflow에도 질문을 게시하였다. (이유를 알게 되면 추가로 작성할 예정)
+아래와 같이 `if` 문으로 한 번 더 undefined 일 가능성을 없애주면 더 이상 에러가 나지 않는다. 하지만 이미 제일 바깥에서 `if` 문으로 undefined 일 가능성을 없애주었는데 왜 한 번 더 묶어줘야 하는지 아직 모르겠다. 그래서 Issue를 통해 팀원들과 공유하고, 동시에 Stackoverflow에도 질문을 게시하였다. (~~이유를 알게 되면 추가로 작성할 예정~~ [같은 문제(참조)](/posts/projects/debate-ducks-5/#문제-2---type-error)가 한 번 더 발생하였고 이유를 찾음)
 
 ```ts
 const myStreamRef = useRef<MediaStream>();
