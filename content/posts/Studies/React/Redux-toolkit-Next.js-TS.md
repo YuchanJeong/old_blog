@@ -106,7 +106,7 @@ export default function Example() {
   const dispatch = useAppDispatch();
   const count = useAppSelector(exampleSelector);
   const event = () => {
-    dispatch(actionCreator)
+    dispatch(actionCreator(/*action.payload*/))
   }
 
   return ...
