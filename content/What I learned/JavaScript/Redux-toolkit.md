@@ -9,6 +9,10 @@ tags:
   - Redux
 ---
 
+{{< alert "circle-info" >}}
+Next.js 및 TS 환경에서 설정 추가 예정
+{{< /alert >}}
+
 Ref. [Redux-toolkit Usage Guide
 ](https://redux-toolkit.js.org/usage/usage-guide)<br/>\*_[Redux-toolkit 예시](/storage/wil/javascript/ex-redux-toolkit)_
 
