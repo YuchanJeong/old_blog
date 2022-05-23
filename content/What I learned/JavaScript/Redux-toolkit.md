@@ -15,8 +15,16 @@ Ref. [Redux-toolkit Usage Guide
 ## Init
 
 ```bash
-npm i redux @reduxjs/toolkit react-redux
+npm i @reduxjs/toolkit react-redux
 ```
+
+<!-- ```bash
+npm i -D @types/react-redux # TypeScript
+```
+
+```bash
+npm i next-redux-wrapper # Next.js
+``` -->
 
 ### 1. Provider
 
