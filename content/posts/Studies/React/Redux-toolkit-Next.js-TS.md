@@ -38,12 +38,20 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 ### redux/modules/example.ts
 
 ```ts
-import { RootState } from "./../store";
+import { RootState } from "../store";
 import { createSlice } from "@reduxjs/toolkit";
 
-const example = createSlice({
+export interface IExample {
+  value: string;
+}
+
+const initialState: IExample = {
+  value: "...",
+};
+
+const exampleSlice = createSlice({
   name: "example",
-  initialState: { value: "..." },
+  initialState,
   reducers: {
     actionCreator: (state, action) => {
       // action.payload는 actionCreator의 params
