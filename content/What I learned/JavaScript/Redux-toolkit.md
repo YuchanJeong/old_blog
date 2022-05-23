@@ -22,14 +22,6 @@ Ref. [Redux-toolkit Usage Guide
 npm i @reduxjs/toolkit react-redux
 ```
 
-<!-- ```bash
-npm i -D @types/react-redux # TypeScript
-```
-
-```bash
-npm i next-redux-wrapper # Next.js
-``` -->
-
 ### 1. Provider
 
 ```js
