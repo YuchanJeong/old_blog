@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - Canvas"
+title: "[Debate-Ducks] WebSocket - Canvas 1"
 date: 2022-05-22
 categories:
   - <Projects>
@@ -9,6 +9,143 @@ tags:
 ---
 
 ## 개요
+
+캔버스에 여러 요소들(비디오, 공유 화면, 각종 정보 등)을 그리고 녹화할 수 있게 만들었다.
+
+<img src="https://user-images.githubusercontent.com/84524514/170090866-8df029df-795f-4632-a3fd-ad033abe965c.gif" alt="test"/>
+
+## 작업 내용
+
+### 캔버스 및 비디오
+
+이전 프로젝트에서 동일한 동영상 퀄리티를 위해서 캔버스에 고정 크기를 사용했었다. 그래서 화면을 줄이거나 모바일에서 보게 되면 캔버스가 잘리는 문제가 있었다. 이번에는 이런 문제를 해결하고 싶었다. 그래서 스타일(임시로 인라인 스타일 사용)로 보여지는 캔버스의 크기를 바꾼 다음 녹화 테스트를 하자 보여지는 캔버스의 크기와는 상관 없이 캔버스의 고정 크기에 맞게 녹화되었다.
+
+```tsx
+<canvas
+  ref={canvasRef}
+  width="1280px"
+  height="720px"
+  style={{ border: "2px solid red", width: "100vw" }}
+></canvas>
+```
+
+이전 프로젝트에서 비디오는 캔버스 내부의 `drawImage()`에서 크기를 조정해서 사용했었다. 그래서 사용자 카메라의 종류에 따라 화면이 늘어나는 문제가 있었다. 이번에는 사용자의 비디오를 획득할 때 애초에 고정된 크기에 맞게 받아서 늘어남 문제를 원천 차단하였다.
+
+```ts
+.getUserMedia({
+          video: { facingMode: "user", width: 500, height: 500 },
+          audio: { echoCancellation: true, noiseSuppression: true },
+        })
+```
+
+이전 프로젝트에서는 화면 가운데 보이지 않는 비디오를 고정하는 방식으로 뷰 바깥의 요소를 캔버스가 그리기 못하는 문제를 해결 하였는데 이번에는 `sticky`를 활용해 좀더 간단히 해결하였다.
+
+```ts
+<video
+  ref={videoRef}
+  muted
+  autoPlay
+  playsInline
+  width={0}
+  height={0}
+  style={{ position: "sticky", top: 0 }}
+></video>
+```
+
+### 카메라 연결 상태
+
+이전 프로젝트에서는 사용자의 카메라가 꺼지면 `.enable=false` 상태의 검은 화면만 보였다. 이번에는 소켓을 통해 카메라 on/off 여부와 화면공유 on/off 여부를 전달하고, 현재의 연결 상태 및 진행 상태를 고려하여 각각 다른 화면이 보이게 하였다.
+
+```ts
+useEffect(() => {
+  if (peer) {
+    socket?.emit("peerVideo", { debateId, isVideoOn });
+    socket?.emit("peerScreen", { debateId, isPeerScreenOn });
+  }
+}, [socket, peer, debateId, isVideoOn, isPeerScreenOn]);
+```
+
+```ts
+// prosText
+drawText(
+  canvasRef,
+  "#F8FBFD",
+  "bold 32px san-serif",
+  peer ? "Camera Off" : isPros ? "Camera Off" : "Not connected",
+  300,
+  380
+);
+```
+
+<img width="700" alt="Not Connected" src="https://user-images.githubusercontent.com/84524514/170036376-5b4fd654-e154-481c-beca-c0acff95b5be.png">
+<img width="700" alt="Camera Off" src="https://user-images.githubusercontent.com/84524514/170036312-150b2598-7c4a-47c6-b9b9-e1ac50f1d5a1.png">
+
+### 캔버스에 그리기
+
+이전 프로젝트에서는 사용자의 비디오를 그리는 함수, 찬성 측 화면공유 그리고 반대 측 화면공유로 나눠서 작성하였다. 처음에는 요소별로 그리는 함수를 만들어 조건을 걸었지만 한번 interval이 등록된 함수를 삭제하지 않으면 중첩으로 그려지는 문제가 발생하기 때문이었다.
+
+이번에는 interval을 중지하고 다시 시작하는 부분은 `useEffect()`의 `dependency`로 처리하고, 그리기 함수 내부에서 조건에 따라 다른 화면을 그리게 처리하여 가독성과 유지보수의 편리성을 늘렸다.
+
+```ts
+useEffect(() => {
+  drawStop();
+  drawStart();
+}, [
+  drawStart,
+  drawStop,
+  peer,
+  isVideoOn,
+  isPeerVideoOn,
+  isScreenOn,
+  isPeerScreenOn,
+]);
+```
+
+또한 캔버스에 그리는 과정도 종류(사각형, 텍스트, 비디오)별로 함수를 작성한 다음 파라미터를 이용해 원하는 것을 그릴 수 있게 만들어 가독성과 유지 보수의 편리성을 늘렸다.
+
+```ts
+const drawSquare = (
+  canvasRef: MutableRefObject<HTMLCanvasElement | null>,
+  color: string,
+  dx: number,
+  dy: number,
+  w: number,
+  h: number
+) => {
+  const ctx = canvasRef.current?.getContext("2d");
+  if (ctx) {
+    ctx.fillStyle = color;
+    ctx.fillRect(dx, dy, w, h);
+  }
+};
+```
+
+### Props Type 정리
+
+Props를 넘길 때마다 Props의 타입을 하나하나 작성해 주어야 해서 시간이 조금 소요되었다. Props의 타입을 `interface`로 모두 저장해두고 `Pick`을 이용해서 뽑아서 사용하니 편리하고 시간도 절약되었다.
+
+```tsx
+export default function Buttons({
+  peer,
+  streamRef,
+  videoRef,
+  isAudioOn,
+  setIsAudioOn,
+  isVideoOn,
+  setIsVideoOn,
+  setIsScreenOn,
+}: Pick<
+  IDebateroomProps,
+  | "peer"
+  | "streamRef"
+  | "videoRef"
+  | "isAudioOn"
+  | "setIsAudioOn"
+  | "isVideoOn"
+  | "setIsVideoOn"
+  | "setIsScreenOn"
+>) {...}
+```
 
 ## 문제 및 문제 해결
 
