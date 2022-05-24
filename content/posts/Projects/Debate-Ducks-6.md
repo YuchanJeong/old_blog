@@ -120,9 +120,9 @@ const drawSquare = (
 };
 ```
 
-### Props Type 정리
+### Props 타입 정리
 
-Props를 넘길 때마다 Props의 타입을 하나하나 작성해 주어야 해서 시간이 조금 소요되었다. Props의 타입을 `interface`로 모두 저장해두고 `Pick`을 이용해서 뽑아서 사용하니 편리하고 시간도 절약되었다.
+Props를 넘길 때마다 Props의 타입을 하나하나 작성해 주어야 해서 시간이 조금 소요되었다. Props의 타입을 `interface`로 모두 저장해두고 `Pick`으로 뽑아서 사용하니 편리하고 시간도 절약되었다.
 
 ```tsx
 export default function Buttons({
