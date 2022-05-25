@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - Canvas 2"
+title: "[Debate-Ducks] WebSocket - Disconnect"
 date: 2022-05-25
 categories:
   - <Projects>
@@ -9,3 +9,5 @@ tags:
 ---
 
 ## 개요
+
+## 작업 내용
