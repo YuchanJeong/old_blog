@@ -162,7 +162,7 @@ Ps. 색상도 따로 객체 형태로 만들어 유지 보수의 편리성을 �
 
 ## 문제 및 문제 해결
 
-### 문제 1 - PR의 커밋 중첩
+### 1. PR의 커밋 중첩
 
 \# 문제
 
@@ -178,7 +178,7 @@ PR이 쌓이게 되면 커밋과 변경된 파일이 중첩되는 문제가 있�
 <img width="800" alt="PR3" src="https://user-images.githubusercontent.com/84524514/169777664-3d19858d-7d0d-48d8-bec9-5aa80f085bb3.png">
 <img width="576" alt="PR4" src="https://user-images.githubusercontent.com/84524514/169777698-8d8e8245-f2f7-4886-b1e5-fd3c01762fa0.png">
 
-### 문제 2 - useRef에 할당 불가능
+### 2. useRef에 할당 불가능
 
 캔버스에 사용자의 미디어와 공유 화면을 각각 그리기 위해 `useInterval Hook` 작성 중 `Cannot assign to 'current' because it is a read-only property.` 에러가 발생하였다. 이유는 초깃값으로 null을 지닐 때 제네릭에 null을 포함하지 않으면 변경할 수 없는 객체를 생성하기 때문이다.
 

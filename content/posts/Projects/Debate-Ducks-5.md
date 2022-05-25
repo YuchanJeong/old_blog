@@ -16,7 +16,7 @@ tags:
 
 ## 문제 및 문제 해결
 
-### 문제 1 - useRef를 하위 요소로 보낼 때
+### 1. useRef를 하위 요소로 보낼 때
 
 `useRef()`로 `streamRef`에 사용자의 스트림을 저장해서 사용하였다. 그리고 비디오 끄기/켜기 버튼을 하위 컴포넌트로 사용하면서 `stream={streamRef.current}`로 props를 넘겨주었다.
 
@@ -26,7 +26,7 @@ tags:
 
 Ps. 다른 이유로 재랜더링이 일어날 경우 코드는 정상 작동한다. 그래서 이 기능을 독립적으로 확인해 보기 전까지는 정상적으로 작동한다는 착각을 하게 되었다. 안전성을 위해서 `useRef()`를 하위 요소로 넘길 때는 `ref.current`가 아닌 `ref` 자체를 넘기는 것을 추천한다.
 
-### 문제 2 - Type Error
+### 2. Type Error
 
 화면 공유 기능을 개발할 때 `if (peerRef.current && myStreamRef.current && myVideoRef.current) {...}`로 한번 falsy 일 가능성을 제거해 줬음에도 `screenStream.getTracks()[0].onended` 내부의 `... Ref.current`가 falsy 일 가능성이 있다고 타입 에러가 떴다.
 
@@ -80,7 +80,7 @@ navigator.mediaDevices.getDisplayMedia().then((screenStream) => {
 
 Ps. 위 코드의 경우 WebRTC 연결을 하지 않았을 때 화면 공유를 하지 못한다는 문제가 추가로 발생하였다. 조건문 안의 `peerRef.current`를 따로 조건처리 하여 해결하였다.
 
-### 문제 3 - 화면공유 시스템 거절
+### 3. 화면공유 시스템 거절
 
 [문제 2](/posts/projects/debate-ducks-5/#문제-2---type-error)의 코드로 화면 공유를 실행 하였을 때 Chrome 탭 공유는 정상적으로 실행 되지만 전체 화면과 창 공유는 정상적으로 실행되지 않았다.
 

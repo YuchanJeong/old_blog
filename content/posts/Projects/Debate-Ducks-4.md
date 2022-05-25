@@ -83,7 +83,7 @@ export const connectHostPeer = (
 
 ## 문제 및 문제 해결
 
-### 문제 1 - WebSocket Issue
+### 1. WebSocket Issue
 
 [이전에 작성한 코드](/posts/projects/debate-ducks-3)에서 WebRTC를 적용하기 위해 추가로 코드를 작성하였는데 제대로 작동하지 않았다.
 
@@ -119,7 +119,7 @@ socket?.on("connect", () => {
 <img width="236" alt="success1" src="https://user-images.githubusercontent.com/84524514/169594975-7bdcea51-325a-4c4d-b34a-fc6b41cbdf2c.png">
 <img width="237" alt="success2" src="https://user-images.githubusercontent.com/84524514/169594913-ff0ed3a7-0b94-46e5-89f9-be0c7553335a.png">
 
-### 문제 2 - Type Error
+### 2. Type Error
 
 `addTrack` 내부의 `myStreamRef.current`에 타입 에러가 발생하였다.
 
@@ -165,7 +165,7 @@ npm i -D @types/simple-peer
 
 ## "TypeScript" 사용 후기
 
-TypeScript를 사용하면서 장점들을 체감하였고 매우 마음에 들었다. 단순히 데이터의 타입을 정해둘 뿐이지만 이 덕분에 코드의 구조와 작동 원리를 더 쉽고 명확하게 파악할 수 있었다.
+TypeScript를 사용하면서 장점들을 체감하였고 매우 마음에 들었다. 단순히 데이터의 타입을 정해둘 뿐이지만 이 덕분에 코드의 구조와 작동 원리를 더 쉽고 명확하게 파악할 수 있었다. TypeScript가 아니었다면 수많은 에러들을 모르고 지나쳤을 것이다. (이전 코드에 문제가 많았지만 JS에서는 오류를 확인하지 못하였음)
 
 특히 서버 코드와 클라이언트 코드를 각각 작성할 때 TypeScript의 이점이 두드러졌다. 사실 지금 WebSocket 기능을 혼자서 구현하고 있기 때문에 엄청 큰 이점으로 작용하지는 않지만, 그럼에도 구조를 헷갈리지 않고 서버 코드와 클라이언트 코드를 좀 더 쉽게 연동시킬 수 있었다. 서버와 클라이언트를 각각 작업하게 되는 상황에서는 훨씬 유용할 것이다.
 
