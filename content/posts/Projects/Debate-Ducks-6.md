@@ -8,13 +8,13 @@ tags:
   - (Devlog)
 ---
 
-## 개요
+## Summary
 
 캔버스에 여러 비디오 및 공유 화면를 포함한 요소들을 그리고 녹화할 수 있게 만들었다.
 
 <img src="https://user-images.githubusercontent.com/84524514/170090866-8df029df-795f-4632-a3fd-ad033abe965c.gif" alt="test"/>
 
-## 작업 내용
+## Details
 
 ### 캔버스 및 비디오 크기
 
@@ -160,9 +160,9 @@ export default function Buttons({
 
 Ps. 색상도 따로 객체 형태로 만들어 유지 보수의 편리성을 높혔다.
 
-## 문제 및 문제 해결
+## Problems
 
-### 1. PR의 커밋 중첩
+### PR의 커밋 중첩
 
 \# 문제
 
@@ -178,12 +178,12 @@ PR이 쌓이게 되면 커밋과 변경된 파일이 중첩되는 문제가 있�
 <img width="800" alt="PR3" src="https://user-images.githubusercontent.com/84524514/169777664-3d19858d-7d0d-48d8-bec9-5aa80f085bb3.png">
 <img width="576" alt="PR4" src="https://user-images.githubusercontent.com/84524514/169777698-8d8e8245-f2f7-4886-b1e5-fd3c01762fa0.png">
 
-### 2. useRef에 할당 불가능
+### useRef에 할당 불가능
 
 캔버스에 사용자의 미디어와 공유 화면을 각각 그리기 위해 `useInterval Hook` 작성 중 `Cannot assign to 'current' because it is a read-only property.` 에러가 발생하였다. 이유는 초깃값으로 null을 지닐 때 제네릭에 null을 포함하지 않으면 변경할 수 없는 객체를 생성하기 때문이다.
 
 Ref. [(useRef) Cannot assign to 'current' because it is read-only property](https://bobbyhadz.com/blog/react-cannot-assign-to-current-because-read-only-property)
 
-## 발전한 점
+## Reflections
 
 아직 많이 부족하지만 중복 작성되는 요소들을 최대한 공통으로 묶어서 빼는 노력을 통해 코드의 가독성과 유지 보수의 편리성이 많이 늘어났다. 또한 만나는 이슈나 개발과정의 기록을 통해 코드를 이전보다 더 확실하게 이해하게 되었다. 특히 이전에는 내가 작성한 코드를 팀원에게 설명해 줄 때 많은 어려움을 겪었는데, 기록을 하면서 코드를 인간의 언어로 설명하는 과정을 연습할 수 있게 되었고 (이전에는 인간의 언어를 코드로 작성하는 부분만 집중적으로 함), 이제는 팀원들에게 내 코드를 설명하는데 큰 어려움이 없다.

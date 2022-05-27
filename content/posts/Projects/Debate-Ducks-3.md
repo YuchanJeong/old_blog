@@ -8,11 +8,13 @@ tags:
   - (Devlog)
 ---
 
-## 개요
+## Summary
 
 WebSocket에서 방을 생성하고, 사용자가 방에 입장할 수 있게 만들었다. (한 방에 최대 2명)
 
-## 서버 방 입장 코드
+## Details
+
+### 서버 방 입장 코드
 
 ```ts
 import {
@@ -65,7 +67,7 @@ export class EventsGateway
 }
 ```
 
-## 클라이언트 방 입장 코드
+### 클라이언트 방 입장 코드
 
 ```tsx
 // debateroom/[debateId].tsx
@@ -127,7 +129,7 @@ export default function Room({ debateId, socket }: IRoom) {
 }
 ```
 
-## 문제 및 문제 해결
+## Problems
 
 처음에는 `useEffect()` 내부에서 `setState`로 socket을 받아서 저장했다. 그러자 한 번의 입장에 여러 번의 연결 시도를 하는 문제가 있었다. _(bcs, 재랜더링)_
 
@@ -148,7 +150,7 @@ export default function Room({ debateId, socket }: IRoom) {
 <img width="244" alt="useRef 1번" src="https://user-images.githubusercontent.com/84524514/169261494-559f58d4-e37f-4ec3-af48-7fdc5006824f.png">
 <img width="242" alt="useRef 2번" src="https://user-images.githubusercontent.com/84524514/169261521-436df3de-09c4-4e13-8a3d-56c358b60346.png">
 
-## 반성할 점
+## Reflections
 
 이전에 한번 만든 적 있는 기능이다 보니 이전의 코드를 참조하면서 만들고 있다. 참조만 하고 더 많이 생각하며 발전시킨 코드를 작성해야 하는데 이전의 코드를 답습하며 현재의 스택에 맞게 적용만 하고 있었다.
 

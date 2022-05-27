@@ -8,13 +8,15 @@ tags:
   - (Devlog)
 ---
 
-## 개요
+## Summary
 
 simple-peer를 사용해서 사용자를 1 대 1로 연결하여 서로의 미디어를 주고받을 수 있게 만들었다.
 
 <img width="1440" alt="WebRTC" src="https://user-images.githubusercontent.com/84524514/169651461-ce53935d-9bb4-476f-88bf-dfdcdbcaca94.png">
 
-## 클라이언트 WebRTC 코드
+## Details
+
+### 클라이언트 WebRTC 코드
 
 기존에 한 파일에 작성했던 코드를 외부 파일로 이동해 가독성을 높였다. 또한 `useRef()`를 적극 활용해 불필요한 재랜더링을 방지하였다.
 
@@ -81,9 +83,9 @@ export const connectHostPeer = (
 };
 ```
 
-## 문제 및 문제 해결
+## Problems
 
-### 1. WebSocket Issue
+### WebSocket Issue
 
 [이전에 작성한 코드](/posts/projects/debate-ducks-3)에서 WebRTC를 적용하기 위해 추가로 코드를 작성하였는데 제대로 작동하지 않았다.
 
@@ -119,7 +121,7 @@ socket?.on("connect", () => {
 <img width="236" alt="success1" src="https://user-images.githubusercontent.com/84524514/169594975-7bdcea51-325a-4c4d-b34a-fc6b41cbdf2c.png">
 <img width="237" alt="success2" src="https://user-images.githubusercontent.com/84524514/169594913-ff0ed3a7-0b94-46e5-89f9-be0c7553335a.png">
 
-### 2. Type Error
+### Type Error
 
 `addTrack` 내부의 `myStreamRef.current`에 타입 에러가 발생하였다.
 
@@ -152,7 +154,9 @@ if (myStreamRef.current) {
 }
 ```
 
-## "simple-peer" 사용 이유
+## Etc
+
+### simple-peer 사용 이유
 
 ```bash
 npm i simple-peer
@@ -163,7 +167,7 @@ npm i -D @types/simple-peer
 
 <img width="1323" alt="WebRTC Libraries" src="https://user-images.githubusercontent.com/84524514/169651454-5df86c85-47f6-4caf-bdab-681e4156c011.png">
 
-## "TypeScript" 사용 후기
+### TypeScript 사용 후기
 
 TypeScript를 사용하면서 장점들을 체감하였고 매우 마음에 들었다. 단순히 데이터의 타입을 정해둘 뿐이지만 이 덕분에 코드의 구조와 작동 원리를 더 쉽고 명확하게 파악할 수 있었다. TypeScript가 아니었다면 수많은 에러들을 모르고 지나쳤을 것이다. (이전 코드에 문제가 많았지만 JS에서는 오류를 확인하지 못하였음)
 

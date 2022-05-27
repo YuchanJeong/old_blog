@@ -8,11 +8,13 @@ tags:
   - (Devlog)
 ---
 
-## 개요
+## Summary
 
 socket.io를 사용해 WebSocket 서버를 구축하고 클라이언트에서 접속 가능하게 만들었다.
 
-## WebSocket 서버
+## Details
+
+### WebSocket 서버
 
 \*_["[Socket.io] Nest.js에서 Socket.io 연결 기초"](/posts/studies/socket.io/socket.io-nest.js) 참조_
 
@@ -20,7 +22,7 @@ Nest.js에 대한 지식 없이 Socket.io를 적용시키려고 하니 어려움
 
 아직은 기본적인 형태만 갖추어져있고, Debate-Ducks 프로젝트에 필요 없는 부분들도 작성되어 있어 추후 여러 테스트를 거쳐 프로젝트에 맞게 최적화 시킬 예정이다.
 
-## WebSocket 클라이언트
+### WebSocket 클라이언트
 
 Next.js를 사용하였지만 이미 충분히 학습하였고, 기본적으로 React에서의 사용법과 크게 다르지 않아 쉽게 적용할 수 있었다. 다만 TypeScript를 실전에서 처음 써봐서 아직은 조금 적응이 덜 되었다.
 
@@ -51,7 +53,7 @@ export default function Debateroom() {
 \- 패키지, 라이브러리 > api, styles, utils > components > Etc  
 \- 각 순서마다 개행으로 구분
 
-## 문제 및 문제 해결
+## Problems
 
 처음 Youtube의 강의만 보고 서버를 열었을 때 CORS 에러가 발생하였다. 기본 express에서는 `new Server`에 `{ cors: { origin: "..." } }`을 설정해서 해결했었던 문제였다. Nest.js에서는 `@WebSocketGateway`에 `{ cors: { origin: "..." } }`을 설정해서 해결하였다.
 
@@ -59,7 +61,7 @@ export default function Debateroom() {
 
 <img width="400" alt="CORS 에러 해결" src="https://user-images.githubusercontent.com/84524514/168922409-6cc999cd-3592-4402-a5d7-e99aaf5ab40d.png">
 
-## 반성할 점
+## Reflections
 
 이전 프로젝트 때 `package-lock.json`이 자주 충돌이 났다. `package-lock.json`이 `package.json`의 보조하는 역할이라고 대충 알고 있던 우리는 둘을 함께 버전 관리에서 제외하였다. 프로젝트는 아무 이상이 없었고, 그래서 이번에도 `package-lock.json`을 버전 관리에서 제외하였다.
 
