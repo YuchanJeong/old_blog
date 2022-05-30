@@ -72,6 +72,7 @@ tags:
 | git commit                | 커밋 생성                                             |
 | git commit -m "[메시지]"  | 메시지와 함께 커밋 생성                               |
 | git commit -am "[메시지]" | 스테이징 후 커밋<br/>\*_한번 이상 커밋한 파일만 가능_ |
+| git commit --amend        | 마지막 커밋 메시지 수정                               |
 
 ### 7. 커밋 기록
 

@@ -20,6 +20,8 @@ tags:
 
 ![debate-start](https://user-images.githubusercontent.com/84524514/170584346-b2296711-7778-433f-81c1-1abba46f8fb6.gif)
 
+![debate](https://user-images.githubusercontent.com/84524514/170883638-7eebea9b-a6c2-44b7-8e39-a337c94fe45e.gif)
+
 ## Problems
 
 ### 토론 일시 중단 시 clearInterval 문제
