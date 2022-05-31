@@ -114,7 +114,7 @@ clearInterval(roomDebates[roomId].debate);
 
 처음에는 교차 조사 단계에서 질문자가 마이크를 껐을 경우에만 답변자의 마이크를 켜서 답변이 가능하게 했다. 하지만 질문자가 "답변 감사드립니다. 이제 다음 질문으로 넘어가겠습니다."라고 양해를 구하고 다음 질문으로 넘어가는 것이 마이크를 뚝 하고 끊어버리는 것보다 훨씬 낫다고 판단하여 마이크는 자유롭게 끄고 켜는 것이 가능하게 했다.
 
-<img src="debate-turn](https://user-images.githubusercontent.com/84524514/171024576-1de410a5-9b50-4551-b949-45748871d9af.gif" alt="debate-turn">
+![debate-turn](https://user-images.githubusercontent.com/84524514/171024576-1de410a5-9b50-4551-b949-45748871d9af.gif)
 
 ## Problems
 
