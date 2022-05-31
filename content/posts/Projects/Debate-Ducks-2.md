@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - Init"
+title: "[Debate-Ducks] Debateroom - Init"
 date: 2022-05-17
 categories:
   - <Projects>

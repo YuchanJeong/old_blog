@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - Reconnect"
+title: "[Debate-Ducks] Debateroom - Reconnect"
 date: 2022-05-25
 categories:
   - <Projects>

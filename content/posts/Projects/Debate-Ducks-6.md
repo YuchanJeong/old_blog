@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - Canvas"
+title: "[Debate-Ducks] Debateroom - Canvas"
 date: 2022-05-22
 categories:
   - <Projects>

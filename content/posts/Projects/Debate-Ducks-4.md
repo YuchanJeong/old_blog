@@ -1,5 +1,5 @@
 ---
-title: "[Debate-Ducks] WebSocket - WebRTC"
+title: "[Debate-Ducks] Debateroom - WebRTC"
 date: 2022-05-20
 categories:
   - <Projects>
