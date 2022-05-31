@@ -139,6 +139,8 @@ handleSkip(@MessageBody() data: { debateId: string; isPros: boolean }) {
 }
 ```
 
+Ps. 남은 시간이 10초 일 때와 3초 일 때 경고음이 울리게 만들었다. 10초는 발언을 마무리하라는 신호이고, 3초는 차례가 곧 종료된다는 신호이다.
+
 ## Problems
 
 ### 토론 일시 중단 시 clearInterval 문제
