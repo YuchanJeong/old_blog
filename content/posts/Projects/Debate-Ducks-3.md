@@ -138,7 +138,7 @@ export default function Room({ debateId, socket }: IRoom) {
 <img width="240" alt="useState 1번" src="https://user-images.githubusercontent.com/84524514/169258595-7a513e2f-ae1e-4c94-8eac-e9481ab0a68f.png">
 <img width="240" alt="useState 2번" src="https://user-images.githubusercontent.com/84524514/169258523-c649af87-a15e-4f78-8b71-68ebcefe2726.png">
 
-두 번째에는 `useEffect` 내부에서 바로 const로 socket을 저장한 다음 내부에서 바로 socket의 event를 작성 했다. 하지만 `useState`를 사용했을 때와 같은 문제가 여전히 발생 하였고, 두 번째 브라우저에서 입장하자 이미 정원을 초과하였다고 입장을 거절당하는 추가적인 문제도 발생했다.
+두 번째에는 `useEffect` 내부에서 바로 const로 socket을 저장한 다음 내부에서 바로 socket의 event를 작성 했다. 하지만 `useState`를 사용했을 때와 같은 문제가 여전히 발생 하였고, 두 번째 브라우저에서 입장하자 이미 정원을 초과했다.고 입장을 거절당하는 추가적인 문제도 발생했다.
 
 <img width="240" alt="const 1번" src="https://user-images.githubusercontent.com/84524514/169260185-921edb9f-0616-46f3-9758-89c8d1d4ce1d.png">
 <img width="240" alt="const 2번" src="https://user-images.githubusercontent.com/84524514/169260201-590ee288-4893-48d2-b9bd-7fdd873fe170.png">

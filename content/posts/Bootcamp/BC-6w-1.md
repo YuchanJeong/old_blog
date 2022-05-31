@@ -831,7 +831,7 @@ export default App;
 ## Today's takeaway
 
 - 오전에는 페어에게 React Twittler Advanced 코드를 설명하는 시간을 가졌다. 이제 코드를 설명하는 능력도 많이 향상되었다.
-- 오후에는 Fastcampus 강의를 들고, HA를 대비하여 지금까지 배웠던 React를 WIL에 총정리하였다.
+- 오후에는 Fastcampus 강의를 들고, HA를 대비하여 지금까지 배웠던 React를 WIL에 총정리했다.
 - 리액트를 배우면서 리액트뿐만 아니라 최적화나 중복 데이터의 관리 등 기본적인 프로그래밍 방식들도 배울 수 있었다.
 
 ## Tomorrow I'll learn

@@ -98,9 +98,9 @@ tags:
 
 ## Today's takeaway
 
-- section1 HA로 알고리즘 테스트(JavaScript)를 진행하였다.
+- section1 HA로 알고리즘 테스트(JavaScript)를 진행했다.
 - 문제는 전부 이전에 풀어본 양식이어서 어렵지 않았다.
-- 리액트 부분을 아직 완전히 정리하지 못해서 추가로 정리하였다.
+- 리액트 부분을 아직 완전히 정리하지 못해서 추가로 정리했다.
 
 ## Tomorrow I'll learn
 

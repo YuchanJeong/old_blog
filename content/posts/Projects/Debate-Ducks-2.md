@@ -52,7 +52,7 @@ export default function Debateroom() {
 
 ### WebSocket CORS Error
 
-처음 Youtube의 강의만 보고 서버를 구축했을 때 CORS 에러가 발생하였다. 기본 express에서는 `new Server`에 `{ cors: { origin: "..." } }`을 설정해서 해결했던 문제였다. Nest.js에서는 `@WebSocketGateway`에 `{ cors: { origin: "..." } }`을 설정해서 해결했다.
+처음 Youtube의 강의만 보고 서버를 구축했을 때 CORS 에러가 발생했다. 기본 express에서는 `new Server`에 `{ cors: { origin: "..." } }`을 설정해서 해결했던 문제였다. Nest.js에서는 `@WebSocketGateway`에 `{ cors: { origin: "..." } }`을 설정해서 해결했다.
 
 <img width="400" alt="CORS 에러" src="https://user-images.githubusercontent.com/84524514/168922191-7982a7bd-418e-45a3-b390-021ee9e06b91.png">
 
