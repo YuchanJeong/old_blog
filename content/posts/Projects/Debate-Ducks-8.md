@@ -116,6 +116,29 @@ clearInterval(roomDebates[roomId].debate);
 
 <img width="800px" alt="debate-turn" src="https://user-images.githubusercontent.com/84524514/171024576-1de410a5-9b50-4551-b949-45748871d9af.gif">
 
+### 남은 시간 생략
+
+발언이 끝난 경우 억지로 남은 시간 동안 더 발언하지 않고 넘어갈 수 있게 남은 시간 생략 기능을 만들었다.
+
+```ts
+@SubscribeMessage("skip")
+handleSkip(@MessageBody() data: { debateId: string; isPros: boolean }) {
+  if (
+    roomDebates[data.debateId].timer > 3 &&
+    ((data.isPros &&
+      (roomDebates[data.debateId].turn === 1 ||
+        roomDebates[data.debateId].turn === 4 ||
+        roomDebates[data.debateId].turn === 5)) ||
+      (!data.isPros &&
+        (roomDebates[data.debateId].turn === 2 ||
+          roomDebates[data.debateId].turn === 3 ||
+          roomDebates[data.debateId].turn === 6)))
+  ) {
+    roomDebates[data.debateId].timer = 3;
+  }
+}
+```
+
 ## Problems
 
 ### 토론 일시 중단 시 clearInterval 문제
