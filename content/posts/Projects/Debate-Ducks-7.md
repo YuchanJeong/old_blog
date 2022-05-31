@@ -10,15 +10,15 @@ tags:
 
 ## Summary
 
-WebRTC 재연결 시 발생하는 여러 문제들을 해결하였다.
+WebRTC 재연결 시 발생하는 여러 문제들 해결.
 
-<img src="https://user-images.githubusercontent.com/84524514/170385170-08048515-eaea-4bf5-85c1-355e80a8957e.gif" alt="reconnect"></img>
+<img width="800px" alt="reconnect" src="https://user-images.githubusercontent.com/84524514/170385170-08048515-eaea-4bf5-85c1-355e80a8957e.gif" ></img>
 
 ## Problems
 
 ### WebRTC 재연결 문제
 
-WebRTC가 이미 연결되어 있는 상태에서 한쪽이 재접속을 시도할 때 `cannot signal` 에러가 발생하였다. 이전 프로젝트 때도 발생했던 에러인데 그때는 문제가 발생하는 이유조차 제대로 이해할 수 없어서 뒤로 가기를 막고, 한쪽 연결이 끊겼을 때 다른 쪽의 연결도 끊고 종료 시켜버리는 방식으로 문제를 회피하였다. 보통의 영상 통화라면 위의 방식으로도 충분했겠지만 토론을 진행하며 녹화까지 하는 프로젝트의 특징상 안정성을 위해서 반듯이 해결되어야 할 문제였다.
+WebRTC가 이미 연결되어 있는 상태에서 한쪽이 재접속을 시도할 때 `cannot signal` 에러가 발생했다. 이전 프로젝트 때도 발생했던 에러인데 그때는 문제가 발생하는 이유조차 제대로 이해할 수 없고 시간도 부족했다. 그래서 뒤로 가기를 막고, 한쪽 연결이 끊겼을 때 다른 쪽의 연결도 끊고 종료 시켜버리는 방식으로 문제를 회피했다. 보통의 영상 통화라면 위의 방식으로도 충분했겠지만 토론을 진행하며 녹화까지 하는 프로젝트의 특징상 안정성을 위해서 해결되어야 할 문제였다.
 
 ```bash
 Error cannot signal after peer is destroyed
@@ -26,22 +26,21 @@ Error cannot signal after peer is destroyed
 
 <img width="800" alt="peer" src="https://user-images.githubusercontent.com/84524514/170372767-d1964811-287f-42c9-9872-759b7f99927b.png">
 
-소켓과 리액트의 구조에 대해서 어느 정도 이해하고 있는 지금은 소켓의 이벤트에 재접속을 시도하지 않은 쪽의 peer가 남아있어서 생기는 문제라는 것을 금방 파악하였다.
+소켓과 리액트의 구조에 대해서 어느 정도 이해하고 있는 지금은 소켓의 이벤트에 재접속을 시도하지 않은 쪽의 peer가 남아있어서 생기는 문제라는 것을 금방 파악했다.
 
-우선 한쪽의 연결이 끊어졌을 때 다른 쪽에 이벤트를 발동시키기 위해 `handleDisconnect()`를 사용하였다. 이때 이전의 코드를 살펴보니 이 부분이 엄청나게 잘못되어 있었다. 한쪽이 나갔을 때 모든 방에 `peerDisconnect` 이벤트를 발동 시키게 되어 있었다. 테스트를 할 때 동시에 하나 이상의 토론을 진행한 적이 없어서 발견하지 못했던 문제였다.
+우선 한쪽의 연결이 끊어졌을 때 다른 쪽에 이벤트를 발동시키기 위해 `handleDisconnect`를 사용했다. 이때 이전의 코드를 살펴보니 이 부분이 엄청나게 잘못되어 있었다. 한쪽이 나갔을 때 모든 방에 `peerDisconnect` 이벤트를 발동 시키게 되어 있었다. 테스트를 할 때 동시에 하나 이상의 토론을 진행한 적이 없어서 발견하지 못했던 문제였다.
 
-처음에는 `this.server.sockets.adapter.rooms`에 `forEach`를 사용해 정보를 찾으려고 하였다. 하지만 `handleDisconnect()`는 연결이 끊어진 후 발동하는 이벤트라 해당 `socket.id`는 WebSocket 서버에 남아있지 않았고 정보를 찾기는 어려웠다.
+처음에는 `this.server.sockets.adapter.rooms`에 `forEach`를 사용해 정보를 찾으려고 했다. 하지만 `handleDisconnect`는 연결이 끊어진 후 발동하는 이벤트라 해당 `socket.id`는 WebSocket 서버에 남아있지 않았고 정보를 찾기는 어려웠다.
 
-그래서 `join` 이벤트가 발동할 때 해당 `socket.id`에 방의 정보를 담아서 서버 측에 저장해 두고 `handleDisconnect()`에서 정보를 할당한 다음 삭제하는 방식으로 변경하였다.
+그래서 `join` 이벤트가 발동할 때 해당 `socket.id`에 방의 정보를 담아서 서버 측에 저장해 두고 `handleDisconnect`에서 정보를 할당한 다음 삭제하는 방식으로 변경하였다.
 
-그 후 `peerDisconnect` 이벤트에서 `peer.destroy()`로 peer를 삭제한 뒤 `setPeer(undefined)`로 peer를 초기화 시키는 방식으로 접근하였으나 이번에는 `Failed to set remote answer sdp` 에러가 발생하였다.
+그 후 `peerDisconnect` 이벤트에서 `peer.destroy()`로 peer를 삭제한 뒤 `setPeer(undefined)`로 peer를 초기화 시키는 방식으로 접근하였으나 새로운 에러가 발생했다.
 
 ```bash
 DOMException: Failed to execute 'setRemoteDescription' on 'RTCPeerConnection': Failed to set remote answer sdp: Called in wrong state: stable
 ```
 
-이번에는 소켓의 연결이 그대로 남아있는 게 문제의 원인이어서 `peerDisconnect` 이벤트에서 `socket.current.disconnect()`로 소켓의 연결을 끊은 다음 새로운 소켓을 연결한 뒤 `join` 이벤트를 발동시켰다. 그러자
-`Connection failed` 에러가 발생하였다.
+이번에는 소켓의 연결이 그대로 남아있는 게 문제의 원인이어서 `peerDisconnect` 이벤트에서 `socket.current.disconnect()`로 소켓의 연결을 끊은 다음 새로운 소켓을 연결한 뒤 `join` 이벤트를 발동시켰다. 그러자 또 새로운 에러가 발생했다.
 
 ```bash
 Error: Connection failed.
@@ -49,17 +48,17 @@ Error: Connection failed.
   at RTCPeerConnection.Peer._pc.onconnectionstatechange
 ```
 
-새로 생성된 소켓에 peer를 연결하는 이벤트가 작성되어 있지 않기 때문이었다. 그래서 `peerDisconnect` 이벤트에서 `setReConnect(!reConnect)`로 `reConnect`의 값이 변하게 하고, `useEffect()`의 dependency에 추가하는 방식으로 재연결이 가능하게 만들었다.
+새로 생성된 소켓에 peer를 연결하는 이벤트가 작성되어 있지 않기 때문이었다. 그래서 `peerDisconnect` 이벤트에서 `setReConnect(!reConnect)`로 `reConnect`의 값이 변하게 하고, `useEffect`의 dependency에 `reConnect`를 추가하는 방식으로 재연결이 가능하게 만들었다.
 
-Ps. 빈 배열 dependency로 첫 연결 시에는 비디오 화면이 꺼진 상태로 연결되고, 상대방이 재연 결의 시도했을 때는 현제의 비디오 상태가 유지된다.
+Ps. 빈 배열 dependency를 가지는 `useEffect`를 따로 사용해 첫 연결 시에는 비디오 화면이 꺼진 상태로 연결되고, 상대방이 재연결을 시도했을 때는 현제의 비디오 상태가 유지된다.
 
 ### 화면 공유 중 재연결 문제
 
-화면 공유 상태에서 다른쪽이 재연결을 시도하면 에러가 발생하였다. 공유 화면의 종료 함수에 이미 종료된 peer가 남아있어서 발생하는 문제였다. 그래서 공유 화면의 스트림을 `useRef()`에 저장하여 `screenStreamRef.current.getTracks()[0].stop()`으로 종료 시켜주었다.
+화면 공유 상태에서 다른쪽이 재연결을 시도하면 에러가 발생했다. 공유 화면의 종료 함수에 이미 종료된 peer가 남아있어서 발생하는 문제였다. 그래서 공유 화면의 스트림을 `useRef`에 저장하여 `peerDisconnect` 이벤트에서 `screenStreamRef.current.getTracks()[0].stop()`으로 종료 시켜 해결했다.
 
-<img width="800" alt="screenshare" src="https://user-images.githubusercontent.com/84524514/170372966-b59370d6-aa5e-47b7-82fa-07e276115632.png">
+<img width="800" alt="screen share" src="https://user-images.githubusercontent.com/84524514/170372966-b59370d6-aa5e-47b7-82fa-07e276115632.png">
 
-Ps. 저장해둔 peer의 정보들도 초기화 시켜주었다.
+Ps. `peerDisconnect` 이벤트에서 저장해둔 peer의 정보들도 함께 초기화 시켜줬다.
 
 ## Etc
 
@@ -67,14 +66,16 @@ Ps. 저장해둔 peer의 정보들도 초기화 시켜주었다.
 
 \*[Suggestion Issue](https://github.com/SuSang-YuHee/Debate-Ducks-Client/issues/20)
 
-다른 팀원들의 개인 사정으로 인해 현재 나만 개발을 진행하고 있다. 그러던 중 백엔드를 담당하는 팀원이 곧 개발을 시작할 수 있는데, 기본적인 로그인 기능부터 우선으로 작업할 거 같다며 로그인 기능을 먼저 같이 개발하자고 제안하였다. 이전 프로젝트에서 주로 이런 식으로 서버 측과 클라이언트 측이 동시간대에 같은 기능을 작업하였는데 개인적으로 몇 가지 불편함을 느꼈다.
+다른 팀원들의 개인 사정으로 인해 현재 나만 개발을 진행하고 있다. 그러던 중 백엔드를 담당하는 팀원이 곧 개발을 시작할 수 있는데, 기본적인 로그인 기능부터 우선으로 작업할 거 같다며 로그인 기능을 먼저 같이 개발하자고 제안했다. 이전 프로젝트에서 주로 이런 식으로 서버 측과 클라이언트 측이 동시간대에 같은 기능을 작업했는데 개인적으로 몇 가지 불편함을 느꼈었다.
 
-우선 개발하면서 생기는 변경 사항으로 인한 끊임없는 수정이다. 의사소통에 신경 쓰면서 개발을 해도 실시간 수정 사항으로 인해 "이렇게 하기로 한거 아니었냐? 나는 이미 이렇게 했다." 하는 문제로 시간을 꽤나 소모하였다.
+우선 개발하면서 생기는 변경 사항으로 인한 끊임없는 수정이다. 의사소통에 신경 쓰면서 개발을 해도 실시간으로 바뀌는 수정 사항으로 인해 "이렇게 하기로 한거 아니었냐? 나는 이미 이렇게 했다." 하는 문제로 시간을 꽤나 소모했다.
 
-또한 같은 기능을 동시간대에 작업하다 보니 각자 테스트 코드를 따로 만들어서 작업해야 하는 불편함도 있었다. 마지막으로 상대방과 실시간으로 대화하면서 개발하다 보니 코드를 읽는 능력을 기르는 연습이 되지 않았다.
+또한 같은 기능을 동시간대에 작업하다 보니 각자 테스트 코드를 따로 만들어서 작업해야 하는 불편함도 있었다.
 
-그래서 나는 서버와 클라이언트가 같은 기능을 동시간대에 개발하기보다는 한쪽이 기본적인 기능을 개발한 뒤 명확한 명세가 나오면, 다른 쪽이 해당 코드를 보고 바로바로 테스트하면서 개발하는 방식을 제안하였다. 그 과정에서 이미 개발된 코드의 수정이 필요하다면 hotfix로 수정하면서 개발하면 된다.
+마지막으로 상대방과 실시간으로 대화하면서 개발하다 보니 코드를 읽는 능력을 기르는 연습이 되지 않았다.
 
-특히 이번에 TypeScript를 사용하는데, 주석이나 별다른 설명 없이도 코드의 구조를 명확하게 파악할 수 있는 장점을 잘 활용할 수 있는 방식이라고 생각하였다.
+그래서 나는 서버와 클라이언트가 같은 기능을 동시간대에 개발하기보다는 한쪽이 기본적인 기능을 개발한 뒤 명확한 명세가 나오면, 다른 쪽이 해당 코드를 보고 바로바로 테스트하면서 개발하는 방식을 제안했다. 그 과정에서 이미 개발된 코드의 수정이 필요하다면 hotfix로 수정하면서 개발하면 된다.
 
-사실 기획부터 기능 및 각종 명세들을 아주 세세하게 짜고 들어가면 크게 상관없는 불편함이다. 하지만 현제 우리 프로젝트에서는 제안한 방식이 더 효율적일 것이라 생각해 제안하였고, 팀원들도 적극적으로 동의하였다.
+특히 이번에 TypeScript를 사용하는데, 주석이나 별다른 설명 없이도 코드의 구조를 명확하게 파악할 수 있는 TypeScript의 장점을 잘 활용할 수 있는 방식이라고 생각했다.
+
+사실 기획부터 기능 및 각종 명세들을 아주 세세하게 짜고 들어가면 크게 상관없는 불편함이다. 하지만 현제 우리 프로젝트에서는 제안한 방식이 더 효율적일 것이라 생각해 제안했고, 팀원들도 적극적으로 동의했다.
