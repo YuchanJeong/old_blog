@@ -118,7 +118,7 @@ clearInterval(roomDebates[roomId].debate);
 
 ### 남은 시간 생략
 
-발언이 끝난 경우 억지로 남은 시간 동안 더 발언하지 않고 넘어갈 수 있게 남은 시간 생략 기능을 만들었다.
+발언이 일찍 끝난 경우 억지로 남은 시간 동안 더 발언하지 않고 넘어갈 수 있게 남은 시간 생략 기능을 만들었다.
 
 ```ts
 @SubscribeMessage("skip")
