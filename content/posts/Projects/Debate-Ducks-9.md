@@ -1,6 +1,6 @@
 ---
 title: "[Debate-Ducks] Debateroom - Record"
-date: 2022-05-27
+date: 2022-06-01
 categories:
   - <Projects>
 tags:
