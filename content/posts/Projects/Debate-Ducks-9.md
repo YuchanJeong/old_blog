@@ -57,7 +57,7 @@ useEffect(() => {
 
 <img width="800" alt="reconnect-screen_share-error-1" src="https://user-images.githubusercontent.com/84524514/171619486-b947bdfd-3053-4965-a66a-a7fb2ac142da.png">
 
-그래서 상대방 재연결 시 화면 공유를 꺼주는 방식을 생각했다. 처음에는 `offScreen` 함수를 peerStream이 변경될 때 적용하는 방식을 사용했지만 화면 종료 시 발생하는 에러가 여전히 발생했다.
+그래서 상대방 재연결 시 화면 공유를 꺼주는 방식으로 해결해야겠다고 생각했다. 처음에는 `offScreen` 함수를 peerStream이 변경될 때 적용하는 방식을 사용했지만 화면 종료 시 발생하는 에러가 여전히 발생했다.
 
 ```ts
 // Bad1!!
