@@ -1,5 +1,5 @@
 ---
-title: "[React-query] React Query와 상태관리 :: 2월 우아한테크세미나"
+title: "[React-query] React Query와 상태관리 (feat. 2월 우아한테크세미나)"
 date: 2022-07-18
 categories:
   - <Studies>
