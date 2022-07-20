@@ -16,7 +16,7 @@ tags:
 
 - [Notion](https://codestates.notion.site/2-SuSang-YuHee-Debate-Ducks-142843d8e3524de2ae72fa2b66fc54f2)
 - [Github](https://github.com/codestates/debate-ducks)
-- [Demo](https://debate-ducks.click/)
+- ~~[Demo](https://debate-ducks.click/)~~
 
 ## 1. Socket.io[^](https://socket.io/)
 
