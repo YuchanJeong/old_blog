@@ -10,9 +10,9 @@ showPagination: false
 
 > A developer who wants to help create a better world :)
 
-| Name         | Location   | Language                              |
-| ------------ | ---------- | ------------------------------------- |
-| Yuchan Jeong | Dubai, UAE | Korean(Native), English(Intermediate) |
+| Name         | Location     | Language                              |
+| ------------ | ------------ | ------------------------------------- |
+| Yuchan Jeong | Pusan, Korea | Korean(Native), English(Intermediate) |
 
 ### 👇 Follow me on
 
