@@ -10,7 +10,7 @@ tags:
 ---
 
 {{< alert "circle-info" >}}
-[React v18.0](/posts/studies/react/react-v18.0/) 업데이트 미반영
+[React v18.0](/posts/studies/react/react/v18.0/) 업데이트 미반영
 {{< /alert >}}
 
 Ref. [React Docs (en)](https://reactjs.org/docs/getting-started.html)
