@@ -18,6 +18,7 @@ showPagination: false
 
 - [HTML](/what-i-learned/html-css/html)
 - [CSS](/what-i-learned/html-css/css)
+- [SCSS](/what-i-learned/html-css/scss)
 
 ## Etc
 
