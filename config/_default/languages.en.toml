@@ -7,7 +7,7 @@ rtl = false
 
 title = "Yuchan's hello world!"
 # logo = "img/logo.jpg"
-description = "The blog of a developer who wants to help create a better world :)"
+description = "The blog of a developer who loves 'Why?' :)"
 copyright = "Copyright © Yuchan's hello world!"
 
 dateFormat = "2 January 2006"
@@ -15,8 +15,8 @@ dateFormat = "2 January 2006"
 [author]
   name = "Yuchan"
   image = "img/MyLogo.jpeg"
-  headline = "A developer who wants to help create a better world :)"
-  bio = "A developer who wants to help create a better world :)"
+  headline = "A developer who loves 'Why?' :)"
+  bio = "A developer who loves 'Why?' :)"
   links = [
   { email = "mailto:yuchanjeong0923@gmail.com" },
   { github = "https://github.com/YuchanJeong" },
