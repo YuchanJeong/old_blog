@@ -16,15 +16,9 @@ showPagination: false
 
 ### 👇 Follow me on
 
-| Contact        | Details                                                                             |
-| -------------- | ----------------------------------------------------------------------------------- |
-| Mobile Number  | +82 10 8295 2674                                                                    |
-| E-mail         | [yuchanjeong0923@gmail.com](mailto:yuchanjeong0923@gmail.com)                       |
-| Blog           | [https://yuchanjeong.github.io](https://yuchanjeong.github.io)                      |
-| Github         | [/yuchanjeong](https://github.com/yuchanjeong)                                      |
-| Stack Overflow | [/users/16967930/yuchanjeong](https://stackoverflow.com/users/16967930/yuchanjeong) |
-
-### 🔖 Keyword
-
-- Pros : `Philomath` `Optimistic` `Meticulous` `Proactive` `Consistent`
-- Cons : `Overconcentration` `Reserved`
+| Contact       | Details                                                        |
+| ------------- | -------------------------------------------------------------- |
+| Mobile Number | +82 10 8295 2674                                               |
+| E-mail        | [yuchanjeong0923@gmail.com](mailto:yuchanjeong0923@gmail.com)  |
+| Blog          | [https://yuchanjeong.github.io](https://yuchanjeong.github.io) |
+| Github        | [/yuchanjeong](https://github.com/yuchanjeong)                 |
