@@ -6,9 +6,7 @@ showAuthor: false
 showPagination: false
 ---
 
-<img src="https://user-images.githubusercontent.com/84524514/167863098-414650df-4075-4b94-b5be-f37bef90e4d5.png" width="200"/>
-
-> A developer who wants to help create a better world :)
+> A developer who loves "Why?" :)
 
 | Name         | Location     | Language                              |
 | ------------ | ------------ | ------------------------------------- |
