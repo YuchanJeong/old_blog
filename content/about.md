@@ -6,9 +6,11 @@ showAuthor: false
 showPagination: false
 ---
 
+<img width="150px" alt="debate" src="https://user-images.githubusercontent.com/84524514/183109790-2aed3ca5-36c3-4852-b37f-88bdeb70b61b.jpg"/>
+
 > A developer who loves "Why?" :)
 
-| Name         | Location     | Language                              |
+| Name         | Location     | Languages                             |
 | ------------ | ------------ | ------------------------------------- |
 | Yuchan Jeong | Pusan, Korea | Korean(Native), English(Intermediate) |
 
