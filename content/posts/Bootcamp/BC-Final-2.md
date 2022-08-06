@@ -5,7 +5,7 @@ categories:
   - <Bootcamp>
 tags:
   - "'Debate-Ducks'"
-  - (Retrospect)
+  - (Retrospective)
 ---
 
 \*_전체적인 회고는 따로 [회고록](https://yuchanjeong.github.io/posts/bootcamp/bc-final-1/)에 작성_

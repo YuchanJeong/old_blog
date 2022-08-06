@@ -4,7 +4,7 @@ date: 2021-10-17
 categories:
   - <Bootcamp>
 tags:
-  - (Retrospect)
+  - (Retrospective)
 ---
 
 - 자료구조를 마무리하고 비동기를 공부했다.

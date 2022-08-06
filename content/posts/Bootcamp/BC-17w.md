@@ -4,6 +4,7 @@ date: 2022-03-22
 categories:
   - <Bootcamp>
 tags:
-  - (Retrospect)
+  - (Retrospective)
+
 draft: true
 ---

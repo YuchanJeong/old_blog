@@ -4,7 +4,7 @@ date: 2021-09-05
 categories:
   - <Bootcamp>
 tags:
-  - (Retrospect)
+  - (Retrospective)
 ---
 
 ![macCalculator](https://user-images.githubusercontent.com/84524514/132117283-92b29171-0d03-4f92-9325-d58a94a95539.gif)
