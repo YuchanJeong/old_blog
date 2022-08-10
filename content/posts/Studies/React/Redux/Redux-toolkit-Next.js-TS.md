@@ -62,7 +62,7 @@ const exampleSlice = createSlice({
 });
 
 export default exampleSlice.reducer;
-export const selectExample = (state: RootState) => state.example.value;
+export const exampleSelector = (state: RootState) => state.example.value;
 export const { actionCreator } = exampleSlice.actions;
 ```
 
