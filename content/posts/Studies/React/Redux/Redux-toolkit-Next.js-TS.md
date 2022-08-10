@@ -61,9 +61,9 @@ const exampleSlice = createSlice({
   },
 });
 
-export default example.reducer;
+export default exampleSlice.reducer;
 export const selectExample = (state: RootState) => state.example.value;
-export const { actionCreator } = reducerSlice.actions;
+export const { actionCreator } = exampleSlice.actions;
 ```
 
 ### utils/useReduxToolkit.ts
