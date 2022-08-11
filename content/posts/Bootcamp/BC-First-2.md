@@ -610,8 +610,15 @@ const searchCancel = () => {
 
 ### 9. MyPage
 
+1. 커플 맺기 전
+   ![1](https://user-images.githubusercontent.com/84524514/184223336-acc48436-fafd-403f-92c9-919466a3f00a.gif)
+2. 커플 맺기 진행 중
+   ![2](https://user-images.githubusercontent.com/84524514/184223357-36ed70b7-d828-48e9-aefc-f845164fbc75.gif)
+3. 커플 맺기 후
+   ![3](https://user-images.githubusercontent.com/84524514/184223378-cfebd94f-c0ec-416c-b133-c164322610d6.gif)
+
 ```jsx
-// 유저의 현재 상태별로 다양한 화면을 렌더링 해줘야 했음
+// 커플 맺기 단계별로 다양한 화면을 렌더링 해줘야 했음
 <>
   {!userInfo.id ? (
     <Navigate to="/signin" />
