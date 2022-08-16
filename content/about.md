@@ -6,9 +6,9 @@ showAuthor: false
 showPagination: false
 ---
 
-<img width="150px" alt="debate" src="https://user-images.githubusercontent.com/84524514/183109790-2aed3ca5-36c3-4852-b37f-88bdeb70b61b.jpg"/>
-
 > A developer who loves "Why?" :)
+
+<img width="250px" alt="profile" src="https://user-images.githubusercontent.com/84524514/184883636-eef39eb0-2f2a-4a70-9bdc-8a1d54732bb9.JPG"/>
 
 | Name         | Location     | Languages                             |
 | ------------ | ------------ | ------------------------------------- |
