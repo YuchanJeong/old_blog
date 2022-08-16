@@ -1,7 +1,7 @@
 # Yuchan’s hello world!
 
 {{< lead >}}
-A blog from a developer who wants to help create a better world :)
+A blog from a developer who loves "Why?" :)
 {{< /lead >}}
 
 {{< alert "circle-info" >}}
