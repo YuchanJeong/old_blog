@@ -13,6 +13,7 @@ showPagination: false
 - [React](/what-i-learned/javascript/react)
 - Next.js
 - [Redux-toolkit](/what-i-learned/javascript/redux-toolkit)
+- React-query
 
 ## HTML & CSS
 
