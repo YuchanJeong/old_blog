@@ -5,6 +5,7 @@ categories:
   - <Algorithm>
 tags:
   - Algorithm
+  - Practice Kit
 ---
 
 > 부분적인 최적해가 전체적인 최적해가 되는 마법.

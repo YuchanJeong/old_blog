@@ -5,6 +5,7 @@ categories:
   - <Algorithm>
 tags:
   - Algorithm
+  - Practice Kit
 ---
 
 > 정렬을 이용해서 문제를 효율적으로 풀어보세요.

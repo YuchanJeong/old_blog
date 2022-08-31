@@ -5,6 +5,7 @@ categories:
   - <Algorithm>
 tags:
   - Algorithm
+  - Practice Kit
 ---
 
 > 힙은 특정한 규칙을 가지는 트리로, 힙을 이용해서 우선순위 큐를 구현할 수 있습니다.

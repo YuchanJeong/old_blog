@@ -5,6 +5,7 @@ categories:
   - <Algorithm>
 tags:
   - Algorithm
+  - Practice Kit
 ---
 
 > 깊이/너비 우선 탐색을 사용해 원하는 답을 찾아보세요.
