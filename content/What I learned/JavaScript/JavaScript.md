@@ -676,7 +676,7 @@ const 객체 = new 클래스();
 | 일반 함수   | 호출      | 1. 일반 호출: 전역 객체<br/>2. 메서드 호출: 호출 객체 |
 | 화살표 함수 | 선언      | 화살표 함수를 감싸고 있는 외부 함수의 객체            |
 
-_\*_[This 예제](/storage/wil/javascript/ex-javascript/#this)\_
+\_\*[This 예제](/storage/wil/javascript/ex-javascript/#this)\_
 
 ### 4. JSON
 
