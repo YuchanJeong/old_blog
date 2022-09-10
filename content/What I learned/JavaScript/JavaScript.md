@@ -308,14 +308,14 @@ Primitive Type
 
 - string, number, boolean, undefined, null
 - 변수에 값을 저장
-- mutable
+- immutable
 
 Reference Type
 
 - array, object, function
 - 변수에 heap의 주소를 저장, 값은 heap에 저장
 - 같은 주소(heap)를 참조할 때 하나 변화 시 일괄 변화
-- immutable
+- mutable
 
 **4\) Data Copy**
 

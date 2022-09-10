@@ -65,9 +65,9 @@ npm i classnames
 ```css
 /* example.module.css */
 :global(.inner) /* module의 고유화 방지 */ {
-  width: 1100px; /* 최대 넓이 */
+  width: 1200px; /* 최대 넓이 */
   max-width: 100%; /* 모바일용 */
-  margin: 0 auto; /* 가로 가운데 정렬 */
+  margin: 0 auto; /* 가로 가운데 정렬 (auto는 양쪽의 여백을 같게 만들겠다는 뜻) */
   position: relative;
 }
 
