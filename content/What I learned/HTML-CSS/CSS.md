@@ -73,13 +73,13 @@ selector {
 
 여백 및 테두리
 
-| Property                    | Details                                      |
-| --------------------------- | -------------------------------------------- |
-| `margin`                    | 외부 여백, 음수 가능                         |
-| `padding`                   | 내부 여백, 내용 선택 가능                    |
-| `border`: width style color | 테두리<br/>└ style solid \| dotted \| dashed |
-| `border-radius`             | 테두리 둥글게 깍는 정도                      |
-| `boxing-size: border-box;`  | 크기가 내부 여백과 테두리 포함               |
+| Property                    | Details                                                    |
+| --------------------------- | ---------------------------------------------------------- |
+| `margin`                    | 외부 여백, 음수 가능                                       |
+| `padding`                   | 내부 여백, 내용 선택 가능                                  |
+| `border`: width style color | 테두리<br/>└ style solid \| dotted \| dashed               |
+| `border-radius`             | 테두리 둥글게 깍는 정도                                    |
+| `boxing-size: border-box;`  | 크기가 내부 여백과 테두리 포함 (원래는 컨텐츠 크기만 포함) |
 
 출력
 
