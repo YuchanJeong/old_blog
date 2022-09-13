@@ -52,7 +52,14 @@ Ps. 커링 - 함수 하나가 n개의 **인자**를 받는 과정을 n개의 함
 
 ### 이벤트 버블링 (★★★★☆)
 
+[[참조]](https://velog.io/@reasonz/2022.04.05-Javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81%EA%B3%BC-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%BA%A1%EC%B2%98%EB%A7%81#-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
+
 - 하위 요소에서 상위 요소로 이벤트가 전파되는 것 (<-> 이벤트 캡쳐, capture: true)
+- 부모요소에 이벤트의 위임을 해서 효율적인 코딩이 가능
+
+Ps. ev.stopPropagation() - 이벤트 전파를 막음
+
+Ps. ev.preventDefault() - 고유 동작을 막음
 
 ### 데이터 타입 (★★★☆☆)
 
@@ -171,7 +178,7 @@ Ps. 응답 번호
 ### 웹 워커(HTML5) (★★★★☆)
 
 - 브라우저의 메인 스레드와 별개로 작동하는 고유 스레드를 생성해 **멀티 스레드**를 가능하게 함
-- 별도의 WorkerGlobalScope를 가져서 Window 메서드 호출이나 DOM 조작이 불가능함
+- 별도의 WorkerGlobalScope를 가져서 Window 메서드 호출이나 DOM 조작이 불가능
 
 ### OSI 7계층 (★☆☆☆☆)
 
