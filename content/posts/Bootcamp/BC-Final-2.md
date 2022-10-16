@@ -4,7 +4,7 @@ date: 2022-03-21
 categories:
   - <Bootcamp>
 tags:
-  - "'Debate-Ducks'"
+  - \Debate-Ducks
   - (Retrospective)
 ---
 
